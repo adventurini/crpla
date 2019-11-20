@@ -1,0 +1,63 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.2rem;
+  height: 100px;
+  align-items: center;
+  background: transparent;
+ 
+  .left-nav {
+      width: 350px;
+      a{
+          color: white;
+          font-size: 2.3rem;
+      }
+  }
+  .center-nav {
+    width: 350px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      height: 100px;
+      align-items: center;
+
+      li {
+
+        color: $dark-gray;
+        margin-right: 35px;
+        a {
+          text-decoration: none;
+          font-size: 2.1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .right-nav {
+    width: 350px;
+    text-align: right;
+
+      button{
+          width: 120px;
+          border: 2px solid $white;
+          border-radius: 14px;
+          color: $white;
+          background-color: $purple;
+          margin-right: 10px;
+          padding: 12px 18px;
+          font-size: 1.8rem;
+      }
+      button:hover{
+          cursor: pointer;
+      }
+      .signup{
+        color: $purple;
+        background-color: $white;
+        font-weight: 500;
+      }
+  }
+}
