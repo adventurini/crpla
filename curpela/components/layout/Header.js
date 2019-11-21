@@ -3,12 +3,16 @@ import Nav from "./Nav";
 import "./Header.scss";
 
 const Header = () => (
+    <>
+    
   <div className="header">
-    <Nav />
-    <h1>Welcome to Curpela</h1>
-    <h2>Homes Live Here</h2>
-    <button>Discover</button>
+    
+    <h1>Featuring the <span>Best Houses</span></h1> 
+    <h2>Browse homes near you</h2>
+    <input type="text" placeholder="Enter a city or Zip code"></input>
+    {/* <button>Discover</button> */}
   </div>
+  </>
 );
 
 export default Header;
