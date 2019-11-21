@@ -1,36 +1,35 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 800px;
-    margin-top: -100px;
-    background-color: $purple;
-    text-align: center;
-    align-items: center;
-    h1{
-        font-size: 5.2rem;
-        color: $white;
-        margin-bottom: 2rem;
-        font-weight: 800;
-    }
-    h2{
-        font-size: 2.1rem;
-        color: $orange;
-        margin-bottom: 4rem;
-    }
-    button{
-        border: 2px solid $white;
-        border-radius: 14px;
-        color: $purple;
-        background-color: $white;
-        margin-right: 10px;
-        padding: 12px 28px;
-        font-size: 1.8rem;
-    }
-    button:hover{
-        cursor: pointer;
-    }
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 800px;
+  background-image: url("../../assets/HousesHeader.png");
+  text-align: center;
+  align-items: center;
+  h1 {
+    font-size: 5.2rem;
+    color: $white;
+    margin-bottom: 2rem;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 2.1rem;
+    color: $orange;
+    margin-bottom: 4rem;
+  }
+  button {
+    border: 2px solid $white;
+    border-radius: 14px;
+    color: $purple;
+    background-color: $white;
+    margin-right: 10px;
+    padding: 12px 28px;
+    font-size: 1.8rem;
+  }
+  button:hover {
+    cursor: pointer;
+  }
 }
