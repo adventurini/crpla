@@ -1,4 +1,1 @@
-# Curpela front-end
-
-
-## ☛ Next.js
+# front-end
