@@ -11,9 +11,10 @@
  
   .left-nav {
       width: 350px;
+      margin-left: 15px;
       a{
           color: white;
-          font-size: 2.4rem;
+          font-size: 3.4rem;
           font-weight: 500
       }
   }
@@ -47,7 +48,7 @@
           border: 2px solid $white;
           border-radius: 14px;
           color: $white;
-          background-color: $purple;
+          background-color: transparent;
           margin-right: 10px;
           padding: 12px 18px;
           font-size: 1.8rem;

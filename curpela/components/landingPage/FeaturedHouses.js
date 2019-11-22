@@ -1,11 +1,15 @@
 import React from 'react'
 import './FeaturedHouses.scss'
 
+const houses = [0,1,2,3,4,5]
+
 export default function FeaturedHouses() {
     return (
         <div className="featured-houses-container">
             <h3>Featured Houses</h3>
             <div className="featured-houses">
+            {houses.length > 0 && houses.map(house=> 
+            
                 <div className="featured-house">
                     <div className="house-image-section">
                     <img></img>
@@ -18,7 +22,9 @@ export default function FeaturedHouses() {
                             <p className="author">John Venturini</p>
                             <p className="followers">2500 Followers</p>
                         </div>
-                        <div className="likes">
+                      
+                    </div>
+                    <div className="likes">
                             <img></img>
                             <p className="number-of-likes">2500</p>
                         </div>
@@ -28,10 +34,10 @@ export default function FeaturedHouses() {
                         </div>
                         <button>View</button>
                     </div>
-                    </div>
                 </div>
-            </div>
-            
+          
+            )}
+              </div>
         </div>
     )
 }

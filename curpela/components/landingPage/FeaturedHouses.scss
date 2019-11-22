@@ -3,21 +3,27 @@
 
 .featured-houses-container {
     padding: 25px;
+    margin: 0 auto;
+   
     h3{
         font-size: 1.8rem;
         margin-left: 20px;
     }
   .featured-houses {
       display: flex;
-      
+      flex-wrap: wrap;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+      justify-content: space-between;
 
     .featured-house {
-        width: 311px;
+        width: 29%;
         height: 295px;
         margin: 20px;
         border-radius: 15px;
+        background: silver;
 
-        background: black;
       .house-image-section {
           height: 250px;
           border-radius: 15px 15px 0px 0px;
@@ -35,6 +41,9 @@
       }
 
       .house-info-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         .house-info-author {
             display: flex;
             height: 45px;
@@ -44,7 +53,7 @@
               height: 30px;
               width: 30px;
               border-radius: 30px;
-              background-color: white;
+              background-color: black;
           }
 
           .author-info {
@@ -56,7 +65,7 @@
               justify-content: space-around;
             .author {
                 text-align: left;
-                color: $white;
+                color: black;
                 font-size: 12px;
                 padding-bottom: 3px;
             }
@@ -69,44 +78,46 @@
             }
           }
 
-          .likes{
-            display: flex;
-            margin-left: 20px;
-            align-items: center;
-              img{
+        }
 
-              }
-              .number-of-likes{
-                color: $white;
-                font-size: 1rem;
-                margin-left: 10px;
-              }
-          }
-          .comments{
-            display: flex;
-            margin-left: 20px;
-            align-items: center;
+        .likes{
+          display: flex;
+          margin-left: 20px;
+          align-items: center;
             img{
 
             }
-            .number-of-comments{
-                color: $white;
-                font-size: 1rem;
-                margin-left: 10px;
+            .number-of-likes{
+              color: black;
+              font-size: 1rem;
+              margin-left: 10px;
             }
         }
-        button {
-            border: 2px solid $purple;
-            border-radius: 5px;
-            color: $white;
-            background-color: $purple;
-            margin-left: 20px;
-            padding: 4px 12px;
-            font-size: 1.1rem;
+        .comments{
+          display: flex;
+          margin-left: 20px;
+          align-items: center;
+          img{
+
           }
-          button:hover {
-            cursor: pointer;
+          .number-of-comments{
+              color: black;
+              font-size: 1rem;
+              margin-left: 10px;
           }
+      }
+      button {
+          border: 2px solid $purple;
+          border-radius: 5px;
+          color: $white;
+          background-color: $purple;
+          margin-left: 20px;
+          font-size: 1.1rem;
+          padding: 4px 8px;
+          margin-right: 10px;
+        }
+        button:hover {
+          cursor: pointer;
         }
       }
     }
