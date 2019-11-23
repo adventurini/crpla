@@ -3,7 +3,8 @@ import Head from "next/head";
 import Header from "../components/layout/Header";
 import Nav from "../components/layout/Nav";
 import FeaturedHouses from "../components/landingPage/FeaturedHouses";
-import FeaturedPhotographers from "../components/landingPage/FeaturedPhotographers";
+import FeaturedPhotographers from "../components/landingPage/FeaturedPhotographers";import 
+FeaturedHashtags from "../components/landingPage/FeaturedHashtags";
 import "../styles/base.scss";
 
 const Home = () => (
@@ -39,6 +40,7 @@ const Home = () => (
     <Header />
     <FeaturedHouses />
     <FeaturedPhotographers />
+    <FeaturedHashtags />
   </div>
 );
 

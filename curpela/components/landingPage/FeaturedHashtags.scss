@@ -1,2 +1,66 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+
+.featured-hashtags{
+    padding: 25px;
+h3{
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+.featured-hashtags-container{
+    display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: space-between;
+    
+   
+    .featured-hashtag{
+        width: 20%;
+        height: 228px;
+        margin: 20px;
+        position: relative;
+        &:hover{
+            cursor:pointer;
+        }
+        .hashtag{
+            width: 33%;
+            color: white;
+            text-align:center;
+            font-size: 2.8rem;
+            position: absolute;
+            bottom: 45%;
+            right: 37%;
+        }
+        .top-flex-container{
+            display: flex;
+            height: 50%;
+        .hashtag-top-left{
+            background: teal;
+            width: 50%;
+            border-top-left-radius: 15px;
+        }
+        .hashtag-top-right{
+            background: orange;
+            width: 50%;
+            border-top-right-radius: 15px;
+        }
+    }
+    .bottom-flex-container{
+        display: flex;
+        height: 50%;
+        .hashtag-bottom-left{
+            background: green;
+            width: 50%;
+            border-bottom-left-radius: 15px;
+        }
+        .hashtag-bottom-right{
+            background: red;
+            width: 50%;
+            border-bottom-right-radius: 15px;
+        }
+    }
+    }
+}
+}
