@@ -21,6 +21,7 @@ h3{
         height: 228px;
         margin: 20px;
         position: relative;
+        opacity: .6;
         &:hover{
             cursor:pointer;
         }
@@ -37,12 +38,12 @@ h3{
             display: flex;
             height: 50%;
         .hashtag-top-left{
-            background: teal;
+            background: rgb(0, 57, 57);
             width: 50%;
             border-top-left-radius: 15px;
         }
         .hashtag-top-right{
-            background: orange;
+            background: rgb(82, 53, 0);
             width: 50%;
             border-top-right-radius: 15px;
         }
@@ -51,12 +52,12 @@ h3{
         display: flex;
         height: 50%;
         .hashtag-bottom-left{
-            background: green;
+            background: rgb(0, 63, 0);
             width: 50%;
             border-bottom-left-radius: 15px;
         }
         .hashtag-bottom-right{
-            background: red;
+            background: rgb(81, 0, 0);
             width: 50%;
             border-bottom-right-radius: 15px;
         }

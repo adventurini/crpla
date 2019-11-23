@@ -6,6 +6,8 @@ import FeaturedHouses from "../components/landingPage/FeaturedHouses";
 import FeaturedPhotographers from "../components/landingPage/FeaturedPhotographers";import 
 FeaturedHashtags from "../components/landingPage/FeaturedHashtags";
 import "../styles/base.scss";
+import Footer from "../components/layout/Footer";
+import "../styles/base.scss";
 
 const Home = () => (
   <div>
@@ -41,6 +43,7 @@ const Home = () => (
     <FeaturedHouses />
     <FeaturedPhotographers />
     <FeaturedHashtags />
+    <Footer />
   </div>
 );
 
