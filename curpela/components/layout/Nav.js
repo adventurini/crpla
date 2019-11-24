@@ -14,7 +14,9 @@ const links = [
 const Nav = () => (
   <div className='nav'>
     <div className="left-nav">
+      <Link href="/">
       <a>curpela</a>
+      </Link>
     </div>
     <div className="center-nav">
       <ul>
@@ -27,8 +29,12 @@ const Nav = () => (
     </div>
 
     <div className="right-nav">
+      <Link href="/login">
       <button>Log In</button>
+      </Link>
+      <Link href="/signup">
       <button className="signup">Sign Up</button>
+      </Link>
     </div>
   </div>
 );

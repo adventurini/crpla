@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 840px;
+  height: 100vh;
   background: linear-gradient( to right,
     rgba(39, 16, 154, 0.824) 48%, 
     rgba(41, 7, 143, 0.741)
@@ -15,7 +15,7 @@
   margin: -100px auto 0 auto;
 
   .header-content{
-    margin: 0 auto 0 360px;
+    margin: 0 auto 0 25%;
   // align-items: center;
   h1 {
     font-size: 6.2rem;
