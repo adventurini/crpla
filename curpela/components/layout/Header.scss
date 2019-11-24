@@ -5,20 +5,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 650px;
+  height: 840px;
   background: linear-gradient( to right,
-    rgba(87, 48, 205,.90) 46%, 
-    rgba(76, 39, 155, .76)
+    rgba(45, 15, 135, 0.78) 68%, 
+    rgba(54, 0, 171, 0.65)
   ),url("/static/HousesHeader.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin: -100px auto 0 auto;
 
   .header-content{
-    margin: 0 auto 0 150px;
+    margin: 0 auto 0 360px;
   // align-items: center;
   h1 {
-    font-size: 5.2rem;
+    font-size: 6.2rem;
     color: $white;
     margin-bottom: 2rem;
     font-weight: 600;
@@ -28,7 +28,7 @@
     }
   }
   h2 {
-    font-size: 2.6rem;
+    font-size: 3.9rem;
     color: $white;
     margin-bottom: 3rem;
     font-weight: 500;
@@ -41,13 +41,13 @@
   }
   button {
     border: $orange 2px solid;
-    width: 245px;
+    width: 313px;
     border-radius: 10px;
     color: $orange;
-    background-color: transparent;
+    background: transparent;
     margin-right: 10px;
-    padding: 14px 22px;
-    font-size: 1.8rem;
+    padding: 22px 30px;
+    font-size: 2.5rem;
     font-weight: 600;
   }
   button:hover {
