@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import './Nav.scss'
+import "./Nav.scss";
 
 const links = [
   { href: "https://zeit.co/now", label: "Discover" },
@@ -12,10 +12,10 @@ const links = [
 });
 
 const Nav = () => (
-  <div className='nav'>
+  <div className="nav">
     <div className="left-nav">
       <Link href="/">
-      <a>curpela</a>
+        <a>curpela</a>
       </Link>
     </div>
     <div className="center-nav">
@@ -29,12 +29,12 @@ const Nav = () => (
     </div>
 
     <div className="right-nav">
-      <Link href="/login">
-      <button>Log In</button>
-      </Link>
-      <Link href="/signup">
-      <button className="signup">Sign Up</button>
-      </Link>
+      <a href="/login">
+        <button>Log In</button>
+      </a>
+      <a href="/signup">
+        <button className="signup">Sign Up</button>
+      </a>
     </div>
   </div>
 );
