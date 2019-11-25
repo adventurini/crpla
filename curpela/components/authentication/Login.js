@@ -15,7 +15,7 @@ export default function Login() {
           <p>New User? Create an Account</p>
           </div>
           <form>
-          <input className="username" placeholder="Username"></input>
+          <input className="email" placeholder="Email"></input>
           <input placeholder="Password"></input>
           <button>Log In</button>
           </form>
