@@ -4,7 +4,7 @@
 .sidebar{
     z-index: 1;
     width: 420px;
-    height: 100%;
+    height: 120%;
     background: silver;
     text-align: center;
     .house-image{
@@ -69,6 +69,60 @@
     }
     .about{
         margin: 45px;
+        .about-title{
+            font-size: 1.4rem;
+            margin: 15px;
+        }
+        .about-description{
+            font-size: 1.4rem;
+            color: gray;
+            line-height: 2rem;
+        }
+    }
+    .house-images-section{
+        .house-images-title{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            .house-images-icon{
+
+            }
+            .title{
+                font-weight: 600;
+            }
+            .view-all{
+                color: gray;
+                margin-left: 95px;
+            }
+            .view-all-icon{
+
+            }
+        }
+        .house-images{
+            display: flex;
+            width: 88%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            .house-photo{
+                background: white;
+                width: 128px;
+                height: 109px;
+                margin: 20px;
+                border-radius: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        
+    }
+    .house-compliments-section{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
     }
   
 }

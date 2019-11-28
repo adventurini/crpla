@@ -29,14 +29,14 @@ export default function HouseSideBar() {
         </div>
         <div className="about">
         <p className="about-title">ABOUT</p>
-        <p className="about-description">Lorem ipsum lorem ipsum lorem ipsum</p>
+        <p className="about-description">Lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum</p>
         </div>
      
       <div className="house-images-section">
         <div className="house-images-title">
           <img className="house-images-icon" src=""></img>
-          <p>Images + (Count)</p>
-          <p>View All</p>
+          <p className='title'>Images(23)</p>
+          <p className="view-all">View All</p>
           <img className="view-all-icon" src=""></img>
         </div>
         <div className="house-images">
@@ -45,15 +45,10 @@ export default function HouseSideBar() {
           ))}
         </div>
       </div>
-      <div className="house-compliments-section">
-      <div className="house-compliments-title">
-          <img className="house-compliments-icon" src=""></img>
-          <p>Images + (Count)</p>
-          <p>View All</p>
-          <img className="view-all-icon" src=""></img>
-        </div>
+      {/* <div className="house-compliments-section">
+      
         <HouseCompliments />
-      </div>
+      </div> */}
     </div>
   );
 }
