@@ -5,17 +5,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 71vh;
+  height: 82vh;
   background: linear-gradient( to right,
-    rgba(16, 21, 154, 0.544) 48%, 
-    rgba(7, 7, 143, 0.241)
-  ),url("/static/HousesHeader.png");
+    rgba(16, 21, 154, 0.644) 58%, 
+    rgba(7, 7, 143, 0.541)
+  );
   background-repeat: no-repeat;
   background-size: cover;
-  margin: -100px auto 0 auto;
+  margin: 0px auto;
 
   .header-content{
-    margin: 0 auto 0 9%;
+    margin: 0 auto 70px 12%;
   // align-items: center;
   h1 {
     font-size: 6.2rem;

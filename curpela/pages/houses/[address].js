@@ -2,11 +2,12 @@ import React from 'react'
 import HouseHeader from '../../components/houseProfile/HouseHeader'
 import HouseSideBar from '../../components/houseProfile/HouseSideBar'
 import HouseFeed from '../../components/houseProfile/HouseFeed'
+import Nav from '../../components/layout/Nav'
 
 export default function address(props) {
     return (
         <div>
-            <h1>{props.address}</h1>
+            <Nav />
             <HouseHeader />
             <HouseSideBar />
             <HouseFeed />
@@ -15,6 +16,5 @@ export default function address(props) {
 }
 
 address.getInitialProps = props => {
-    console.log('hello')
     return {address: props.query.address}
 }

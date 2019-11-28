@@ -1,2 +1,73 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+
+.sidebar{
+    position: fixed;
+    height: 100vh;
+    width: 420px;
+    background: silver;
+    margin: 0 auto;
+    text-align: center;
+    .house-image{
+        height: 212px;
+        width: 212px;
+        background: white;
+        margin: -106px auto 0 auto;
+        border-radius: 10px;
+    }
+    .house-info{
+        margin: 35px;
+        p{
+            line-height: 1.5
+        }
+    }
+    button{
+        width: 25%;
+    }
+    .house-attributes{
+        width: 70%;
+        margin: 40px auto; 
+        display: flex;
+        justify-content: space-between;
+    }
+    .followers{
+      width: 33%;
+      .number-of-followers{
+          font-size: 2rem;
+          font-weight: 600;
+      }
+      .followers-title{
+          color: gray;
+          font-weight: 300;
+          font-size: 1.4rem;
+      }
+    }
+    .posts{
+        width: 33%;
+        .number-of-posts{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .posts-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .compliments{
+        width: 33%;
+        .number-of-compliments{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .compliments-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .about{
+        margin: 45px;
+    }
+  
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./Nav.scss";
 
 const links = [
-  { href: "https://zeit.co/now", label: "Discover" },
+  { href: "/houses", label: "Discover" },
   { href: "https://github.com/zeit/next.js", label: "Popular" },
   { href: "https://github.com/zeit/next.js", label: "Recent" }
 ].map(link => {
@@ -22,7 +22,9 @@ const Nav = () => (
       <ul>
         {links.map(({ key, href, label }) => (
           <li key={key}>
-            <a href={href}>{label}</a>
+            <Link href={href}>
+            <a>{label}</a>
+            </Link>
           </li>
         ))}
       </ul>
