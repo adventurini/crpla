@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './HouseFeed.scss'
 
 export default function HouseFeed() {
     return (
-        <div>
+        <div className="house-feed-container">
             
         </div>
     )

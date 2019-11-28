@@ -2,13 +2,14 @@
 @import "../../styles/mixins";
 
 .sidebar{
-    position: fixed;
-    height: 100vh;
+    z-index: 1;
     width: 420px;
+    height: 100%;
     background: silver;
-    margin: 0 auto;
     text-align: center;
     .house-image{
+        position: relative;
+        z-index: 2;
         height: 212px;
         width: 212px;
         background: white;
