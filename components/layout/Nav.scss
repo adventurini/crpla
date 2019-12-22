@@ -7,7 +7,10 @@
   padding: 2.2rem;
   height: 100px;
   align-items: center;
-  background: transparent;
+  background: linear-gradient( to right,
+  rgba(16, 21, 154, 0.644) 58%, 
+  rgba(7, 7, 143, 0.541)
+);;
  
   .left-nav {
       width: 350px;
@@ -29,7 +32,7 @@
 
       li {
 
-        color: $dark-gray;
+        color: $elans-grey;
         margin-right: 35px;
         a {
           text-decoration: none;

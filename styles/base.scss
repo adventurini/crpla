@@ -10,5 +10,10 @@
 @import 'mixins';
 
 // Views Here
+@import '../components/authentication/Login.scss';
+@import '../components/authentication/Register.scss';
+@import '../components/houseProfile/HouseFeed.scss';
+@import '../components/houseProfile/HouseHeader.scss';
+@import '../components/houseProfile/HouseSideBar.scss'
 
 // Components

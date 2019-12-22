@@ -1,0 +1,128 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.sidebar{
+    z-index: 1;
+    width: 420px;
+    height: 120%;
+    background: silver;
+    text-align: center;
+    .house-image{
+        position: relative;
+        z-index: 2;
+        height: 212px;
+        width: 212px;
+        background: white;
+        margin: -106px auto 0 auto;
+        border-radius: 10px;
+    }
+    .house-info{
+        margin: 35px;
+        p{
+            line-height: 1.5
+        }
+    }
+    button{
+        width: 25%;
+    }
+    .house-attributes{
+        width: 70%;
+        margin: 40px auto; 
+        display: flex;
+        justify-content: space-between;
+    }
+    .followers{
+      width: 33%;
+      .number-of-followers{
+          font-size: 2rem;
+          font-weight: 600;
+      }
+      .followers-title{
+          color: gray;
+          font-weight: 300;
+          font-size: 1.4rem;
+      }
+    }
+    .posts{
+        width: 33%;
+        .number-of-posts{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .posts-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .compliments{
+        width: 33%;
+        .number-of-compliments{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .compliments-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .about{
+        margin: 45px;
+        .about-title{
+            font-size: 1.4rem;
+            margin: 15px;
+        }
+        .about-description{
+            font-size: 1.4rem;
+            color: gray;
+            line-height: 2rem;
+        }
+    }
+    .house-images-section{
+        .house-images-title{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            .house-images-icon{
+
+            }
+            .title{
+                font-weight: 600;
+            }
+            .view-all{
+                color: gray;
+                margin-left: 95px;
+            }
+            .view-all-icon{
+
+            }
+        }
+        .house-images{
+            display: flex;
+            width: 88%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            .house-photo{
+                background: white;
+                width: 128px;
+                height: 109px;
+                margin: 20px;
+                border-radius: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        
+    }
+    .house-compliments-section{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+  
+}

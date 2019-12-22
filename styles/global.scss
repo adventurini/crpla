@@ -6,7 +6,18 @@ html {
     font-size: 62.5%;
   }
   button{
-    font-family: "sofia-pro"
+    font-family: "sofia-pro";
+    border: none;
+    border-radius: 6px;
+    color: $white;
+    background: $orange;
+    margin-right: 10px;
+    padding: 12px 15px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    &:hover{
+      cursor: pointer;
+    }
   }
   body {
     font-family: "sofia-pro", "sans-serif";

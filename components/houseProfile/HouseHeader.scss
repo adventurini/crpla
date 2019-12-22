@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.house-header-container{
+    width:100%;
+    height: 327px;
+    background-color: $elans-grey;
+    position: relative;
+    z-index: 1;
+}
