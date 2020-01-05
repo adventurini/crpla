@@ -4,10 +4,6 @@ import "./Login.scss";
 export default function Login() {
   return (
     <div className="login-container">
-      <div className="login-content-left">
-        <div className="logo"></div>
-        <h2>Curpela Has the <br /> Best Houses</h2>
-      </div>
       <div className="login-content-right">
           <div className="login-content-form">
             <div className="login-form-type">

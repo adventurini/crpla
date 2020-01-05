@@ -5,12 +5,10 @@
   display: flex;
   justify-content: space-between;
   padding: 2.2rem;
-  height: 100px;
+  height: 10vh;
+  min-height: 80px;
   align-items: center;
-  background: linear-gradient( to right,
-  rgba(16, 21, 154, 0.644) 58%, 
-  rgba(7, 7, 143, 0.541)
-);;
+  background: #6751FF;
  
   .left-nav {
       width: 350px;
