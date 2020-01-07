@@ -3,35 +3,33 @@
 
 .header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 82vh;
-  background: linear-gradient( to right,
-    rgba(16, 21, 154, 0.644) 58%, 
-    rgba(7, 7, 143, 0.541)
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 90vh;
+  background: linear-gradient(rgb(66, 43, 216), rgb(72, 59, 218));
   margin: 0px auto;
 
-  .header-content{
-    margin: 0 auto 70px 12%;
+  .header-content-left{
+    margin: 0 auto 70px 8%;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 182px;
   // align-items: center;
   h1 {
-    font-size: 6.2rem;
+    font-size: 7.7rem;
     color: $white;
     margin-bottom: 2rem;
     font-weight: 600;
-    margin-top: 50px;
+    line-height: 9.4rem;
     span{
         color: $orange;
     }
   }
   h2 {
-    font-size: 3.9rem;
+    font-size: 2.9rem;
+    font-family: "sofia-pro";
     color: $white;
     margin-bottom: 3rem;
-    font-weight: 500;
+    font-weight: 300;
+    line-height: 5.9rem;
   }
   input{
     margin-left: 100px;
@@ -40,19 +38,27 @@
       height: 1.8rem;
   }
   button {
-    border: none;
 
-    width: 313px;
-    border-radius: 10px;
+    border-radius: 4px;
     color: $white;
+    font-family: Roboto;
     background: $orange;
+    border: 2px solid $orange;
     margin-right: 10px;
-    padding: 22px 30px;
-    font-size: 2.5rem;
+    padding: 19px 33px;
+    font-size: 2.2rem;
     font-weight: 500;
   }
   button:hover {
     cursor: pointer;
+  }
+}
+.header-content-right{
+  width: 35%;
+  margin-top: 200px;
+  img{
+    height: 350px;
+    width: 460px;
   }
 }
 }

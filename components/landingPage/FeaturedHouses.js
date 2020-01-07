@@ -1,6 +1,6 @@
 import React from "react";
 import "./FeaturedHouses.scss";
-import Link from 'next/link'
+import Link from "next/link";
 
 const houses = [
   {
@@ -54,7 +54,7 @@ export default function FeaturedHouses() {
       <div className="featured-houses">
         {houses.length > 0 &&
           houses.map(house => (
-            <div className="featured-house">
+            <div key={house.id} className="featured-house">
               <div className="house-image-section">
                 <img></img>
                 <p className="city">San Francisco, CA</p>
@@ -75,8 +75,11 @@ export default function FeaturedHouses() {
                   <img></img>
                   <p className="number-of-comments">23</p>
                 </div>
-                <Link href='/houses/[house.address]' as={`/houses/${house.address}`}>
-                <button>View</button>
+                <Link
+                  href="/houses/[house.address]"
+                  as={`/houses/${house.address}`}
+                >
+                  <button>View</button>
                 </Link>
               </div>
             </div>
