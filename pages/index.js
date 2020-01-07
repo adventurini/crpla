@@ -39,10 +39,10 @@ const Home = () => (
     </Head>
     <Nav />
     <Header />
-    <FeaturedHouses />
+    {/* <FeaturedHouses />
     <FeaturedPhotographers />
     <FeaturedHashtags />
-    <Footer />
+    <Footer /> */}
   </div>
 );
 
