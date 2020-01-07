@@ -161,7 +161,7 @@ function createApolloClient(initialState = {}, { getToken }) {
 
   // @TODO Make URI http link URI dynamic
   const httpLink = new HttpLink({
-    uri: "http://localhost:4000", // Server URL (must be absolute)
+    uri: process.env.API_URI, // Server URL (must be absolute)
     credentials: "same-origin",
     fetch,
     fetchOptions
