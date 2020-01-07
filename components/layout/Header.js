@@ -8,9 +8,9 @@ const Header = () => (
     
   <div className="header">
     <div className="header-content-left">
-    <h1>Real Estate Content Platform</h1> 
+    <h1>Stand out <br /> from the others.</h1> 
     
-    <h2>Manage your workflow, build a brand, & attract an <br/>audience all under one simple platform</h2>
+    <h2>Manage your workflow, build a brand, and attract an <br/>audience all under one simple, real estate content platform.</h2>
     {/* <input type="text" placeholder="Enter a city or Zip code"></input> */}
     <Link href="/houses">
     <button>Explore the Platform</button>

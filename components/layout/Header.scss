@@ -4,22 +4,21 @@
 .header {
   display: flex;
   height: 90vh;
-  background: #6751FF;
+  background: linear-gradient(rgb(66, 43, 216), rgb(72, 59, 218));
   margin: 0px auto;
 
   .header-content-left{
     margin: 0 auto 70px 8%;
     flex-direction: column;
     align-items:center;
-    margin-top: 170px;
+    margin-top: 182px;
   // align-items: center;
   h1 {
-    font-size: 5.1rem;
+    font-size: 7.7rem;
     color: $white;
     margin-bottom: 2rem;
     font-weight: 600;
-    margin-top: 50px;
-    line-height: 5rem;
+    line-height: 9.4rem;
     span{
         color: $orange;
     }
@@ -30,7 +29,7 @@
     color: $white;
     margin-bottom: 3rem;
     font-weight: 300;
-    line-height: 4.9rem;
+    line-height: 5.9rem;
   }
   input{
     margin-left: 100px;
@@ -56,10 +55,10 @@
 }
 .header-content-right{
   width: 35%;
-  margin-top: 175px;
+  margin-top: 200px;
   img{
-    height: 320px;
-    width: 440px;
+    height: 350px;
+    width: 460px;
   }
 }
 }

@@ -5,7 +5,7 @@ import Router from "next/router";
  * @Desc Redirects to a given target (Preferred as it supports both client and server redirects)
  * @Access Public
  * @Param? Context
- * @Param Targe
+ * @Param Target
  */
 export default (context, target) => {
   // Server redirect
