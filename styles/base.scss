@@ -1,19 +1,19 @@
 // Fonts
-@import url('https://use.typekit.net/she4pxn.css');
+@import url("https://use.typekit.net/she4pxn.css");
 @import url("https://use.typekit.net/gbg1rsf.css");
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
 
-@import 'reset';
+@import "reset";
 // Vars and Mixins
-@import 'variables';
-@import 'global';
-@import 'mixins';
+@import "variables";
+@import "global";
+@import "mixins";
 
 // Views Here
-@import '../components/authentication/Login.scss';
-@import '../components/authentication/Register.scss';
-@import '../components/houseProfile/HouseFeed.scss';
-@import '../components/houseProfile/HouseHeader.scss';
-@import '../components/houseProfile/HouseSideBar.scss'
+@import "../components/authentication/Login.scss";
+@import "../components/authentication/Register.scss";
+@import "../components/houseProfile/HouseFeed.scss";
+@import "../components/houseProfile/HouseHeader.scss";
+@import "../components/houseProfile/HouseSideBar.scss";
 
 // Components
