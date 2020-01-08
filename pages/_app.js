@@ -5,7 +5,6 @@ import { withApollo } from "../config/apollo.config";
 
 class MyApp extends App {
   render() {
-    console.log(process.env.API_URI);
     const { Component, pageProps, apollo } = this.props;
     return (
       <ApolloProvider client={apollo}>
