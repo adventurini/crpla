@@ -4,17 +4,18 @@ import redirect from "../utils/redirect";
 import nextCookie from "next-cookies";
 import Nav from '../components/layout/Nav'
 
-export default function login() {
+function login() {
     return (
         <div className="login-container">
             <Nav />
             <Login />
         </div>
     )
-
+}
     Login.getInitialProps = ctx => {
         const auth = nextCookie(ctx).token;
-        if (auth) redirect(ctx, "/notes");
+        if (auth) redirect(ctx, "/");
         return {};
       };
-}
+
+export default login

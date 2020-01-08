@@ -1,0 +1,142 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.user-card{
+    z-index: 1;
+    width: 430px;
+    background: $elans-grey;
+    text-align: center;
+    margin-top: 5vh;
+    border-radius: 20px;
+    float: right;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
+    margin-right: 60px;
+    .user-header-image{
+        background: $orange;
+        height: 160px;
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .user-avatar{
+        position: relative;
+        z-index: 2;
+        height: 132px;
+        width: 132px;
+        background: black;
+        margin: -66px auto 0 auto;
+        border-radius: 50%;
+        border: 2px solid $white;
+    }
+    .user-info{
+        margin: 35px;
+        p{
+            line-height: 1.5
+        }
+    }
+    button{
+        width: 25%;
+        background-color: rgb(66, 43, 216);
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
+    }
+    .user-attributes{
+        width: 70%;
+        margin: 40px auto; 
+        display: flex;
+        justify-content: space-between;
+    }
+    .user-followers{
+      width: 33%;
+      .number-of-followers{
+          font-size: 2rem;
+          font-weight: 600;
+      }
+      .followers-title{
+          color: gray;
+          font-weight: 300;
+          font-size: 1.4rem;
+      }
+    }
+    .posts{
+        width: 33%;
+        .number-of-posts{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .posts-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .compliments{
+        width: 33%;
+        .number-of-compliments{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .compliments-title{
+            color: gray;
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+    .about{
+        margin: 45px;
+        .about-title{
+            font-size: 1.4rem;
+            margin: 15px;
+        }
+        .about-description{
+            font-size: 1.4rem;
+            color: gray;
+            line-height: 2rem;
+        }
+    }
+    .user-images-section{
+        .user-images-title{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            .user-images-icon{
+
+            }
+            .title{
+                font-weight: 600;
+            }
+            .view-all{
+                color: gray;
+                margin-left: 95px;
+            }
+            .view-all-icon{
+
+            }
+        }
+        .user-images{
+            display: flex;
+            width: 88%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            .user-photo{
+                background: white;
+                width: 128px;
+                height: 109px;
+                margin: 20px;
+                border-radius: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        
+    }
+    .user-compliments-section{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+  
+}

@@ -12,7 +12,7 @@ const Header = () => (
     
     <h2>Manage your workflow, build a brand, and attract an <br/>audience all under one simple, real estate content platform.</h2>
     {/* <input type="text" placeholder="Enter a city or Zip code"></input> */}
-    <Link href="/houses">
+    <Link href="/explore">
     <button>Explore the Platform</button>
     </Link>
     </div>

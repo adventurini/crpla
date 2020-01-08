@@ -45,47 +45,47 @@ const Register = () => {
       </Head>
 
       <div className="form-container">
-        <div  className="form__message">
-        <span>
-          Already have an account? Login{" "}
-          <button
-            onClick={e => (e.preventDefault(), Router.push("/login"))}
-            className="form__message-link"
-          >
-            here
-          </button>
-        </span>
+        <div className="form__message">
+          <span>
+            Already have an account? Login{" "}
+            <button
+              onClick={e => (e.preventDefault(), Router.push("/login"))}
+              className="form__message-link"
+            >
+              here
+            </button>
+          </span>
         </div>
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           {errors.registrationError && (
             <p>{errors.registrationError.message}</p>
           )}
-        <div className="name">
-          <div className="form__field firstLast">
-            <input
-              className="form__field--input"
-              type="text"
-              name="firstName"
-              placeholder="First name"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-            {errors.firstName && (
-              <p className="form__error">First name required</p>
-            )}
-          </div>
+          <div className="name">
+            <div className="form__field firstLast">
+              <input
+                className="form__field--input"
+                type="text"
+                name="firstName"
+                placeholder="First name"
+                ref={register({ required: true, maxLength: 80 })}
+              />
+              {errors.firstName && (
+                <p className="form__error">First name required</p>
+              )}
+            </div>
 
-          <div className="form__field firstLast">
-            <input
-              className="form__field--input"
-              type="text"
-              name="lastName"
-              placeholder="Last name"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-            {errors.lastName && (
-              <p className="form__error">Last name required</p>
-            )}
-          </div>
+            <div className="form__field firstLast">
+              <input
+                className="form__field--input"
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                ref={register({ required: true, maxLength: 80 })}
+              />
+              {errors.lastName && (
+                <p className="form__error">Last name required</p>
+              )}
+            </div>
           </div>
           <div className="form__field">
             <input
@@ -130,21 +130,6 @@ const Register = () => {
               </p>
             )}
           </div>
-          <div className="form__field">
-            <input
-              className="form__field--input"
-              type="password"
-              name="password"
-              placeholder="Confirm Password"
-              ref={register({ required: true, minLength: 8 })}
-            />
-            {errors.password && (
-              <p className="form__error">
-                Password must be at least 8 characters
-              </p>
-            )}
-          </div>
-
           <button type="submit" className="form__btn">
             Submit
           </button>
