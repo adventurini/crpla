@@ -1,12 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import Router from "next/router";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { setToken } from "../../utils/auth.utils";
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../../graphql/User/mutations/loginUser";
 import "./Login.scss";
-
 
 const Login = () => {
   const [loginUser, { client }] = useMutation(LOGIN_USER);
@@ -36,7 +35,7 @@ const Login = () => {
     // update isLoggedIn to true
     client.writeData({ data: { isLoggedIn: true } });
     // route to dashboard
-    Router.push("/notes");
+    Router.push("/");
   };
 
   return (
@@ -46,10 +45,9 @@ const Login = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <div className="form-container">
-      <div className="form__message">
-      <span >
+        <div className="form__message">
+          <span>
             Don't have an account? Create one{" "}
             <button
               onClick={e => (e.preventDefault(), Router.push("/signup"))}
@@ -58,7 +56,7 @@ const Login = () => {
               here
             </button>
           </span>
-          </div>
+        </div>
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           {/* <button className="form__sso-btn">Sign in with google</button>
           <button className="form__sso-btn">Sign in with facebook</button>
@@ -75,7 +73,7 @@ const Login = () => {
               className="form__field--input"
               placeholder="Username or Email"
               type="text"
-              name="email"
+              name="emailOrUsername"
               ref={register({
                 required: true,
                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -102,8 +100,6 @@ const Login = () => {
           <button className="form__btn" type="submit">
             Submit
           </button>
-
-       
         </form>
       </div>
     </div>
