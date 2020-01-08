@@ -1,15 +1,20 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.nav {
+.nav-auth {
   display: flex;
   justify-content: space-between;
   padding: 2.2rem;
   height: 10vh;
   min-height: 80px;
   align-items: center;
-  background: $snow-white;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  background: $dark-purple;
+
+  &__profile-picture {
+    width: 65px;
+    border-radius: 50%;
+    border: 2px solid $purple;
+  }
 
   .left-nav {
     width: 350px;
@@ -29,12 +34,16 @@
       align-items: center;
 
       li {
-        color: rgb(109, 109, 109);
+        color: #929399;
         margin-right: 35px;
         a {
           text-decoration: none;
           font-size: 2.1rem;
           font-weight: 400;
+        }
+
+        &:hover {
+          color: $snow-white;
         }
       }
     }
@@ -42,25 +51,5 @@
   .right-nav {
     width: 350px;
     text-align: right;
-
-    button {
-      width: 120px;
-      border: 2px solid rgb(72, 59, 218);
-      border-radius: 9px;
-      color: rgb(72, 59, 218);
-      background-color: transparent;
-      margin-right: 10px;
-      padding: 12px 18px;
-      font-size: 1.8rem;
-      font-weight: 500;
-    }
-    button:hover {
-      cursor: pointer;
-    }
-    .signup {
-      border: 2px solid rgb(72, 59, 218);
-      color: white;
-      background-color: rgb(72, 59, 218);
-    }
   }
 }
