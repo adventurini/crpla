@@ -69,7 +69,11 @@ export default function UserPostCard(props) {
                   <div className="comment-section">
                       <div className="comment-author-avatar"></div>
                     <div className="comment-author">JDvento</div>
-                    <div className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className="comment">
+                        <p className="comment-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className="comment-reply">Reply</p>
+                        <IoIosHeartEmpty className="comment-heart"/>
+                        </div>
                 </div>
                   <input className="comment-input" placeHolder="Add Comment"></input>
               </div>

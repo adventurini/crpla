@@ -63,6 +63,10 @@
             border-radius: 50%;
             background: black;
             margin: 20px;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
 
           .post-credentials {
@@ -112,6 +116,10 @@
               margin: 26px 5px 10px 9px;
               padding-bottom: 5px;
               color: red;
+
+              &:hover {
+                cursor: pointer;
+              }
             }
             .number-of-likes {
               margin: 33px 25px 10px 2px;
@@ -130,6 +138,10 @@
               margin: 26px 5px 10px 25px;
               padding-bottom: 5px;
               color: black;
+
+              &:hover {
+                cursor: pointer;
+              }
             }
             .number-of-comments {
               margin: 33px 25px 10px 5px;
@@ -143,31 +155,72 @@
       .comment-section {
         display: flex;
         padding: 15px;
-        margin-top:15px;
+        margin-top: 15px;
+        align-items: center;
+        padding-bottom: 80px;
         // justify-content: space-between;
-        
+
         .comment-author-avatar {
-            width: 45px;
-            min-width: 45px;
-            height: 45px;
-            border-radius: 22.5px;
-            background: black;
-            margin-left: 20px;
-            margin-top: 4px;
+          width: 45px;
+          min-width: 45px;
+          height: 45px;
+          border-radius: 22.5px;
+          background: black;
+          margin-left: 20px;
+          margin-right: 20px;
+
+          &:hover {
+            cursor: pointer;
           }
+        }
 
         .comment-author {
           font-weight: 500;
           color: black;
-          margin: 13px 13px 80px 20px;
           font-size: 1.9rem;
+            margin-right: 25px;
+          &:hover {
+            cursor: pointer;
+          }
         }
 
         .comment {
-          font-weight: 300;
-          color: gray;
-          margin: 4px 5px 80px 5px;
-          font-size: 1.9rem;
+
+            display: flex;
+            align-items: center;
+
+          .comment-content {
+              
+            font-weight: 300;
+            color: gray;
+            padding-right: 55px;
+            font-size: 1.9rem;
+        
+          }
+
+          .comment-reply{
+            font-size: 1.7rem;
+            font-weight: 400;
+            color: rgb(58, 58, 58);
+
+            &:hover {
+                cursor: pointer;
+              }
+          }
+
+          .comment-heart{
+              height: 43px;
+              width: 43px;
+              color: black;
+              margin-left: 15px;
+              margin-top: 2px;
+
+              &:hover {
+                cursor: pointer;
+              }
+              
+          }
+      
         }
       }
 
@@ -177,6 +230,7 @@
         bottom: 0;
         border-radius: 7px;
         overflow: hidden;
+        // margin-top: 60px;
       }
     }
   }
