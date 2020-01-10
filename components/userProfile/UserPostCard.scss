@@ -35,21 +35,62 @@
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
   }
+  input::placeholder {
+    padding: 1px;
+    font-family: "sofia-pro";
+    color: gray;
+    font-weight: 200;
+  }
 
     .post {
       width: 100%;
       height: 710px;
-      margin: 20px 0px 20px 12px;
+      margin: 20px 0px 30px 12px;
       border-radius: 15px;
       position: relative;
       background: white;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
       .post-content {
-        height: 25%;
         background: white;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
+
+        .post-title{
+            display: flex;
+            margin-left: 15px;
+            
+            .post-user-avatar{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: black;
+            margin: 20px;
+            }
+
+            .post-credentials{
+                display: flex;
+                flex-direction: column;
+                margin-top: 25px;
+
+                .post-user-name{
+                    font-weight: 500;
+                }
+                .post-time{
+                    color: rgb(177, 177, 177);
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .post-word-content{
+            color: rgb(91, 91, 91);
+            font-weight: 200;
+            margin: 10px 35px 25px 35px;
+            line-height: 1.3;
+            font-size: 2.2rem;
+        }
+        
       }
 
       img {
@@ -59,6 +100,50 @@
         &:hover {
             cursor: pointer;
           }
+      }
+
+      .post-footer{
+
+        .post-attributes{
+            display: flex;
+            margin-left: 20px;
+
+            .post-likes{
+                display: flex;
+
+                img{
+
+                }
+
+                .number-of-likes{
+                    margin: 26px;
+                    font-weight: 200;
+                    font-family: "sofia-pro";
+                    font-size: 1.9rem
+                }
+            }
+
+            .post-comments{
+                display: flex;
+
+                img{
+
+                }
+
+                .number-of-comments{
+                    margin: 26px;
+                    font-weight: 200;
+                    font-family: "sofia-pro";
+                    font-size: 1.9rem
+                }
+            }
+          
+        }
+  .comment{
+                margin: 0;
+                position: absolute;
+                bottom: 0;
+            }
       }
   
     }
