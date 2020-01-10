@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./UserPostCard.scss";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
+import { FaRegComments } from "react-icons/fa"
 
 const posts = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -55,15 +57,21 @@ export default function UserPostCard(props) {
               <div className="post-footer">
                   <div className="post-attributes">
                       <div className="post-likes">
-                          <img></img>
-                          <p className="number-of-likes">Likes</p>
+                        <IoIosHeartEmpty className="like-icon"/>
+                          <p className="number-of-likes">1.6k</p>
                       </div>
                       <div className="post-comments">
-                          <img></img>
-                          <p className="number-of-comments">Comments</p>
+                      <FaRegComments className="comments-icon"/>
+                          <p className="number-of-comments">127</p>
                       </div>
-                      
-                  </div><input className="comment" placeHolder="Add Comment"></input>
+               
+                  </div> 
+                  <div className="comment-section">
+                      <div className="comment-author-avatar"></div>
+                    <div className="comment-author">JDvento</div>
+                    <div className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </div>
+                  <input className="comment-input" placeHolder="Add Comment"></input>
               </div>
             </div>
           ))}
