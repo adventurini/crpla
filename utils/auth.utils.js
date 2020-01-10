@@ -22,7 +22,7 @@ function setToken(token) {
  */
 function logOut() {
   cookie.remove("token");
-  Router.push("/login");
+  Router.push("/");
 }
 
 /*

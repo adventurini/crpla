@@ -35,7 +35,7 @@ const Login = () => {
     // update isLoggedIn to true
     client.writeData({ data: { isLoggedIn: true } });
     // route to dashboard
-    Router.push("/");
+    Router.push("/explore");
   };
 
   return (

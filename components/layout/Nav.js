@@ -4,7 +4,7 @@ import CurpelaWordLogo from "../icons/CurpelaWordLogo";
 import "./Nav.scss";
 
 const links = [
-  { href: "/houses", label: "Discover" },
+  { href: "/explore", label: "Discover" },
   { href: "https://github.com/zeit/next.js", label: "Popular" },
   { href: "https://github.com/zeit/next.js", label: "Recent" }
 ].map(link => {
@@ -17,7 +17,9 @@ const Nav = () => {
     <div className="nav">
       <div className="left-nav">
         <Link href="/">
+          <a>
           <CurpelaWordLogo fill="#483bda" width="120" />
+          </a>
         </Link>
       </div>
       <div className="center-nav">

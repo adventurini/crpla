@@ -1,14 +1,20 @@
 import React from 'react';
 import './UserProfileCard.scss'
 
-const user_images = [0, 1, 2, 3, 4, 5];
+const user_images = ["https://images.unsplash.com/photo-1487975460695-a2e5c4ea12c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", "https://images.unsplash.com/photo-1487975460695-a2e5c4ea12c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", 'https://images.unsplash.com/photo-1515095182805-4367ad159fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1509119891769-8c8648bc3a66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+"https://images.unsplash.com/photo-1487975460695-a2e5c4ea12c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", "https://images.unsplash.com/photo-1487975460695-a2e5c4ea12c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", 'https://images.unsplash.com/photo-1515095182805-4367ad159fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1509119891769-8c8648bc3a66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1502005097973-6a7082348e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+];
 
 export default function userProfileCard() {
     return (
-      <>
+      <div className="userProfileCard">
         <div className="user-card">
           <div className="user-header-image"></div>
-        <div className="user-avatar"></div>
+          <img
+          className="user-avatar"
+          src="https://ca.slack-edge.com/T4JUEB3ME-UF0MEJPQS-456f70806ec0-512"
+          alt="Profile Picture"
+        />
         <div className="user-info">
             <p>Anthony Venturini <br /> @adventurini</p>
         </div>
@@ -41,7 +47,9 @@ export default function userProfileCard() {
           </div>
           <div className="user-images">
             {user_images.map(image => (
-              <div className="user-photo"></div>
+              <div className="user-photo">
+                <img src={image}></img>
+              </div>
             ))}
           </div>
         </div>
@@ -50,6 +58,6 @@ export default function userProfileCard() {
           <HouseCompliments />
         </div> */}
       
-      </>
+      </div>
     )
 }
