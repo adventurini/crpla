@@ -24,10 +24,9 @@
       font-size: 1.7rem;
       margin-bottom: 25px;
       padding-left: 5px;
-      
-      span{
-        
-        button{
+
+      span {
+        button {
           padding: 1px 0px;
           background-color: white;
           border-radius: 5px;
@@ -51,22 +50,21 @@
       .form__field--input {
         width: calc(100% - 16px);
         height: 45px;
-        background-color: #f2f3f7;
+        background-color: $background;
         padding: 0px 8px;
         margin: 7px 0px;
         border: none;
       }
-      .name{
+      .name {
         display: flex;
         width: 87%;
-       margin: 0 auto;
-        
- 
-        .firstLast{
+        margin: 0 auto;
+
+        .firstLast {
           width: 48%;
         }
       }
-      
+
       input::placeholder {
         padding: 1px;
         font-family: "sofia-pro";

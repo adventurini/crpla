@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./UserProfileImages.scss";
-import Link from "next/Link";
-import UserProfilePosts from "./UserProfilePosts";
+import "./NewsFeedImages.scss";
+import NewsFeedPosts from "./NewsFeedPosts";
 
 const houses = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -29,7 +28,7 @@ const houses = [
   "https://images.unsplash.com/photo-1502005097973-6a7082348e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
 ];
 
-export default function UserProfileImages() {
+export default function NewsFeedImages() {
   const [active, setActive] = useState("images");
 
   const setActiveTab = (tab) => {
@@ -39,7 +38,7 @@ export default function UserProfileImages() {
   return (
     <>
       {active === "images" ? (
-        <div className="user-images-container">
+        <div className="news-feed-images-container">
           {console.log(active)}
           <div className="images-posts">
             <a className={active ==='images' && "bold"} onClick={() => setActiveTab('images')}>Images</a>{" "}
@@ -47,7 +46,7 @@ export default function UserProfileImages() {
               Posts
             </a>
           </div>
-          <div className="user-images">
+          <div className="news-feed-images">
             {houses.length > 0 &&
               houses.map(house => (
                 <div key={house} className="image-container">
@@ -58,7 +57,7 @@ export default function UserProfileImages() {
           </div>
         </div>
       ) : (
-          <UserProfilePosts active={active} setActive={setActive} setActiveTab={setActiveTab}/>
+          <NewsFeedPosts active={active} setActive={setActive} setActiveTab={setActiveTab}/>
       )}
     </>
   );
