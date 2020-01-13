@@ -29,7 +29,7 @@ const houses = [
   "https://images.unsplash.com/photo-1502005097973-6a7082348e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
 ];
 
-export default function UserProfileImages() {
+export default function UserProfileImages({ posts }) {
   const [active, setActive] = useState("images");
 
   const setActiveTab = (tab) => {
@@ -48,11 +48,11 @@ export default function UserProfileImages() {
             </a>
           </div>
           <div className="user-images">
-            {houses.length > 0 &&
-              houses.map(house => (
-                <div key={house} className="image-container">
+            {posts.length > 0 &&
+				posts.map(post => (
+                <div key={post.id} className="image-container">
                   <div className="overlay"></div>
-                  <img src={house}></img>
+                  <img src={post.media[0].url}></img>
                 </div>
               ))}
           </div>

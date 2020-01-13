@@ -1,17 +1,37 @@
 import React from "react";
-import redirect from "../../utils/redirect";
-import nextCookie from "next-cookies";
 import UserProfileCard from "../../components/userProfile/UserProfileCard";
 import UserProfileImages from "../../components/userProfile/UserProfileImages";
 import NavAuth from "../../components/layout/NavAuth";
 
-function profile() {
+import { useQuery } from "@apollo/react-hooks";
+import { FETCH_PROFILE } from "../../graphql/User/queries/profile";
+
+function profile({ user }) {
+  const { data, loading, error } = useQuery(FETCH_PROFILE, {
+    variables: {
+      username: user
+    }
+  });
+
+  if (loading) return <h1>Loading!</h1>;
+
   return (
-    <div style={{ backgroundColor: "$background" }}>
+    <div style={{ backgroundColor: "#F2F3F7" }}>
       <NavAuth />
+
       <div style={{ display: "flex", flexDirection: "row-reverse" }}>
-        <UserProfileCard />
-        <UserProfileImages />
+        <UserProfileCard
+          profile={{
+            firstName: data.profile.firstName,
+            lastName: data.profile.lastName,
+            username: data.profile.username,
+            profilePicture: data.profile.profilePicture,
+            followerCount: data.profile.followerCount,
+            followingCount: data.profile.followingCount,
+			postCount: data.profile.postCount
+          }}
+        />
+        <UserProfileImages posts={data.profile.posts} />
       </div>
     </div>
   );
