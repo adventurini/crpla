@@ -1,6 +1,4 @@
 import React from "react";
-import redirect from "../../utils/redirect";
-import nextCookie from "next-cookies";
 import UserProfileCard from "../../components/userProfile/UserProfileCard";
 import UserProfileImages from "../../components/userProfile/UserProfileImages";
 import NavAuth from "../../components/layout/NavAuth";
