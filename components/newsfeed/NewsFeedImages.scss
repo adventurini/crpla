@@ -3,11 +3,13 @@
 
 .news-feed-images-container {
     padding: 45px 0px 45px 45px;
-    width: 100%;
+    width: 70%;
 
     .images-posts{
         display: flex;
         margin: 20px 12px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
         a{
             margin-right: 55px;
             font-weight: 300;
@@ -33,8 +35,8 @@
       justify-content: space-between;
 
     .image-container {
-        width: 31%;
-        height: 18vw;
+        width: 29%;
+        height: 13vw;
         margin: 20px 12px 20px 10px;
         border-radius: 15px;
         position: relative;

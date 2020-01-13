@@ -4,13 +4,13 @@ import Nav from "../components/layout/Nav";
 import Footer from "../components/layout/Footer";
 import NavAuth from "../components/layout/NavAuth";
 import UserPostCard from "../components/userProfile/UserProfilePosts";
-import NewsFeedImages from "../components/newsfeed/NewsFeedImages";
+import NewsFeed from "../components/newsfeed/NewsFeed";
 
 export default function houses() {
   return (
-    <div style={{ background: "$background" }}>
+    <div style={{ background: "#F2F3F7" }}>
       <NavAuth />
-      <NewsFeedImages />
+      <NewsFeed/>
       <Footer />
     </div>
   );

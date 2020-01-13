@@ -29,7 +29,7 @@ const houses = [
 ];
 
 export default function NewsFeedImages() {
-  const [active, setActive] = useState("images");
+  const [active, setActive] = useState("posts");
 
   const setActiveTab = (tab) => {
     tab === 'images' ? setActive('images') : setActive('posts')

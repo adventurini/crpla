@@ -13,8 +13,8 @@
   &__profile-picture {
     width: 68px;
     border-radius: 50%;
-    border: 3px solid #929399;
     margin-right: 20px;
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.22);
 
     &:hover{
       cursor: pointer;
