@@ -41,7 +41,7 @@ export default function userProfileCard() {
         <div className="user-images-section">
           <div className="user-images-title">
             <img className="user-images-icon" src=""></img>
-            <p className='title'>Images(23)</p>
+            <p className='title'>Images (23)</p>
             <p className="view-all">View All</p>
             <img className="view-all-icon" src=""></img>
           </div>

@@ -1,16 +1,18 @@
 import React from 'react'
 import HouseHeader from '../../components/houseProfile/HouseHeader'
 import HouseSideBar from '../../components/houseProfile/HouseSideBar'
-import HouseFeed from '../../components/houseProfile/HouseFeed'
-import Nav from '../../components/layout/Nav';
+import HouseImages from '../../components/houseProfile/HouseImages'
+import NavAuth from '../../components/layout/NavAuth';
 
 export default function address(props) {
     return (
-        <div className="address-container">
-            <Nav />
+        <div className="address-container" style={{backgroundColor: "#F2F3F7"}}>
+            <NavAuth />
             <HouseHeader />
-            <HouseSideBar />
-            <HouseFeed />
+            <div style={{display: "flex"}}>
+            <HouseSideBar/>
+            <HouseImages />
+            </div>
         </div>
     )
 }
