@@ -1,2 +1,28 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.six-image{
+
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+
+    .six-image-row-top{
+        display: flex;
+
+        img{
+            padding: .5%;
+            width: 33.33333%;
+            max-height: 220px;
+        }
+    }
+    .six-image-row-bottom{
+        display: flex;
+
+        img{
+            padding: .5%;
+            width: 33.33333%;
+            max-height: 220px;
+        }
+    }
+}

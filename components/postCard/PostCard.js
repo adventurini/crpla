@@ -2,6 +2,11 @@ import React from 'react';
 import './PostCard.scss';
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa"
+import SingleImage from './postImage/SingleImage';
+import DoubleImage from './postImage/DoubleImage';
+import FourImage from './postImage/FourImage';
+import FiveImage from './postImage/FiveImage';
+import SixImage from './postImage/SixImage';
 
 
 export default function PostCard(props) {
@@ -19,7 +24,7 @@ export default function PostCard(props) {
           </div>
           <p className="post-word-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-        <img src={post}></img>
+        {post.templateSelection === 1 ? <SingleImage post={post} /> : post.templateSelection === 2 ? <DoubleImage post={post} /> : post.templateSelection === 4 ? <FourImage post={post} /> : post.templateSelection === 5 ? <FiveImage post={post} /> : post.templateSelection === 6 ? <SixImage post={post} /> : null}
         <div className="post-footer">
             <div className="post-attributes">
                 <div className="post-likes">
