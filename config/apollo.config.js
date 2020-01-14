@@ -177,7 +177,7 @@ function createApolloClient(initialState = {}, { getToken }) {
     };
   });
 
-  // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient
+  // Check out //pull/4611 if you want to use the AWSAppSyncClient
   const client = new ApolloClient({
     ssrMode: typeof window === "undefined", // Disables forceFetch on the server (so queries are only run once)
     link: authLink.concat(httpLink),

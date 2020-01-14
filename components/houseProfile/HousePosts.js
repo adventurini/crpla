@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa";
 import "./HousePosts.scss";
-import UserPostCard from "../userProfile/UserProfilePosts";
+import PostCard from "../postCard/PostCard";
 
 const posts = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -40,10 +40,10 @@ export default function HousePosts(props) {
       </div>
 
       <div className="house-post-images">
-        <input placeholder="Share something new"></input>
+        <input placeholder="Share something"></input>
         {posts.length > 0 &&
           posts.map(post => (
-           <UserPostCard post={post} />
+           <PostCard post={post} />
           ))}
       </div>
     </div>

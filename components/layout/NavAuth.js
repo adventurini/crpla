@@ -8,9 +8,9 @@ import CurpelaWordLogo from "../icons/CurpelaWordLogo";
 import "./NavAuth.scss";
 
 const links = [
-  { href: "/explore", label: "Discover" },
-  { href: "https://github.com/zeit/next.js", label: "Popular" },
-  { href: "https://github.com/zeit/next.js", label: "Recent" }
+  { href: "/", label: "Discover" },
+  { href: "/", label: "Popular" },
+  { href: "/", label: "Recent" }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;
@@ -22,12 +22,12 @@ function NavAuth(props) {
       <div className="left-nav">
         <Link href="/">
           <a>
-          <CurpelaWordLogo fill="#fff" width="120" />
+            <CurpelaWordLogo fill="#fff" width="120" />
           </a>
         </Link>
       </div>
       <div className="center-nav">
-        <ul>
+        {/* <ul>
           {links.map(({ key, href, label }) => (
             <li key={key}>
               <Link href={href}>
@@ -35,7 +35,7 @@ function NavAuth(props) {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
 
       <div className="right-nav">

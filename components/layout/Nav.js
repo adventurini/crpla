@@ -5,8 +5,8 @@ import "./Nav.scss";
 
 const links = [
   { href: "/explore", label: "Discover" },
-  { href: "https://github.com/zeit/next.js", label: "Popular" },
-  { href: "https://github.com/zeit/next.js", label: "Recent" }
+  { href: "/", label: "Popular" },
+  { href: "/", label: "Recent" }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;
@@ -18,7 +18,7 @@ const Nav = () => {
       <div className="left-nav">
         <Link href="/">
           <a>
-          <CurpelaWordLogo fill="#483bda" width="120" />
+            <CurpelaWordLogo fill="#483bda" width="120" />
           </a>
         </Link>
       </div>

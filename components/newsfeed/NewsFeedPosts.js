@@ -25,9 +25,9 @@ export default function NewsFeedPosts(props) {
 
     return (
         <div className="news-feed-post-container">
-        <div className="images-posts">
+        <div className="news-feed-images-posts">
           <a
-            className={active === "images" && "bold"}
+            className={active === "images" ? "bold" : ""}
             onClick={() => setActiveTab("images")}
           >
             Images
@@ -43,8 +43,8 @@ export default function NewsFeedPosts(props) {
         <div className="news-feed-post-images">
           <input placeholder="Share something new"></input>
           {posts.length > 0 ?
-            posts.map(post => (
-              <PostCard post={post}/>
+            posts.map((post, i )=> (
+              <PostCard post={post} key={i}/>
             )) : "Loading"}
         </div>
       </div>

@@ -40,7 +40,7 @@ export default function PostCard(props) {
                   <IoIosHeartEmpty className="comment-heart"/>
                   </div>
           </div>
-            <input className="comment-input" placeHolder="Add Comment"></input>
+            <input className="comment-input" placeholder="Add Comment"></input>
         </div>
       </div>
     )

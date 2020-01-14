@@ -9,7 +9,7 @@ import Footer from "../components/layout/Footer";
 import "../styles/base.scss";
 
 import NavAuth from "../components/layout/NavAuth";
-import UserFeed from "../components/feeds/UserFeed";
+import NewsFeed from "../components/newsfeed/NewsFeed";
 import nextCookie from "next-cookies";
 
 const Home = ({ isAuthenticated }) => {
@@ -44,7 +44,7 @@ const Home = ({ isAuthenticated }) => {
       </Head>
 
       {isAuthenticated ? <NavAuth /> : <Nav />}
-      {isAuthenticated ? <UserFeed /> : <Header />}
+      {isAuthenticated ? <NewsFeed /> : <Header />}
 
       {/* <FeaturedHouses />
     <FeaturedPhotographers />
