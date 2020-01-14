@@ -2,6 +2,8 @@ import React from "react";
 import UserProfileCard from "../../components/userProfile/UserProfileCard";
 import UserProfileImages from "../../components/userProfile/UserProfileImages";
 import NavAuth from "../../components/layout/NavAuth";
+import ReactLoadingSpinner from '../../components/icons/ReactLoadingSpinner'
+
 
 import { useQuery } from "@apollo/react-hooks";
 import { FETCH_PROFILE } from "../../graphql/User/queries/profile";
@@ -13,7 +15,7 @@ function profile({ user }) {
     }
   });
 
-  if (loading) return <h1>Loading!</h1>;
+  if (loading) return    <ReactLoadingSpinner />;
 
   return (
     <div style={{ backgroundColor: "#F2F3F7" }}>
