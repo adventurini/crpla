@@ -24,7 +24,7 @@ export default function HousePosts(props) {
   const{ active, setActiveTab} = props
   return (
     <div className="house-post-container">
-      <div className="images-posts">
+      <div className="house-post-images-posts">
         <a
           className={active === "images" && "bold"}
           onClick={() => setActiveTab("images")}

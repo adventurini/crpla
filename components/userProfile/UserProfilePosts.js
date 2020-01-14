@@ -22,7 +22,7 @@ export default function UserProfilePosts(props) {
 
   return (
     <div className="user-post-container">
-      <div className="images-posts">
+      <div className="user-profile-images-posts">
         <a
           className={active === "images" && "bold"}
           onClick={() => setActiveTab("images")}

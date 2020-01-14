@@ -2,11 +2,11 @@
 @import "../../styles/mixins";
 
 .house-post-container {
-  padding: 45px 30px 45px 35px;
-
+  padding: 45px 35px 45px 35px;
+  margin: 0 auto;
   width: 70%;
 
-  .images-posts {
+  .house-post-images-posts {
     display: flex;
     margin: 20px 12px;
     a {

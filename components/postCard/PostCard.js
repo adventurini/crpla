@@ -3,6 +3,7 @@ import './PostCard.scss';
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa"
 
+
 export default function PostCard(props) {
 
     const {post} = props

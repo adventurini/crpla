@@ -41,7 +41,7 @@ export default function UserProfileImages({ posts }) {
       {active === "images" ? (
         <div className="user-images-container">
           {console.log(active)}
-          <div className="images-posts">
+          <div className="user-images-posts">
             <a className={active ==='images' && "bold"} onClick={() => setActiveTab('images')}>Images</a>{" "}
             <a className={active=== 'posts' && "bold"} onClick={() => setActiveTab('posts')}>
               Posts

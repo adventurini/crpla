@@ -40,7 +40,7 @@ export default function NewsFeedImages() {
       {active === "images" ? (
         <div className="news-feed-images-container">
           {console.log(active)}
-          <div className="images-posts">
+          <div className="news-feed-images-posts">
             <a className={active ==='images' && "bold"} onClick={() => setActiveTab('images')}>Images</a>{" "}
             <a className={active=== 'posts' && "bold"} onClick={() => setActiveTab('posts')}>
               Posts

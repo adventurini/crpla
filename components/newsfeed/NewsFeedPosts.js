@@ -25,7 +25,7 @@ export default function NewsFeedPosts(props) {
 
     return (
         <div className="news-feed-post-container">
-        <div className="news-feed-images-posts">
+        <div className="news-feed-posts-images-posts">
           <a
             className={active === "images" ? "bold" : ""}
             onClick={() => setActiveTab("images")}

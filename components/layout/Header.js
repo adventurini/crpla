@@ -6,7 +6,7 @@ import "./Header.scss";
 const Header = () => (
   <>
     
-  <div className="header">
+  <div className="header" >
     <div className="header-content-left">
     <h1>Stand out <br /> from the others.</h1> 
     

@@ -3,10 +3,10 @@
 
 .user-post-container {
   padding: 45px 45px 45px 45px;
+  margin: 0 auto;
+  width: 70%;
 
-  width: 100%;
-
-  .images-posts {
+  .user-profile-images-posts {
     display: flex;
     margin: 20px 12px;
     a {
