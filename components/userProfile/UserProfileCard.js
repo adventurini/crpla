@@ -27,9 +27,12 @@ export default function userProfileCard({ profile }) {
           alt="Profile Picture"
         />
         <div className="user-info">
-          <p>
-            {`${profile.firstName} ${profile.lastName}`} <br /> @{`${profile.username}`}
-          </p>
+          <p className="profile-name">
+            {`${profile.firstName} ${profile.lastName}`} 
+           
+          </p> 
+          <p className="profile-profession"> Real Estate Photographer </p>
+          <p className="profile-username"> @{`${profile.username}`} </p>
         </div>
         <button>Follow</button>
         <div className="user-attributes">
@@ -55,7 +58,7 @@ export default function userProfileCard({ profile }) {
           <div className="user-images-title">
             <img className="user-images-icon" src=""></img>
             <p className='title'>Images (23)</p>
-            <p className="view-all">View All</p>
+            {/* <p className="view-all">View All</p> */}
             <img className="view-all-icon" src=""></img>
           </div>
           <div className="user-images">

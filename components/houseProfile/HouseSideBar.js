@@ -45,7 +45,7 @@ export default function HouseSideBar() {
         <div className="house-images-title">
           <img className="house-images-icon" src=""></img>
           <p className='title'>Images(23)</p>
-          <p className="view-all">View All</p>
+          {/* <p className="view-all">View All</p> */}
           <img className="view-all-icon" src=""></img>
         </div>
         <div className="house-images">
