@@ -28,7 +28,7 @@ function profile({ user }) {
             profilePicture: data.profile.profilePicture,
             followerCount: data.profile.followerCount,
             followingCount: data.profile.followingCount,
-			postCount: data.profile.postCount
+			    postCount: data.profile.postCount
           }}
         />
         <UserProfileImages posts={data.profile.posts} />

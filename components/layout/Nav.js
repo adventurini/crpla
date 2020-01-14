@@ -23,7 +23,7 @@ const Nav = () => {
         </Link>
       </div>
       <div className="center-nav">
-        <ul>
+        {/* <ul>
           {links.map(({ key, href, label }) => (
             <li key={key}>
               <Link href={href}>
@@ -31,7 +31,7 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
 
       <div className="right-nav">
