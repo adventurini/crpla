@@ -2,32 +2,30 @@ import React from 'react'
 import PostCard from '../postCard/PostCard';
 import './NewsFeedPosts.scss';
 import {posts} from '../../data'
+import ShareInput from '../layout/ShareInput';
 
-export default function NewsFeedPosts(props) {
+export default function NewsFeedPosts({active, setActivePostTab, clicked, setClicked}) {
 
-    
-
-    const {active, setActiveTab} = props
 
     return (
         <div className="news-feed-post-container">
         <div className="news-feed-posts-images-posts">
           <a
             className={active === "images" ? "bold" : ""}
-            onClick={() => setActiveTab("images")}
+            onClick={() => setActivePostTab("images")}
           >
             Images
           </a>{" "}
           <a
             className={active === "posts" && "bold"}
-            onClick={() => setActiveTab("posts")}
+            onClick={() => setActivePostTab("posts")}
           >
             Posts
           </a>
         </div>
   
         <div className="news-feed-post-images">
-          <input placeholder="Share something new"></input>
+      <ShareInput />
           {posts.length > 0 ?
             posts.map((post, i )=> (
               <PostCard post={post} key={i}/>

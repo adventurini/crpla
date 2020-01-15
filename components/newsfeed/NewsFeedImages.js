@@ -28,21 +28,15 @@ const houses = [
   "https://images.unsplash.com/photo-1502005097973-6a7082348e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
 ];
 
-export default function NewsFeedImages() {
-  const [active, setActive] = useState("posts");
-
-  const setActiveTab = (tab) => {
-    tab === 'images' ? setActive('images') : setActive('posts')
-  }
+export default function NewsFeedImages({clicked, setClicked, setActivePostTab, active}) {
+  
 
   return (
-    <>
-      {active === "images" ? (
+   
         <div className="news-feed-images-container">
-          {console.log(active)}
           <div className="news-feed-images-posts">
-            <a className={active ==='images' && "bold"} onClick={() => setActiveTab('images')}>Images</a>{" "}
-            <a className={active=== 'posts' && "bold"} onClick={() => setActiveTab('posts')}>
+            <a className={active ==='images' && "bold"} onClick={() => setActivePostTab('images')}>Images</a>{" "}
+            <a className={active=== 'posts' && "bold"} onClick={() => setActivePostTab('posts')}>
               Posts
             </a>
           </div>
@@ -56,9 +50,5 @@ export default function NewsFeedImages() {
               ))}
           </div>
         </div>
-      ) : (
-          <NewsFeedPosts active={active} setActive={setActive} setActiveTab={setActiveTab}/>
-      )}
-    </>
   );
 }

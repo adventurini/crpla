@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./UserProfilePosts.scss";
 import PostCard from "../postCard/PostCard";
 import {posts} from '../../data.js'
+import ShareInput from "../layout/ShareInput";
 
 export default function UserProfilePosts(props) {
   const { active, setActive, setActiveTab } = props;
@@ -24,7 +25,7 @@ export default function UserProfilePosts(props) {
       </div>
 
       <div className="user-post-images">
-        <input placeholder="Share something new"></input>
+        <ShareInput />
         {posts.length > 0 &&
           posts.map(post => (
             <PostCard post={post}/>

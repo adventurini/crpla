@@ -4,13 +4,14 @@ import { FaRegComments } from "react-icons/fa";
 import "./HousePosts.scss";
 import PostCard from "../postCard/PostCard";
 import {posts} from '../../data'
+import ShareInput from "../layout/ShareInput";
 
 export default function HousePosts(props) {
 
   const{ active, setActiveTab} = props
   return (
     <div className="house-post-container">
-      <div className="house-post-images-posts">
+      <div className="house-post-title">
         <a
           className={active === "images" && "bold"}
           onClick={() => setActiveTab("images")}
@@ -26,7 +27,7 @@ export default function HousePosts(props) {
       </div>
 
       <div className="house-post-images">
-        <input placeholder="Share something"></input>
+        <ShareInput />
         {posts.length > 0 &&
           posts.map(post => (
            <PostCard post={post} />
