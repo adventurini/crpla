@@ -1,14 +1,16 @@
 import React from 'react';
 import './NewsFeedSidebarRight.scss'
+import PopularHashtags from './PopularHashtags';
+import TrendingPosts from './TrendingPosts';
+import PopularProfiles from './PopularProfiles';
 
 export default function NewsFeedSidebarRight() {
     return (
         <div className='side-bar-right'>
-          <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
+           <PopularProfiles />
+         <TrendingPosts />
+       
+         <PopularHashtags />
         </div>
     )
 }
