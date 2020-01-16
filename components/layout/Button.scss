@@ -1,13 +1,16 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-
-
-.main-button{
-    button{
+.main-button {
+  button {
     padding: 10px 15px;
-    background: $purple;
+    background-color: $purple;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    color: $snow-white;
+    transition: .2s ease-in-out;
+    &:hover {
+      background-color: darken($purple, 10%);
+    }
   }
 }
