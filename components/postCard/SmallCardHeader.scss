@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.small-card-header{
+    display:flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(199, 199, 199);
+    padding: 15px;
+
+    .small-card-header-icon{
+        color: $purple;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+    .small-card-header-title{
+        margin-left: 18px;
+        font-weight: 600;
+    }
+}
