@@ -2,13 +2,13 @@
 @import "../../styles/mixins";
 
 .user-images-container {
-    padding: 45px 0px 45px 45px;
+    padding: 45px 45px 45px 45px;
     margin: 0 auto;
     width: 70%;
 
     .user-images-posts{
         display: flex;
-        margin: 20px 12px;
+        margin: 20px 12px 0px 12px;
         a{
             margin-right: 55px;
             font-weight: 300;
@@ -32,11 +32,14 @@
       text-align: center;
       width: 100%;
       justify-content: space-between;
+      margin-left: 15px;
+
 
     .image-container {
-        width: 31%;
+        width: 32%;
         height: 17vw;
-        margin: 20px 12px 20px 10px;
+        margin-top: 0px;
+        margin-bottom: 20px;
         border-radius: 15px;
         position: relative;
         background: black;
