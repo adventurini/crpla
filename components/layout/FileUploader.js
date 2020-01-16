@@ -66,7 +66,7 @@ function FileUploader({children, setThumbnail, setPreview}) {
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         {children}
-    
+      {/* {thumbs} */}
      </div>
     </section>
   );

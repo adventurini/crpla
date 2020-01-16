@@ -3,7 +3,8 @@ import "./ShareInput.scss";
 import UserAvatar from "./UserAvatar";
 import Button from "./Button";
 import {FaRegImage, FaRegSmile, FaHashtag} from "react-icons/fa";
-import {GoMention} from "react-icons/go"
+import {GoMention} from "react-icons/go";
+import FileUploader from './FileUploader'
 
 export default function ShareInput() {
 
@@ -17,8 +18,10 @@ export default function ShareInput() {
       </div>
       <div className="share-input-bottom">
           <div className="share-input-icons">
-        <FaRegImage className="share-input-icon"/>
-      <FaRegSmile className="share-input-icon small-icon" />
+            <FileUploader>
+        <FaRegImage className="share-input-icon image-icon"/>
+        </FileUploader>
+      <FaRegSmile className="share-input-icon smile-icon" />
       <GoMention className="share-input-icon mention" />
         
           </div>

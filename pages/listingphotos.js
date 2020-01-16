@@ -1,6 +1,5 @@
 import React from 'react'
 import NavAuth from '../components/layout/NavAuth';
-import StyledDropzone from "../components/layout/StyledDropzone"
 
 export default function listingphotos() {
     return (
