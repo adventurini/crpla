@@ -2,8 +2,6 @@
 @import "../../styles/mixins";
 
 .user-avatar {
-    min-width: 50px;
-    min-height: 50px;
     border-radius: 50%;
     z-index:1;
     &:hover {

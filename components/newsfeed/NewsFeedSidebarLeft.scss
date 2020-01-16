@@ -21,6 +21,12 @@ text-align: center;
     height: 25px;
     color: rgb(66, 43, 216);
   }
+  .side-bar-avatar {
+    margin: 32px 0px 0px 65px;
+    width: 35px;
+    height: 35px;
+    color: rgb(66, 43, 216);
+  }
 
   a {
     font-size: 2.5rem;
@@ -29,7 +35,7 @@ text-align: center;
     color: gray;
   }
   button {
-    margin: 40px 0px 10px 65px;
+    margin: 40px 0px 10px 60px;
     padding: 20px 15px;
     background: $purple;
     font-weight: 600;

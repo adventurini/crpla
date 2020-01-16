@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+
+.main-button{
+    button{
+    padding: 10px 15px;
+    background: $purple;
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+}

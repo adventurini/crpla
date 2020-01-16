@@ -10,20 +10,22 @@ margin-left: 15px;
 border-radius: 10px;
 border-radius: 10px;
 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+margin-top: 40px;
+margin-bottom: 40px;
   .share-input-top {
       width: 100%;
     display: flex;
  margin: 20px 0px 20px 0px;
     .share-input-user-avatar {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
         border-radius: 50%;
         margin-left: 20px
        ;
     }
     input {
       width: 100%;
-      padding-bottom: 90px;
+      padding-bottom: 80px;
       margin-left: 2px;
       border: none;
       border-radius: 8px;
@@ -42,8 +44,29 @@ box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
    
   }
   .share-input-bottom{
+      display: flex;
       width: 100%;
-      height: 60px;
+      height: 65px;
       border-top: 1.5px solid rgba(118, 118, 118, .33);
+       
+        align-items: center;
+      .share-input-icons{
+          display: flex;
+          margin-left: 25px;
+          
+          .share-input-icon{
+              height: 40px;
+              width: 40px;
+              color: $purple;
+              opacity: .83;
+              margin-right: 37px;
+          }
+          &:hover{
+              cursor:pointer;
+          }
+      }
+      .share-input-button{
+       margin-left: auto;
+    }
   }
 }
