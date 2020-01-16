@@ -18,12 +18,11 @@ export default function ShareInput() {
       <div className="share-input-bottom">
           <div className="share-input-icons">
         <FaRegImage className="share-input-icon"/>
-      <FaRegSmile className="share-input-icon" />
-      <FaHashtag className="share-input-icon" />
-      <GoMention className="share-input-icon" />
+      <FaRegSmile className="share-input-icon small-icon" />
+      <GoMention className="share-input-icon mention" />
         
           </div>
-          <div className="share-input-button"><Button text="Submit"/></div>
+          <div className="share-input-button"><Button text="Create Post"/></div>
       </div>
     </div>
   );
