@@ -54,29 +54,49 @@ margin-bottom: 40px;
           margin-left: 25px;
           
           .share-input-icon{
-              height: 40px;
+              height: 42px;
               width: 40px;
               color: $purple;
-              opacity: .83;
-              margin-right: 37px;
+              opacity: .7;
           }
           &:hover{
               cursor:pointer;
             
           }
+          .image-icon{
+            &:hover{
+              opacity: 1
+            }
+          }
           .smile-icon{
-              height: 31px;
-              width: 31px;
+            margin-right: 37px;
+            margin-left: 37px;
+              height: 38px;
+              width: 38px;
               margin-top: 1.5px;
+              &:hover{
+                opacity: 1;
+                
+              }
           }
           .mention{
               margin-top: 3px;
               height: 37px;
               width: 46px;
+              
+
+              &:hover{
+                opacity: 1;
+              }
           }
       }
       .share-input-button{
        margin-left: auto;
     }
+  }
+  .thumbs-container{
+    height: 400px; 
+    background: white;
+    width: 400px;
   }
 }

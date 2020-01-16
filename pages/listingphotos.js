@@ -1,11 +1,13 @@
 import React from 'react'
-import NavAuth from '../components/layout/NavAuth'
+import NavAuth from '../components/layout/NavAuth';
+import StyledDropzone from "../components/layout/StyledDropzone"
 
 export default function listingphotos() {
     return (
         <div>
             <NavAuth />
-            Listing Photo Uploader
+            {/* <StyledDropzone accept="image/jpeg, image/png" multiple={true} onDrop={([file]) => console.log(file)}/> */}
+            <div className="drop-zone"></div>
         </div>
     )
 }
