@@ -7,6 +7,7 @@ import DoubleImage from './postImage/DoubleImage';
 import FourImage from './postImage/FourImage';
 import FiveImage from './postImage/FiveImage';
 import SixImage from './postImage/SixImage';
+import UserAvatar from '../layout/UserAvatar';
 
 
 export default function PostCard(props) {
@@ -16,7 +17,7 @@ export default function PostCard(props) {
         <div key={post} className="post">
         <div className="post-content">
           <div className="post-title">
-            <div className="post-user-avatar"></div>
+            <div className="post-user-avatar"><UserAvatar /></div>
             <div className="post-credentials">
               <p className="post-user-name">Anthony Venturini</p>
               <p className="post-time">2 hours ago</p>

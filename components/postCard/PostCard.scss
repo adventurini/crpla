@@ -4,7 +4,7 @@
 .post {
     width: 100%;
     margin: 20px 0px 45px 12px;
-    border-radius: 15px;
+    border-radius: 9px;
     position: relative;
     background: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -210,6 +210,9 @@
       overflow: hidden;
       border-top: 1px solid rgba(114, 114, 114, .22);
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+      font-family: "sofia-pro";
+      color: rgb(65, 65, 65);
+      font-weight: 300;
       // margin-top: 60px;
     }
     input::placeholder {
