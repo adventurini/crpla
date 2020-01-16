@@ -1,0 +1,62 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.mini-post-card {
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid rgb(199, 199, 199);
+
+    .mini-post-content {
+      background: white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+
+      .mini-post-title {
+        display: flex;
+        margin-left: 10px;
+
+        &:hover {
+            cursor: pointer;
+          }
+
+        .mini-post-user-avatar {
+          min-width: 50px;
+          min-height: 50px;
+          border-radius: 50px;
+          background: black;
+          margin: 20px 15px 20px 20px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .mini-post-credentials {
+          display: flex;
+          flex-direction: column;
+          margin-top: 25px;
+
+          .mini-post-user-name {
+            font-weight: 500;
+          }
+          .mini-post-time {
+            color: rgb(177, 177, 177);
+            font-weight: 300;
+          }
+        }
+      }
+
+      img{
+          width:100%;
+      }
+
+      .mini-post-word-content {
+        color: rgb(75, 75, 75);
+        font-weight: 200;
+        padding:10px;
+        margin: 15px 35px 15px 35px;
+        line-height: 1.4;
+        font-size: 2.4rem;
+      }
+    }
+}
