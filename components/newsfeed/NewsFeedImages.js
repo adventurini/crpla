@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./NewsFeedImages.scss";
 import NewsFeedPosts from "./NewsFeedPosts";
+import ShareInput from "../layout/ShareInput";
 
 const houses = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -34,16 +35,17 @@ export default function NewsFeedImages({clicked, setClicked, setActivePostTab, a
   return (
    
         <div className="news-feed-images-container">
-          <div className="news-feed-images-posts">
+          <div className="news-feed-tabs">
             <a className={active ==='images' && "bold"} onClick={() => setActivePostTab('images')}>Images</a>{" "}
             <a className={active=== 'posts' && "bold"} onClick={() => setActivePostTab('posts')}>
               Posts
             </a>
-          </div>
+          </div><ShareInput />
           <div className="news-feed-images">
+            
             {houses.length > 0 &&
               houses.map(house => (
-                <div key={house} className="image-container">
+                <div key={house} className="news-feed-image">
                   <div className="overlay"></div>
                   <img src={house}></img>
                 </div>
