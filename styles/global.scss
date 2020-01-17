@@ -1,5 +1,7 @@
 ::selection {
-  background: #ff9000;
+  background: $purple;
+  color: $snow-white;
+  overflow: hidden;
 }
 
 html {
@@ -157,4 +159,6 @@ html {
       text-decoration: none;
   }
 
-  
+  .dropzone{
+    outline:none;
+  }

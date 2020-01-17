@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.five-image{
+    display: flex;
+    margin: 0 auto;
+    margin-left: .5%;
+    .left-column{
+        width: 50%;
+        
+        img{
+            padding: 0% 1% 0% 4%;
+            margin-top: 2%;
+            height: 95.5%;
+        }
+    }
+    .right-column{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+       .right-column-top{
+           display:flex;
+           img{
+               padding:  1% 1% 1% 1%;
+               width: 48%;
+               height: 100%;
+               margin-top: 1%;
+           }
+       }
+       .right-column-bottom{
+           display:flex;
+
+           img{
+            padding: 1% 1% 1% 1%;
+            width: 48%;
+            height: 100%;
+        }
+
+        .overlay{
+            
+        }
+       }
+    }
+}

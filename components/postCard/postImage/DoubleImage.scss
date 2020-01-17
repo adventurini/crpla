@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.double-image{
+    display: flex;
+    width: 100%;
+    padding: 1.5%;
+    margin: 0 auto;
+
+    img{
+        width: 49%;
+        margin: .5%;
+   }
+}

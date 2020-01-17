@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.user-post-container {
+  padding: 45px 45px 45px 45px;
+  margin: 0 auto;
+  width: 70%;
+
+  .user-profile-images-posts {
+    display: flex;
+    margin: 20px 12px;
+    a {
+      margin-right: 55px;
+      font-weight: 300;
+      color: gray;
+    }
+    .bold {
+      color: black;
+      font-weight: 500;
+    }
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  
+}

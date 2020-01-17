@@ -76,8 +76,8 @@ export default function FeaturedHouses() {
                   <p className="number-of-comments">23</p>
                 </div>
                 <Link
-                  href="/houses/[house.address]"
-                  as={`/houses/${house.address}`}
+                  href="/house/[house.address]"
+                  as={`/house/${house.address}`}
                 >
                   <button>View</button>
                 </Link>

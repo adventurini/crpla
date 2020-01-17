@@ -3,8 +3,12 @@
 
 .house-header-container{
     width:100%;
-    height: 327px;
-    background-color: $elans-grey;
-    position: relative;
+    height: 347px;
+    object-fit: contain;
     z-index: 1;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

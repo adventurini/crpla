@@ -5,21 +5,19 @@
   display: flex;
   justify-content: space-between;
   padding: 2.2rem;
-  height: 100px;
+  height: 10vh;
+  min-height: 80px;
   align-items: center;
-  background: linear-gradient( to right,
-  rgba(16, 21, 154, 0.644) 58%, 
-  rgba(7, 7, 143, 0.541)
-);;
- 
+  background: $snow-white;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+
   .left-nav {
-      width: 350px;
-      margin-left: 15px;
-      a{
-          color: white;
-          font-size: 3.4rem;
-          font-weight: 500
-      }
+    width: 350px;
+    margin-left: 15px;
+
+    &__word-logo {
+      width: 125px;
+    }
   }
   .center-nav {
     width: 350px;
@@ -31,8 +29,7 @@
       align-items: center;
 
       li {
-
-        color: $elans-grey;
+        color: rgb(109, 109, 109);
         margin-right: 35px;
         a {
           text-decoration: none;
@@ -46,23 +43,24 @@
     width: 350px;
     text-align: right;
 
-      button{
-          width: 120px;
-          border: 2px solid $white;
-          border-radius: 14px;
-          color: $white;
-          background-color: transparent;
-          margin-right: 10px;
-          padding: 12px 18px;
-          font-size: 1.8rem;
-      }
-      button:hover{
-          cursor: pointer;
-      }
-      .signup{
-        color: $purple;
-        background-color: $white;
-        font-weight: 500;
-      }
+    button {
+      width: 120px;
+      border: 3px solid rgb(72, 59, 218);
+      border-radius: 9px;
+      color: rgb(72, 59, 218);
+      background-color: transparent;
+      margin-right: 10px;
+      padding: 12px 18px;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    .signup {
+      border: 2px solid rgb(72, 59, 218);
+      color: white;
+      background-color: rgb(72, 59, 218);
+    }
   }
 }
