@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./UserProfileImages.scss";
 import Link from "next/Link";
 import UserProfilePosts from "./UserProfilePosts";
-import ShareInput from "../layout/ShareInput";
+import CreatePost from "../layout/CreatePost";
 
 const houses = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -47,7 +47,7 @@ export default function UserProfileImages({ posts }) {
             <a className={active=== 'posts' && "bold"} onClick={() => setActiveTab('posts')}>
               Posts
             </a>
-          </div><ShareInput />
+          </div><CreatePost />
           <div className="user-images">
             
             {posts.length > 0 &&

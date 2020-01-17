@@ -32,7 +32,7 @@ export default function NewsFeedSidebarLeft(props) {
             <FaHashtag className='side-bar-icon'/> <a className={activeTab === 'explore' ? "bold" : ''} onClick={() => setActiveTab('explore')}>Explore</a>
             </div>
             <div style={{display: 'flex', alignItems: 'center', marginTop: '15px'}}>
-                <div className="side-bar-avatar"><UserAvatar image={image} width="45px" height="45px"/> </div>
+                <div className="side-bar-avatar"><UserAvatar image={image} width="36px" height="36px"/> </div>
             <Link href="/user/adventurini"><a>Profile</a></Link>
             </div>
             <div style={{display: 'flex', alignItems: 'center', marginTop: '15px'}}>

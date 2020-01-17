@@ -32,34 +32,28 @@ const img = {
 };
 
 
-function FileUploader({children, setThumbnail, setPreview}) {
-  const [files, setFiles] = useState([]);
+function FileUploader({children, noClick, setThumbnail, preview, setPreview, post, setPost}) {
+
   const {getRootProps, getInputProps} = useDropzone({
     accept: 'image/*',
     onDrop: acceptedFiles => {
-      setFiles(acceptedFiles.map(file => Object.assign(file, {
+      setPost({
+        ...post, 
+        media: [...post.media, ...acceptedFiles]
+      })
+     
+      setPreview([...preview, ...acceptedFiles.map(file => Object.assign(file, {
         preview: URL.createObjectURL(file)
-      })));
-    }
+      }))]);
+    },
+    noClick : noClick ? true : false
   });
-  
-  const thumbs = files.map(file => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        <img
-          src={file.preview}
-          style={img}
-        />
-      </div>
-    </div>
-  ));
-
   
 
   useEffect(() => () => {
     // Make sure to revoke the data uris to avoid memory leaks
-    files.forEach(file => URL.revokeObjectURL(file.preview));
-  }, [files]);
+    preview.forEach(file => URL.revokeObjectURL(file.preview));
+  }, [preview]);
   
   return (
     <section className="container">

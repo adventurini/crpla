@@ -17,7 +17,7 @@ export default function PostCard(props) {
         <div key={post} className="post">
         <div className="post-content">
           <div className="post-title">
-            <div className="post-user-avatar"><UserAvatar /></div>
+            <div className="post-user-avatar"><UserAvatar image={post.url} height="50px" width="50px"/></div>
             <div className="post-credentials">
               <p className="post-user-name">Anthony Venturini</p>
               <p className="post-time">2 hours ago</p>

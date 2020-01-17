@@ -4,7 +4,7 @@ import { FaRegComments } from "react-icons/fa";
 import "./HousePosts.scss";
 import PostCard from "../postCard/PostCard";
 import {posts} from '../../data'
-import ShareInput from "../layout/ShareInput";
+import CreatePost from "../layout/CreatePost";
 
 export default function HousePosts(props) {
 
@@ -27,7 +27,7 @@ export default function HousePosts(props) {
       </div>
 
       <div className="house-post-images">
-        <ShareInput />
+        <CreatePost />
         {posts.length > 0 &&
           posts.map(post => (
            <PostCard post={post} />

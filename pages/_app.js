@@ -18,6 +18,7 @@ import "../components/newsfeed/NewsFeedImages.scss";
 import "../components/newsfeed/NewsFeedPosts.scss";
 import "../components/newsfeed/NewsFeedSidebarLeft.scss";
 import "../components/newsfeed/NewsFeedSidebarRight.scss";
+import "../components/layout/UserAvatar.scss"
 
 class MyApp extends App {
   render() {
