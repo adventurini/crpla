@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import "./CreatePost.scss";
 import UserAvatar from "./UserAvatar";
 import Button from "./Button";
-import {FaRegImage, FaRegSmile, FaHashtag} from "react-icons/fa";
+import {FaRegImage, FaHome, FaRegSmile, FaHashtag} from "react-icons/fa";
 import {GoMention} from "react-icons/go";
-import FileUploader from './FileUploader'
+import FileUploader from './FileUploader';
+
 
 export default function CreatePost() {
 
@@ -34,6 +35,8 @@ export default function CreatePost() {
         </FileUploader>
       <FaRegSmile className="create-post-icon smile-icon" />
       <GoMention className="create-post-icon mention" />
+      <FaHome className="create-post-icon home" />
+
         
           </div>
           <div className="create-post-button"><Button text="Create Post"/></div>

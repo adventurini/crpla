@@ -57,40 +57,45 @@ margin-bottom: 40px;
           .create-post-icon{
               height: 42px;
               width: 40px;
-              color: $purple;
-              opacity: .7;
-              outline: none;
+              color: rgb(122, 105, 235);
+              margin-right: 39px;
           }
           &:hover{
               cursor:pointer;
-            
+              
           }
           .image-icon{
             outline: none;
             &:hover{
-              opacity: 1
+            
+              color: $purple;
             }
           }
           .smile-icon{
-            margin-right: 37px;
-            margin-left: 37px;
               height: 38px;
               width: 38px;
               margin-top: 1.5px;
               &:hover{
-                opacity: 1;
+                color: $purple;
                 
               }
           }
           .mention{
-              margin-top: 3px;
-              height: 37px;
+              margin-top: 5px;
+              height: 35px;
               width: 46px;
               
 
               &:hover{
-                opacity: 1;
+                color: $purple;
               }
+          }
+          
+          .home{
+
+            &:hover{
+              color: $purple;
+            }
           }
       }
       .create-post-button{
