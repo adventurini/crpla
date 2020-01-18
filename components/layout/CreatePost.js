@@ -5,7 +5,7 @@ import Button from "./Button";
 import { FaRegImage, FaHome, FaRegSmile, FaHashtag } from "react-icons/fa";
 import { GoMention } from "react-icons/go";
 import FileUploader from "./FileUploader";
-// import Picker, {SKIN_TONE_MEDIUM_DARK} from 'emoji-picker-react'
+import EmojiPicker from '../../components/icons/EmojiPicker'
 
 export default function CreatePost() {
   const [preview, setPreview] = useState([]);
@@ -14,15 +14,19 @@ export default function CreatePost() {
     media: []
   });
 
+  const [emojiClick, setEmojiClick] = useState(false)
+
+
   // const [chosenEmoji, setChosenEmoji] = useState(null);
 
   //   const onEmojiClick = (event, emojiObject) => {
   //       setChosenEmoji(emojiObject);
   //   }
 
-  // const fireEmojis = () => {
-  //   <Picker onEmojiClick={onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK}/>
-  // }
+  const loadEmojiPicker = () => {
+    {console.log(emojiClick)}
+    setEmojiClick(!emojiClick)
+  }
 
   const image =
     "https://ca.slack-edge.com/T4JUEB3ME-UF0MEJPQS-456f70806ec0-512";
@@ -53,7 +57,8 @@ export default function CreatePost() {
             >
               <FaRegImage className="create-post-icon image-icon" />
             </FileUploader>
-            <FaRegSmile className="create-post-icon smile-icon" />
+            <FaRegSmile className="create-post-icon smile-icon" onClick={loadEmojiPicker}/>
+            {emojiClick && <EmojiPicker />}
             <GoMention className="create-post-icon mention" />
             <FaHome className="create-post-icon home" />
           </div>
