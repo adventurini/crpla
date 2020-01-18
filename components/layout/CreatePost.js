@@ -30,7 +30,7 @@ export default function CreatePost() {
 useEffect(()=> {
   window.onclick = (e) => {
     {console.log(e)}
-    emojiClick && (e.target.placeholder === "Search" ? null : setEmojiClick(false))
+    emojiClick && (e.target.className === "emoji-mart-emoji" || e.target.className === '' || e.target.className === "emoji-mart-category-list" || e.target.className === "emoji-mart-anchor" || e.target.className==="emoji-mart-preview" || e.target.className.baseVal ==='' || e.target.className ==='emoji-mart-preview-data' ? null : setEmojiClick(false))
   }
 }
 )
@@ -65,7 +65,7 @@ useEffect(()=> {
               <FaRegImage className="create-post-icon image-icon" />
             </FileUploader>
             <FaRegSmile className="create-post-icon smile-icon" onClick={loadEmojiPicker}/>
-            {emojiClick && <EmojiPicker className="create-post-emoji-picker"/>}
+            {emojiClick && <div style={{zIndex:1}}className="create-post-emoji-picker"><EmojiPicker /></div>}
             <GoMention className="create-post-icon mention" />
             <FaHome className="create-post-icon home" />
           </div>

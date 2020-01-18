@@ -5,9 +5,9 @@ import { Picker } from 'emoji-mart'
 
 export default function EmojiPicker() {
     return (
-        <div>
+        <div className="emoji-picker">
             {console.log('emojipicker2')}
-            <Picker set='emojione' style={{ position: 'absolute', top: '230px', left: '36%', zIndex: 1 }}/>
+            <Picker className="emoji-picker" set='emojione' style={{ position: 'absolute', top: '230px', left: '36%', zIndex: 2 }}/>
         </div>
     )
 }
