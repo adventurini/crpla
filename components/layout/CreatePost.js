@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CreatePost.scss";
 import UserAvatar from "./UserAvatar";
 import Button from "./Button";
@@ -27,6 +27,13 @@ export default function CreatePost() {
     {console.log(emojiClick)}
     setEmojiClick(!emojiClick)
   }
+useEffect(()=> {
+  window.onclick = (e) => {
+    {console.log(e)}
+    emojiClick && (e.target.placeholder === "Search" ? null : setEmojiClick(false))
+  }
+}
+)
 
   const image =
     "https://ca.slack-edge.com/T4JUEB3ME-UF0MEJPQS-456f70806ec0-512";
@@ -58,7 +65,7 @@ export default function CreatePost() {
               <FaRegImage className="create-post-icon image-icon" />
             </FileUploader>
             <FaRegSmile className="create-post-icon smile-icon" onClick={loadEmojiPicker}/>
-            {emojiClick && <EmojiPicker />}
+            {emojiClick && <EmojiPicker className="create-post-emoji-picker"/>}
             <GoMention className="create-post-icon mention" />
             <FaHome className="create-post-icon home" />
           </div>
