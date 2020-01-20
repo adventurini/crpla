@@ -1,16 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './PostCard.scss';
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
-import { FaRegComments } from "react-icons/fa"
+import { FaRegComments, FaBluetooth } from "react-icons/fa"
 import SingleImage from './postImage/SingleImage';
 import DoubleImage from './postImage/DoubleImage';
 import FourImage from './postImage/FourImage';
 import FiveImage from './postImage/FiveImage';
 import SixImage from './postImage/SixImage';
 import UserAvatar from '../layout/UserAvatar';
+import useOnclickOutside from 'react-cool-onclickoutside';
 
 
 export default function PostCard(props) {
+
+  const [postModal, setPostModal] = useState(false);
+
+  const registerRef = useOnclickOutside(() => {
+    setPostModal(false);
+  });
 
     const {post} = props
     return (
@@ -25,7 +32,15 @@ export default function PostCard(props) {
           </div>
           <p className="post-word-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
+        <div className="post-image-template" onClick={()=>setPostModal(true)}>
         {post.templateSelection === 1 ? <SingleImage post={post} /> : post.templateSelection === 2 ? <DoubleImage post={post} /> : post.templateSelection === 4 ? <FourImage post={post} /> : post.templateSelection === 5 ? <FiveImage post={post} /> : post.templateSelection === 6 ? <SixImage post={post} /> : null}
+        </div>
+        {console.log(postModal)}
+        {postModal &&
+        <div ref={registerRef} className="post-modal" style={{position: "fixed", zIndex:1, background: "blue", top: "12%", height: "76%", left: "10%", width:"80%", margin: "0 auto"}}>
+        
+        </div>
+}
         <div className="post-footer">
             <div className="post-attributes">
                 <div className="post-likes">

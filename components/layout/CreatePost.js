@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
+import dynamic from 'next/dynamic'
 import "./CreatePost.scss";
 import UserAvatar from "./UserAvatar";
 import Button from "./Button";
 import { FaRegImage, FaHome, FaRegSmile, FaHashtag } from "react-icons/fa";
 import { GoMention } from "react-icons/go";
 import FileUploader from "./FileUploader";
-import EmojiPicker from '../../components/icons/EmojiPicker'
+import useOnclickOutside from 'react-cool-onclickoutside';
+
+
+
+const EmojiPicker = dynamic(import ('../../components/icons/EmojiPicker'),{ssr:false})
+
 
 export default function CreatePost() {
   const [preview, setPreview] = useState([]);
@@ -14,26 +20,27 @@ export default function CreatePost() {
     media: []
   });
 
-  const [emojiClick, setEmojiClick] = useState(false)
+  const [emojiClick, setEmojiClick] = useState(false);
+
+  const [chosenEmoji, setChosenEmoji] = useState(null);
+
+  const registerRef = useOnclickOutside(() => {
+      setEmojiClick(false);
+  });
+
+    const onEmojiClick = (event, emojiObject) => {
+     
+        setChosenEmoji(emojiObject);
+    }
+
+    const fireEmojiPicker = (e) => {
+      if(emojiClick === false){setEmojiClick(true)}
+      else{
+        null
+      }
+    }
 
 
-  // const [chosenEmoji, setChosenEmoji] = useState(null);
-
-  //   const onEmojiClick = (event, emojiObject) => {
-  //       setChosenEmoji(emojiObject);
-  //   }
-
-  const loadEmojiPicker = () => {
-    {console.log(emojiClick)}
-    setEmojiClick(!emojiClick)
-  }
-useEffect(()=> {
-  window.onclick = (e) => {
-    {console.log(e)}
-    emojiClick && (e.target.className === "emoji-mart-emoji" || e.target.className === '' || e.target.className === "emoji-mart-category-list" || e.target.className === "emoji-mart-anchor" || e.target.className==="emoji-mart-preview" || e.target.className.baseVal ==='' || e.target.className ==='emoji-mart-preview-data' ? null : setEmojiClick(false))
-  }
-}
-)
 
   const image =
     "https://ca.slack-edge.com/T4JUEB3ME-UF0MEJPQS-456f70806ec0-512";
@@ -64,8 +71,18 @@ useEffect(()=> {
             >
               <FaRegImage className="create-post-icon image-icon" />
             </FileUploader>
-            <FaRegSmile className="create-post-icon smile-icon" onClick={loadEmojiPicker}/>
-            {emojiClick && <div style={{zIndex:1}}className="create-post-emoji-picker"><EmojiPicker /></div>}
+            {emojiClick ? <FaRegSmile className="create-post-icon smile-icon" style={{color: "rgb(66, 43, 216)"}}/> :
+            <FaRegSmile className="create-post-icon smile-icon" onClick={fireEmojiPicker}/>}
+
+            {emojiClick ? (
+              <div ref={registerRef}
+                style={{
+                  zIndex: 1, position: "absolute", left: "33%", top: "200px"
+                }}
+              >
+                <EmojiPicker />
+              </div>
+            ) : null}
             <GoMention className="create-post-icon mention" />
             <FaHome className="create-post-icon home" />
           </div>
