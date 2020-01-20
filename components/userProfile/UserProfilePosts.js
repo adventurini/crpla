@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import "./UserProfilePosts.scss";
 import PostCard from "../postCard/PostCard";
 import {posts} from '../../data.js'
-import CreatePost from "../layout/CreatePost";
+
+const CreatePost = dynamic(import ('../layout/CreatePost'),{ssr:false})
 
 export default function UserProfilePosts(props) {
   const { active, setActive, setActiveTab } = props;

@@ -2,7 +2,7 @@
 @import "../../styles/mixins";
 
 .side-bar-left {
-  width: 19%;
+  width: 22%;
   background: #f2f3f7;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   min-width: 285px;
 padding-left: 10px;
 text-align: center;
+margin-right: 4%;
   .bold{
       font-weight: 600;
       color: black;
@@ -31,7 +32,7 @@ text-align: center;
   a {
     font-size: 2.5rem;
     font-weight: 400;
-    margin: 30px 5px 0px 15px;
+    margin: 30px 5px 0px 20px;
     color: gray;
   }
   button {

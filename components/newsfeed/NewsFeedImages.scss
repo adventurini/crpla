@@ -38,7 +38,9 @@
 
     .news-feed-image {
         min-width: 32%;
-        height: 14vw;
+        height: 12vw;
+        max-height: 240px;
+        min-height: 130px;
         // margin: 20px 12px 10px 10px;
         margin-top: 0px;
         margin-bottom: 20px;

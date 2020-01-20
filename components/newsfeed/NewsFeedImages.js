@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
 import "./NewsFeedImages.scss";
 import NewsFeedPosts from "./NewsFeedPosts";
-import CreatePost from "../layout/CreatePost";
+
+const CreatePost = dynamic(import ('../layout/CreatePost'),{ssr:false})
 
 const houses = [
   "https://images.unsplash.com/photo-1556955112-28cde3817b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa";
 import "./HousePosts.scss";
 import PostCard from "../postCard/PostCard";
 import {posts} from '../../data'
-import CreatePost from "../layout/CreatePost";
+
+const CreatePost = dynamic(import ('../layout/CreatePost'),{ssr:false})
 
 export default function HousePosts(props) {
 

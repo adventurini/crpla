@@ -14,7 +14,7 @@ import nextCookie from "next-cookies";
 
 const Home = ({ isAuthenticated }) => {
   return (
-    <div>
+    <div style={{background: "#F2F3F7"}}>
       <Head>
         <link
           rel="apple-touch-icon"
