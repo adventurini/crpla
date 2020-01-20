@@ -9,6 +9,7 @@ import FiveImage from './postImage/FiveImage';
 import SixImage from './postImage/SixImage';
 import UserAvatar from '../layout/UserAvatar';
 import useOnclickOutside from 'react-cool-onclickoutside';
+import PostModal from './PostModal'
 
 
 export default function PostCard(props) {
@@ -21,48 +22,47 @@ export default function PostCard(props) {
 
     const {post} = props
     return (
-        <div key={post} className="post">
-        <div className="post-content">
-          <div className="post-title">
-            <div className="post-user-avatar"><UserAvatar image={post.url} height="50px" width="50px"/></div>
-            <div className="post-credentials">
-              <p className="post-user-name">Anthony Venturini</p>
-              <p className="post-time">2 hours ago</p>
+        <div key={post} className="post-card">
+        <div className="post-card-content">
+          <div className="post-card-title">
+            <div className="post-card-user-avatar"><UserAvatar image={post.url} height="50px" width="50px"/></div>
+            <div className="post-card-credentials">
+              <p className="post-card-user-name">Anthony Venturini</p>
+              <p className="post-card-time">2 hours ago</p>
             </div>
           </div>
-          <p className="post-word-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p className="post-card-word-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-        <div className="post-image-template" onClick={()=>setPostModal(true)}>
+        <div className="post-card-image-template" onClick={()=>setPostModal(true)}>
         {post.templateSelection === 1 ? <SingleImage post={post} /> : post.templateSelection === 2 ? <DoubleImage post={post} /> : post.templateSelection === 4 ? <FourImage post={post} /> : post.templateSelection === 5 ? <FiveImage post={post} /> : post.templateSelection === 6 ? <SixImage post={post} /> : null}
         </div>
-        {console.log(postModal)}
         {postModal &&
-        <div ref={registerRef} className="post-modal" style={{position: "fixed", zIndex:1, background: "blue", top: "12%", height: "76%", left: "10%", width:"80%", margin: "0 auto"}}>
-        
+        <div ref={registerRef} className="post-card-modal" style={{position: "fixed", zIndex:1, background: "white", top: "14%", left: "9%", width:"82%", margin: "0 auto"}}>
+        <PostModal post={post}/>
         </div>
 }
-        <div className="post-footer">
-            <div className="post-attributes">
-                <div className="post-likes">
-                  <IoIosHeartEmpty className="like-icon"/>
-                    <p className="number-of-likes">1.6k</p>
+        <div className="post-card-footer">
+            <div className="post-card-attributes">
+                <div className="post-card-likes">
+                  <IoIosHeartEmpty className="post-card-like-icon"/>
+                    <p className="post-card-number-of-likes">1.6k</p>
                 </div>
-                <div className="post-comments">
-                <FaRegComments className="comments-icon"/>
-                    <p className="number-of-comments">127</p>
+                <div className="post-card-comments">
+                <FaRegComments className="post-card-comments-icon"/>
+                    <p className="post-card-number-of-comments">127</p>
                 </div>
          
             </div> 
-            <div className="comment-section">
-                <div className="comment-author-avatar"></div>
-              <div className="comment-author">JDvento</div>
-              <div className="comment">
-                  <p className="comment-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <p className="comment-reply">Reply</p>
-                  <IoIosHeartEmpty className="comment-heart"/>
+            <div className="post-card-comment-section">
+                <div className="post-card-comment-author-avatar"></div>
+              <div className="post-card-comment-author">JDvento</div>
+              <div className="post-card-comment">
+                  <p className="post-card-comment-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p className="post-card-comment-reply">Reply</p>
+                  <IoIosHeartEmpty className="post-card-comment-heart"/>
                   </div>
           </div>
-            <input className="comment-input" placeholder="Add Comment"></input>
+            <input className="post-card-comment-input" placeholder="Add Comment"></input>
         </div>
       </div>
     )

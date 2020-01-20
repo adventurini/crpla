@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.post {
+.post-card {
     width: 100%;
     margin: 20px 0px 45px 12px;
     border-radius: 9px;
@@ -9,12 +9,12 @@
     background: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
-    .post-content {
+    .post-card-content {
       background: white;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
 
-      .post-title {
+      .post-card-title {
         display: flex;
         margin-left: 10px;
 
@@ -22,7 +22,7 @@
             cursor: pointer;
           }
 
-        .post-user-avatar {
+        .post-card-user-avatar {
           min-width: 50px;
           min-height: 50px;
           border-radius: 50px;
@@ -34,22 +34,22 @@
           }
         }
 
-        .post-credentials {
+        .post-card-credentials {
           display: flex;
           flex-direction: column;
           margin-top: 25px;
 
-          .post-user-name {
+          .post-card-user-name {
             font-weight: 500;
           }
-          .post-time {
+          .post-card-time {
             color: rgb(177, 177, 177);
             font-weight: 300;
           }
         }
       }
 
-      .post-word-content {
+      .post-card-word-content {
         color: rgb(75, 75, 75);
         font-weight: 300;
         margin: 15px 35px 15px 35px;
@@ -67,15 +67,15 @@
       }
     }
 
-    .post-footer {
-      .post-attributes {
+    .post-card-footer {
+      .post-card-attributes {
         display: flex;
         margin-left: 20px;
 
-        .post-likes {
+        .post-card-likes {
           display: flex;
 
-          .like-icon {
+          .post-card-like-icon {
             width: 40px;
             height: 40px;
             margin: 10px 5px 10px 9px;
@@ -87,7 +87,7 @@
               cursor: pointer;
             }
           }
-          .number-of-likes {
+          .post-card-number-of-likes {
             margin: 17px 25px 10px 2px;
             font-weight: 500;
             font-family: "sofia-pro";
@@ -97,10 +97,10 @@
           }
         }
 
-        .post-comments {
+        .post-card-comments {
           display: flex;
 
-          .comments-icon {
+          .post-card-comments-icon {
             width: 38px;
             height: 38px;
             margin: 10px 6px 10px 15px;
@@ -112,7 +112,7 @@
               cursor: pointer;
             }
           }
-          .number-of-comments {
+          .post-card-number-of-comments {
             margin: 17px 25px 10px 5px;
             font-weight: 500;
             font-family: "sofia-pro";
@@ -123,7 +123,7 @@
         }
       }
     }
-    .comment-section {
+    .post-card-comment-section {
       display: flex;
       padding: 15px;
       margin-top: 15px;
@@ -132,7 +132,7 @@
       margin-bottom: 15px;
       // justify-content: space-between;
 
-      .comment-author-avatar {
+      .post-card-comment-author-avatar {
         width: 45px;
         min-width: 45px;
         height: 45px;
@@ -146,7 +146,7 @@
         }
       }
 
-      .comment-author {
+      .post-card-comment-author {
         font-weight: 500;
         color: black;
         font-size: 1.9rem;
@@ -156,12 +156,12 @@
         }
       }
 
-      .comment {
+      .post-card-comment {
 
           display: flex;
           align-items: center;
 
-        .comment-content {
+        .post-card-comment-content {
             
           font-weight: 300;
           color: gray;
@@ -170,7 +170,7 @@
       
         }
 
-        .comment-reply{
+        .post-card-comment-reply{
           font-size: 1.7rem;
           font-weight: 400;
           color: rgb(58, 58, 58);
@@ -182,7 +182,7 @@
             }
         }
 
-        .comment-heart{
+        .post-card-comment-heart{
             height: 23px;
             width: 23px;
             color: black;
@@ -199,7 +199,7 @@
       }
     }
 
-    .comment-input {
+    .post-card-comment-input {
       position: absolute;
       width: calc(100% - 30px);
       border: none;
