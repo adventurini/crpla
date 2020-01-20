@@ -24,9 +24,15 @@ export default function CreatePost() {
 
   const [chosenEmoji, setChosenEmoji] = useState(null);
 
-  const registerRef = useOnclickOutside(() => {
-      setEmojiClick(false);
+
+  const registerRef = useOnclickOutside((e) => {
+    if(e.target.nodeName !== "svg")
+     {closeModal()}
   });
+
+const closeModal = () => {
+setEmojiClick(false)
+}
 
     const onEmojiClick = (event, emojiObject) => {
      
@@ -34,11 +40,9 @@ export default function CreatePost() {
     }
 
     const fireEmojiPicker = (e) => {
-      if(emojiClick === false){setEmojiClick(true)}
-      else{
-        null
-      }
+      setEmojiClick(!emojiClick)
     }
+
 
 
 
@@ -71,18 +75,19 @@ export default function CreatePost() {
             >
               <FaRegImage className="create-post-icon image-icon" />
             </FileUploader>
-            {emojiClick ? <FaRegSmile className="create-post-icon smile-icon" style={{color: "rgb(66, 43, 216)"}}/> :
+
+            {emojiClick ? <FaRegSmile className="create-post-icon smile-icon" style={{color: "rgb(66, 43, 216)"}} onClick={closeModal}/> :
             <FaRegSmile className="create-post-icon smile-icon" onClick={fireEmojiPicker}/>}
 
-            {emojiClick ? (
+            {emojiClick && (
               <div ref={registerRef}
                 style={{
-                  zIndex: 1, position: "absolute", left: "33%", top: "200px"
+                  zIndex: 1, position: "absolute", left: "31%", top: "240px"
                 }}
               >
                 <EmojiPicker />
               </div>
-            ) : null}
+            ) }
             <GoMention className="create-post-icon mention" />
             <FaHome className="create-post-icon home" />
           </div>
