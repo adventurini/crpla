@@ -8,7 +8,6 @@ import FourImage from './postImage/FourImage';
 import FiveImage from './postImage/FiveImage';
 import SixImage from './postImage/SixImage';
 import UserAvatar from '../layout/UserAvatar';
-import useOnclickOutside from 'react-cool-onclickoutside';
 import PostModal from './PostModal'
 
 
@@ -16,9 +15,6 @@ export default function PostCard(props) {
 
   const [postModal, setPostModal] = useState(false);
 
-  const registerRef = useOnclickOutside(() => {
-    setPostModal(false);
-  });
 
     const {post} = props
     return (
@@ -37,8 +33,8 @@ export default function PostCard(props) {
         {post.templateSelection === 1 ? <SingleImage post={post} /> : post.templateSelection === 2 ? <DoubleImage post={post} /> : post.templateSelection === 4 ? <FourImage post={post} /> : post.templateSelection === 5 ? <FiveImage post={post} /> : post.templateSelection === 6 ? <SixImage post={post} /> : null}
         </div>
         {postModal &&
-        <div ref={registerRef} className="post-card-modal" style={{position: "fixed", zIndex:1, background: "white", top: "14%", left: "9%", width:"82%", margin: "0 auto"}}>
-        <PostModal post={post}/>
+        <div className="post-card-modal">
+        <PostModal post={post} setPostModal={setPostModal}/>
         </div>
 }
         <div className="post-card-footer">

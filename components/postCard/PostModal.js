@@ -4,28 +4,22 @@ import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import { FaRegComments, FaBluetooth } from "react-icons/fa";
 import SingleImage from "./postImage/SingleImage";
 import UserAvatar from "../layout/UserAvatar";
+import useOnclickOutside from 'react-cool-onclickoutside';
 
 export default function PostModal(props) {
-  const { post } = props;
+  const { post, setPostModal } = props;
+  const closeModal = useOnclickOutside(() => {
+    setPostModal(false);
+  });
+
   return (
-    <div key={post} className="post-modal">
+    <div key={post} className="post-modal" ref={closeModal}>
       <div className="post-modal-left">
      
-        <div className="post-modal-image">
-          <img src={post.url}></img>
+        <div className="post-modal-image-container">
+          <img className="post-modal-image" src={post.url}></img>
         </div>
-        <div className="post-modal-footer">
-          <div className="post-modal-attributes">
-            <div className="post-modal-likes">
-              <IoIosHeartEmpty className="post-modal-like-icon" />
-              <p className="post-modal-number-of-likes">1.6k</p>
-            </div>
-            <div className="post-modal-comments">
-              <FaRegComments className="post-modal-comments-icon" />
-              <p className="post-modal-number-of-comments">127</p>
-            </div>
-          </div>
-        </div>
+       
         </div>
         <div className="post-modal-right">
         <div className="post-modal-content">
@@ -37,6 +31,18 @@ export default function PostModal(props) {
               <p className="post-modal-user-name">Anthony Venturini</p>
               <p className="post-modal-time">2 hours ago</p>
             </div>
+            <div className="post-modal-footer">
+          {/* <div className="post-modal-attributes">
+            <div className="post-modal-likes">
+              <IoIosHeartEmpty className="post-modal-like-icon" />
+              <p className="post-modal-number-of-likes">1.6k</p>
+            </div>
+            <div className="post-modal-comments">
+              <FaRegComments className="post-modal-comments-icon" />
+              <p className="post-modal-number-of-comments">127</p>
+            </div>
+          </div> */}
+        </div>
           </div>
           <p className="post-modal-word-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -48,8 +54,7 @@ export default function PostModal(props) {
             <div className="post-modal-comment-author">JDvento</div>
             <div className="post-modal-comment">
               <p className="post-modal-comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
               </p>
               <p className="post-modal-comment-reply">Reply</p>
               <IoIosHeartEmpty className="post-modal-comment-heart" />
