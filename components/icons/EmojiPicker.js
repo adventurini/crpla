@@ -1,13 +1,17 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import 'emoji-mart/css/emoji-mart.css'
-import { Picker } from 'emoji-mart'
+import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
 
 export default function EmojiPicker() {
+    const [chosenEmoji, setChosenEmoji] = useState(null);
+
+    const onEmojiClick = (event, emojiObject) => {
+        setChosenEmoji(emojiObject);
+    }
     return (
         <div className="emoji-picker">
-            {console.log('emojipicker2')}
-            <Picker className="emoji-picker" set='emojione' style={{ position: 'absolute', top: '230px', left: '36%', zIndex: 2 }}/>
+            <Picker className="emoji-picker" onEmojiClick={onEmojiClick} chosenEmoji={chosenEmoji} skinTone={SKIN_TONE_MEDIUM_DARK} style={{ zIndex: 1}}/>
         </div>
     )
 }
