@@ -7,13 +7,14 @@ import UserAvatar from "../layout/UserAvatar";
 import useOnclickOutside from 'react-cool-onclickoutside';
 
 export default function PostModal(props) {
-  const { post, setPostModal } = props;
+  const { post, postModal, setPostModal } = props;
   const closeModal = useOnclickOutside(() => {
     setPostModal(false);
   });
 
   return (
     <div key={post} className="post-modal" ref={closeModal}>
+      {console.log(postModal)}
       <div className="post-modal-left">
      
         <div className="post-modal-image-container">

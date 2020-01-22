@@ -34,7 +34,7 @@ export default function PostCard(props) {
         </div>
         {postModal &&
         <div className="post-card-modal">
-        <PostModal post={post} setPostModal={setPostModal}/>
+        <PostModal post={post} postModal={postModal} setPostModal={setPostModal}/>
         </div>
 }
         <div className="post-card-footer">
