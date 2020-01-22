@@ -7,10 +7,11 @@ import PopularProfiles from './PopularProfiles';
 export default function NewsFeedSidebarRight() {
     return (
         <div className='side-bar-right'>
-           <PopularProfiles />
+          <PopularHashtags />  
          <TrendingPosts />
        
-         <PopularHashtags />
+        
+         <PopularProfiles />
         </div>
     )
 }
