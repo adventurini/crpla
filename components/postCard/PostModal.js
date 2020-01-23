@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./PostModal.scss";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
-import { FaRegComments, FaBluetooth } from "react-icons/fa";
 import SingleImage from "./postImage/SingleImage";
 import UserAvatar from "../layout/UserAvatar";
 import useOnclickOutside from 'react-cool-onclickoutside';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {PreviousArrow, NextArrow} from '../carousel/Arrows'
 
 export default function PostModal(props) {
   const { post, postModal, setPostModal } = props;
@@ -12,13 +15,31 @@ export default function PostModal(props) {
     setPostModal(false);
   });
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    // prevArrow: <PreviousArrow />,
+    // nextArrow: <NextArrow />,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
     <div key={post} className="post-modal" ref={closeModal}>
       {console.log(postModal)}
       <div className="post-modal-left">
      
         <div className="post-modal-image-container">
-          <img className="post-modal-image" src={post.url}></img>
+        <Slider {...settings} className="post-modal-slider">
+      {post.url.map((image, i)=> {
+        return(
+        <div className="post-modal-image-container" key={i}>
+ <img src={image} className="post-modal-image"></img>
+ </div>)
+      })}
+         
+          </Slider>
         </div>
        
         </div>

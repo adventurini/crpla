@@ -8,7 +8,7 @@ export default function ImageCard({ post }) {
   return (
     <div key={post} className="image-card" onClick={() => setPostModal(true)}>
       <div className="image-card-overlay"></div>
-      <img className="image-card-image" src={post.url}></img>
+      <img className="image-card-image" src={post.url[0]}></img>
       {postModal &&
         <div className="image-card-modal">
         <PostModal postModal={postModal} post={post} setPostModal={setPostModal}/>

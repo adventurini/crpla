@@ -6,7 +6,7 @@ export default function SingleImage(props) {
 
   return (
     <div className="single-image">
-      <img src={post.url}></img>
+      <img src={post.url[0]}></img>
     </div>
   );
 }
