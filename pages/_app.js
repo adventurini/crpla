@@ -18,7 +18,9 @@ import "../components/newsfeed/NewsFeedImages.scss";
 import "../components/newsfeed/NewsFeedPosts.scss";
 import "../components/newsfeed/NewsFeedSidebarLeft.scss";
 import "../components/newsfeed/NewsFeedSidebarRight.scss";
-import "../components/layout/UserAvatar.scss"
+import "../components/layout/UserAvatar.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class MyApp extends App {
   render() {
