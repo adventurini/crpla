@@ -27,7 +27,6 @@ export default function PostModal(props) {
 
   return (
     <div key={post} className="post-modal" ref={closeModal}>
-      {console.log(postModal)}
       <div className="post-modal-left">
      
         <div className="post-modal-image-container">

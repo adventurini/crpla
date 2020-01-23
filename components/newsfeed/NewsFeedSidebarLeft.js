@@ -61,7 +61,7 @@ export default function NewsFeedSidebarLeft(props) {
         </Link>
       </div>
       <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
-        <Link href="/listingphotos">
+        <Link href="/photoupload">
           <button>Upload Listing Photos</button>
         </Link>
       </div>

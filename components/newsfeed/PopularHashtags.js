@@ -10,8 +10,8 @@ export default function PopularHashtags() {
         <div className="popular-hashtags">
             <SmallCardHeader title="Popular Hashtags" icon={<FaHashtag style={{width: "100%", height: "100%"}} />}/>
             <div className="popular-hashtags-content">
-                {hashtags.map(hashtag => 
-                    <div className="popular-hashtags-hashtag">
+                {hashtags.map((hashtag, i) => 
+                    <div key={i} className="popular-hashtags-hashtag">
                         <p>#{hashtag}</p>
                         </div>
                     )}
