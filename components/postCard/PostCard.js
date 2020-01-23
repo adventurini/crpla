@@ -54,8 +54,7 @@ export default function PostCard(props) {
               <div className="post-card-comment-author">JDvento</div>
               <div className="post-card-comment">
                   <p className="post-card-comment-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <p className="post-card-comment-reply">Reply</p>
-                  <IoIosHeartEmpty className="post-card-comment-heart"/>
+                 
                   </div>
           </div>
             <input className="post-card-comment-input" placeholder="Add Comment"></input>
