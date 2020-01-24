@@ -53,7 +53,7 @@ export default function PhotoUpload() {
           <FileUploader preview={preview} post={post} setPost={setPost} setPreview={setPreview}>
           <div className="photo-upload-content-container">
             <p className="photo-upload-content">
-              Drag & Drop files here <br /> or <br /> Click{" "}
+              Drag & Drop photos here <br /> or <br /> Click{" "}
               
                 <span className="underline">here</span>
              {" "}

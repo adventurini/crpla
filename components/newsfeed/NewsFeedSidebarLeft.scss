@@ -39,7 +39,11 @@ margin-right: 4%;
     margin: 40px 0px 10px 60px;
     padding: 20px 15px;
     background: $purple;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 400;
+    font-size: 1.9rem;
+    color: $snow-white;
+    &:hover{
+      background: darken($purple, 9%);
+    }
   }
 }
