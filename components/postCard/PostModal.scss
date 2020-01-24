@@ -58,6 +58,7 @@
         .post-modal-title {
           display: flex;
           margin-left: 10px;
+          text-align:left;
   
           &:hover {
             cursor: pointer;
@@ -82,10 +83,12 @@
   
             .post-modal-user-name {
               font-weight: 500;
+              text-align:left;
             }
             .post-modal-time {
               color: rgb(177, 177, 177);
               font-weight: 300;
+              text-align:left;
             }
           }
         
@@ -149,6 +152,7 @@
           margin: 15px 35px 15px 35px;
           line-height: 1.6;
           font-size: 1.6rem;
+          text-align: left;
         }
       }
       
@@ -157,18 +161,18 @@
       padding: 15px;
       margin-top: 15px;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
 position: absolute;
 bottom: 10%;      // justify-content: space-between;
 
       .post-modal-comment-author-avatar {
-        width: 45px;
-        min-width: 45px;
-        height: 45px;
+        width: 35px;
+        min-width: 35px;
+        height: 35px;
         border-radius: 22.5px;
         background: black;
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 12px;
+        margin-right: 10px;
 
         &:hover {
           cursor: pointer;
@@ -178,8 +182,8 @@ bottom: 10%;      // justify-content: space-between;
       .post-modal-comment-author {
         font-weight: 500;
         color: black;
-        font-size: 1.9rem;
-        margin-right: 25px;
+        font-size: 1.6rem;
+        margin-right: 15px;
         padding-left:10px;
         &:hover {
           cursor: pointer;
@@ -193,9 +197,10 @@ bottom: 10%;      // justify-content: space-between;
         .post-modal-comment-content {
           font-weight: 300;
           color: gray;
-          padding-right: 25px;
+          padding-right: 15px;
           padding-left: 10px;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
+          text-align: left;
         }
 
         .post-modal-comment-reply {
@@ -226,11 +231,12 @@ bottom: 10%;      // justify-content: space-between;
 
     .post-modal-comment-input {
       position: absolute;
-      width: calc(35% - 60px);
-      margin-left: 20px;
+      width: calc(35% - 50px);
+      margin-left: 10px;
       border: none;
       bottom: 10px;
-      right: 10px;
+      right: 20px;
+      padding: 5px 15px;
       border-bottom-left-radius: 8px !important;
       border-bottom-right-radius: 8px !important;
       border-radius: 5px;

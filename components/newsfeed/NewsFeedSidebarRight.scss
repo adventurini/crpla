@@ -2,11 +2,12 @@
 @import "../../styles/mixins";
 
 .side-bar-right{
+    
     min-width: 320px;
     max-width: 320px;
     background: #F2F3F7;
-    display:flex;
-    margin-top:130px;
+    display: none;
+        margin-top:130px;
     border-radius:6px;
     flex-direction: column;
     margin-left: 4%;
