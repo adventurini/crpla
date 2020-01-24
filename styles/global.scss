@@ -87,14 +87,18 @@ html {
   }
   
   input {
-    font-family: "Roboto";
+    font-family: "sofia-pro";
     font-size: 1.6rem;
     padding: 10px 15px;
     outline: none;
     height: 35px;
     border-radius: 5px;
     border: none;
-    border: 1px solid $mirage;
+
+    &::placeholder{
+      font-family: "sofia-pro";
+      font-size: 1.6rem;
+    }
   }
   
   textarea {

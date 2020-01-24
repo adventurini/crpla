@@ -3,6 +3,7 @@ import "./PhotoUpload.scss";
 import { MdCloudUpload } from "react-icons/md";
 import FileUploader from "../../components/layout/FileUploader";
 import ImagePreviewModal from '../postCard/ImagePreviewModal'
+import CurpelaWordLogo from '../../components/icons/CurpelaWordLogo'
 
 export default function PhotoUpload() {
   const [preview, setPreview] = useState([]);
@@ -10,6 +11,8 @@ export default function PhotoUpload() {
     text: "",
     media: []
   });
+
+  const [step, setStep] = useState(0)
 
   const fireModal = (i) => {
       setImageModal(true);
@@ -21,7 +24,28 @@ export default function PhotoUpload() {
 
 
   return (
-    <div className="photo-upload">
+      <div className="photo-upload">
+          {step === 0 ?
+    <div className="photo-upload-container">
+        
+        <div className="photo-upload-content-container">
+        
+        
+            <>
+        <div className="photo-upload-logo">
+         <CurpelaWordLogo fill="#483bda" width="320"/>
+         </div>
+        <form className="photo-upload-address-form" onSubmit={()=>setStep(1)}>
+            
+        <input className="photo-upload-address-input" placeholder="Enter Address"></input>
+        <button className="photo-upload-address-submit">Next</button>
+        </form>
+        <p className="photo-upload-explainer">Welcome to our listing content generator. Please enter the listing address to continue.</p>
+        </>
+        </div>
+        </div>
+        :
+       
       <FileUploader noClick preview={preview} setPreview={setPreview} post={post} setPost={setPost}>
         <h1 className="photo-upload-title">Add Listing Photos</h1>
         <div className="photo-upload-dnd-container">
@@ -39,6 +63,8 @@ export default function PhotoUpload() {
           </FileUploader>
         </div>
       </FileUploader>
+
+}
       <div className={`photo-upload-preview-image-container-hidden ${preview.length >
             0 && "photo-upload-preview-image-container-show"}`}>
                {preview.length > 0 &&
@@ -68,8 +94,10 @@ export default function PhotoUpload() {
             {  console.log(imageModal, index)
 }
       </div>
+
       {imageModal && <ImagePreviewModal preview={preview} index={index} setImageModal={setImageModal} />}
       {imageModal && <div className="photo-upload-modal"></div>}
+      
     </div>
   );
 }
