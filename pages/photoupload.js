@@ -4,11 +4,11 @@ import PhotoUpload from '../components/photoUploader/PhotoUpload';
 
 export default function photoupload() {
     return (
-        <div>
+        <div className="photo-upload-page">
             <NavAuth />
             <PhotoUpload />
             {/* <StyledDropzone accept="image/jpeg, image/png" multiple={true} onDrop={([file]) => console.log(file)}/> */}
-            <div className="drop-zone"></div>
+     
         </div>
     )
 }

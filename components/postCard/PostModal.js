@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./PostModal.scss";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
-import SingleImage from "./postImage/SingleImage";
 import UserAvatar from "../layout/UserAvatar";
 import useOnclickOutside from 'react-cool-onclickoutside';
 import Slider from 'react-slick';
@@ -17,9 +16,11 @@ export default function PostModal(props) {
 
   var settings = {
     dots: true,
+    dots: true,
+    dotsClass: "slick-dots",
     infinite: true,
-    // prevArrow: <PreviousArrow />,
-    // nextArrow: <NextArrow />,
+    prevArrow: <PreviousArrow />,
+    nextArrow: <NextArrow />,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
@@ -77,8 +78,6 @@ export default function PostModal(props) {
               <p className="post-modal-comment-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
               </p>
-              <p className="post-modal-comment-reply">Reply</p>
-              <IoIosHeartEmpty className="post-modal-comment-heart" />
             </div>
           </div>
           <input

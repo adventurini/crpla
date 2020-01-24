@@ -1,11 +1,12 @@
 import React from "react";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import { MdChevronRight, MdChevronLeft } from "react-icons/md";
+import './Arrows.scss'
 
 export const NextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div className="slick-arrow-container">
-            <FaAngleRight 
+            <MdChevronRight 
                 className={className}
                 onClick={onClick}
                 style={{ ...style, display: "flex"}}
@@ -18,7 +19,7 @@ export const PreviousArrow = (props) => {
     const { className, style, onClick } = props;
     return (
         <div className="slick-arrow-container">
-            <FaAngleLeft 
+            <MdChevronLeft 
                 className={className}
                 onClick={onClick}
                 style={{ ...style, display: "flex"}}
