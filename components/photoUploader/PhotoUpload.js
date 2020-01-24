@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./PhotoUpload.scss";
 import { MdCloudUpload } from "react-icons/md";
 import FileUploader from "../../components/layout/FileUploader";
+import ImagePreviewModal from '../postCard/ImagePreviewModal'
 
 export default function PhotoUpload() {
   const [preview, setPreview] = useState([]);
@@ -9,6 +10,14 @@ export default function PhotoUpload() {
     text: "",
     media: []
   });
+
+  const fireModal = (i) => {
+      setImageModal(true);
+      setIndex(i)
+  }
+
+  const [imageModal, setImageModal] = useState(false);
+  const [index, setIndex] = useState(0)
 
 
   return (
@@ -39,6 +48,7 @@ export default function PhotoUpload() {
                     <>
                 <h2 className="photo-upload-preview-image-heading">Header Image</h2>
                   <img
+                  onClick={()=> fireModal(i)}
                     className="photo-upload-preview-image-header"
                     key={i}
                     src={image.preview}
@@ -47,6 +57,7 @@ export default function PhotoUpload() {
                 ) : (
                     
                   <img
+                  onClick={()=> fireModal(i)}
                     className="photo-upload-preview-image"
                     key={i}
                     src={image.preview}
@@ -54,7 +65,11 @@ export default function PhotoUpload() {
                 ) }
               </>
             ))}
+            {  console.log(imageModal, index)
+}
       </div>
+      {imageModal && <ImagePreviewModal preview={preview} index={index} setImageModal={setImageModal} />}
+      {imageModal && <div className="photo-upload-modal"></div>}
     </div>
   );
 }

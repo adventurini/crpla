@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./PostModal.scss";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
-import SingleImage from "./postImage/SingleImage";
 import UserAvatar from "../layout/UserAvatar";
 import useOnclickOutside from 'react-cool-onclickoutside';
 import Slider from 'react-slick';
