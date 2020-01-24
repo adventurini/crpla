@@ -4,19 +4,18 @@
 
 
 .post-modal {
-  // width: 100%;
-  // margin: 20px 0px 45px 12px;
+
   border-radius: 9px;
-  // position: relative;
   background: white;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   position: fixed;
   flex-direction: row;
-  top: 14%;
-  left: 17.5%;
-  width: 70%;
+  top: 17%;
+  left: 13%;
+  width: 74%;
   min-width: 900px;
+  z-index: 200;
 
 
   .post-modal-left {

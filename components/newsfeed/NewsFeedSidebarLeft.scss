@@ -2,15 +2,14 @@
 @import "../../styles/mixins";
 
 .side-bar-left {
-  width: 22%;
+  min-width: 250px;
   background: #f2f3f7;
   display: flex;
   flex-direction: column;
-  margin: 80px auto;
-  min-width: 285px;
+  margin: 90px 0px;
 padding-left: 10px;
 text-align: center;
-margin-right: 4%;
+margin-right: 50px;
   .bold{
       font-weight: 600;
       color: black;
@@ -18,28 +17,32 @@ margin-right: 4%;
 
   .side-bar-icon {
     margin: 30px 10px 0px 65px;
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     color: rgb(66, 43, 216);
   }
   .side-bar-avatar {
     margin: 32px 0px 0px 65px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     color: rgb(66, 43, 216);
   }
 
   a {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     margin: 30px 5px 0px 20px;
     color: gray;
   }
   button {
-    margin: 40px 0px 10px 60px;
-    padding: 20px 15px;
+    margin: 30px 0px 10px 65px;
+    padding: 14px 12px;
     background: $purple;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: $snow-white;
+    &:hover{
+      background: darken($purple, 9%);
+    }
   }
 }

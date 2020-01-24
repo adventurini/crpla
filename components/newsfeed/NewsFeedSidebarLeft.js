@@ -54,7 +54,7 @@ export default function NewsFeedSidebarLeft(props) {
       </div>
       <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
         <div className="side-bar-avatar">
-          <UserAvatar image={image} width="36px" height="36px" />{" "}
+          <UserAvatar image={image} width="30px" height="30px" />{" "}
         </div>
         <Link href="/user/adventurini">
           <a  className={activeTab === "profile" ? "bold" : ""}  onClick={() => setActiveTab("profile")}>Profile</a>
@@ -62,7 +62,7 @@ export default function NewsFeedSidebarLeft(props) {
       </div>
       <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
         <Link href="/photoupload">
-          <button>Upload Listing Photos</button>
+          <button>Listing Generator</button>
         </Link>
       </div>
     </div>

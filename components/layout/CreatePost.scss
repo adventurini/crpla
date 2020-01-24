@@ -14,36 +14,35 @@
   .create-post-top {
     width: 100%;
     display: flex;
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
     .create-post-user-avatar {
-      width: 75px;
-      height: 75px;
       border-radius: 50%;
       margin-left: 20px;
+      margin-top: 10px;
     }
-    input {
+    .create-post-input {
       width: 100%;
-      padding-bottom: 80px;
+      padding-bottom: 70px;
       margin-left: 2px;
+      
       border: none;
-      border-radius: 8px;
       font-family: "sofia-pro";
       color: rgb(62, 62, 62);
       font-weight: 300;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
-    input::placeholder {
+    .create-post-input::placeholder {
       padding: 1px;
       font-family: "sofia-pro";
       color: gray;
       font-weight: 300;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
   }
   .create-post-bottom {
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 60px;
     border-top: 1.5px solid rgba(118, 118, 118, 0.33);
 
     align-items: center;
@@ -53,8 +52,8 @@
       outline: none;
 
       .create-post-icon {
-        height: 42px;
-        width: 40px;
+        height: 32px;
+        width: 30px;
         color: rgb(142, 142, 142);
         margin-right: 39px;
       }
@@ -68,8 +67,8 @@
         }
       }
       .smile-icon {
-        height: 38px;
-        width: 38px;
+        height: 28px;
+        width: 28px;
         margin-top: 1.5px;
         &:hover {
           color: $purple;
@@ -77,8 +76,8 @@
       }
       .mention {
         margin-top: 5px;
-        height: 35px;
-        width: 46px;
+        height: 25px;
+        width: 36px;
 
         &:hover {
           color: $purple;

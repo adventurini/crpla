@@ -18,7 +18,7 @@ export default function PopularProfiles() {
       <div className="popular-profiles-content">
         <div className="popular-profiles-title">
           <div className="popular-profiles-user-avatar">
-            <UserAvatar width="50px" height="50px"/>
+            <UserAvatar width="40px" height="40px"/>
           </div>
 
           <div className="popular-profiles-credentials">

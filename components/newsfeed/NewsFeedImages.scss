@@ -2,21 +2,23 @@
 @import "../../styles/mixins";
 
 .news-feed-images-container {
-    padding: 45px 45px 45px 45px;
-    width: 70%;
-    min-width: 720px;
+    padding: 45px 15px 45px 15px;
+    width: 55%;
+  min-width: 595px;
+
 
     // margin-left: 15px;
 
     .news-feed-tabs{
         display: flex;
-        margin: 20px 12px;
+        margin: 25px 15px;
         flex-direction: row-reverse;
         justify-content: flex-end;
         a{
             margin-right: 55px;
             font-weight: 300;
             color: gray;
+            font-size: 1.8rem;
         }
         .bold{
             color: black;

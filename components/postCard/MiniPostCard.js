@@ -8,7 +8,7 @@ export default function MiniPostCard(props) {
       <div className="mini-post-content">
         <div className="mini-post-title">
           <div className="mini-post-user-avatar">
-            <UserAvatar width="50px" height="50px"/>
+            <UserAvatar width="40px" height="40px"/>
           </div>
           <div className="mini-post-credentials">
             <p className="mini-post-user-name">Anthony Venturini</p>
