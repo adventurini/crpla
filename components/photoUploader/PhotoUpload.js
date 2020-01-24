@@ -33,7 +33,7 @@ export default function PhotoUpload() {
         
             <>
         <div className="photo-upload-logo">
-         <CurpelaWordLogo fill="#483bda" width="320"/>
+         <CurpelaWordLogo fill="#483bda" width="240"/>
          </div>
         <form className="photo-upload-address-form" onSubmit={()=>setStep(1)}>
             
