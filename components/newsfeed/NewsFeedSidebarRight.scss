@@ -2,8 +2,8 @@
 @import "../../styles/mixins";
 
 .side-bar-right{
-    width: 24%;
-    min-width: 375px;
+    min-width: 320px;
+    max-width: 320px;
     background: #F2F3F7;
     display:flex;
     margin-top:130px;
@@ -11,6 +11,7 @@
     flex-direction: column;
     margin-left: 4%;
     margin-right: 2%;
+    padding: 0;
     a{
         margin: 65px 5px 0px 65px;
     }

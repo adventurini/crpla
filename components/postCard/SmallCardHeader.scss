@@ -5,16 +5,18 @@
     display:flex;
     align-items: center;
     border-bottom: 2px solid rgb(199, 199, 199);
-    padding: 15px;
+    padding: 12px;
+   
 
     .small-card-header-icon{
+        margin-left: 20px;
         color: $purple;
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
+        width: 20px;
+        height: 20px;
     }
     .small-card-header-title{
-        margin-left: 18px;
+        margin-left: 10px;
+        font-size: 1.6rem;
         font-weight: 600;
     }
 }

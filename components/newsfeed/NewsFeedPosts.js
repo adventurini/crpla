@@ -9,7 +9,7 @@ export default function NewsFeedPosts({active, setActivePostTab, clicked, setCli
 
     return (
         <div className="news-feed-post-container">
-        <div className="news-feed-posts-images-posts">
+        <div className="news-feed-posts-images">
           <a
             className={active === "images" ? "bold" : ""}
             onClick={() => setActivePostTab("images")}
@@ -24,13 +24,13 @@ export default function NewsFeedPosts({active, setActivePostTab, clicked, setCli
           </a>
         </div>
   
-        <div className="news-feed-post-images">
+        
       <CreatePost />
           {posts.length > 0 ?
             posts.map((post, i )=> (
               <PostCard post={post} key={i}/>
             )) : "Loading"}
-        </div>
+        
       </div>
     )
 }

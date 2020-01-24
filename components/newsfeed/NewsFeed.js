@@ -10,20 +10,12 @@ export default function NewsFeed() {
     const [activeTab, setActiveTab] = useState('feed')
     const [clicked, setClicked] = useState('false')
 
-    const overlay = {
-        display: "flex",
-        filter: 'brightness(50%)',
-        backdropFilter: 'brightness(95%)',
-        zIndex: 15
-      }
 
       const noOverlay = {
         display: "flex",
-        flexDirection: "row",
         background: "#F2F3F7",
-        maxWidth: "1800px",
-    margin: "0 auto"
-      }
+        maxWidth: "1500px",
+        margin: "0 auto"      }
       
       const setActivePostTab = (tab) => {
         tab === 'images' ? setActive('images') : setActive('posts')
@@ -31,7 +23,6 @@ export default function NewsFeed() {
 
     return (
         <div style={noOverlay}>
-            {console.log('newsfeed', clicked)}
             <NewsFeedSidebarLeft activeTab={activeTab} setActiveTab={setActiveTab} />
             {active === "images"? 
             <NewsFeedImages clicked={clicked} active={active} setActivePostTab={setActivePostTab} setClicked={setClicked} activeTab={activeTab} setActiveTab={setActiveTab} />
