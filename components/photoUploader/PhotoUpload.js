@@ -103,19 +103,29 @@ export default function PhotoUpload() {
           setPost={setPost}
         >
           <div className="photo-upload-dnd">
-            <h1 className="photo-upload-title">Add Listing Photos</h1>
+            <h1 className={`photo-upload-title ${preview.length >
+      0 && "photo-upload-content-container-hidden"}`}>Add Listing Photos</h1>
             <div className="photo-upload-dnd-container">
-              <MdCloudUpload className="photo-upload-icon" />
               <FileUploader
                 preview={preview}
                 post={post}
                 setPost={setPost}
                 setPreview={setPreview}
               >
-                <div className="photo-upload-content-container">
+                <div className="photo-upload-icon-container">
+              <MdCloudUpload className="photo-upload-icon" />
+              </div>
+                <div className={`photo-upload-content-container ${preview.length >
+      0 && "photo-upload-content-container-hidden"}`}>
                   <p className="photo-upload-content">
                     Drag & Drop photos here <br /> or <br /> Click{" "}
                     <span className="underline">here</span> to upload{" "}
+                  </p>
+                </div>
+                <div className={`photo-upload-content-container ${preview.length ===
+      0 && "photo-upload-content-container-hidden"}`}>
+                  <p className="photo-upload-content">
+                    Drag images to change photo order or click images to preview. Upload more images <span className="underline">here</span>.
                   </p>
                 </div>
               </FileUploader>
