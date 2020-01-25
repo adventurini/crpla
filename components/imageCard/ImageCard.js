@@ -11,7 +11,7 @@ export default function ImageCard({ post }) {
       <img className="image-card-image" src={post.url[0]}></img>
       {postModal &&
         <div className="image-card-modal">
-        <PostModal postModal={postModal} post={post} setPostModal={setPostModal}/>
+        <PostModal image={true} postModal={postModal} post={post} setPostModal={setPostModal}/>
         </div>
 }
     </div>

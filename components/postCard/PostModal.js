@@ -9,10 +9,11 @@ import "slick-carousel/slick/slick-theme.css";
 import {PreviousArrow, NextArrow} from '../carousel/Arrows'
 
 export default function PostModal(props) {
-  const { post, postModal, setPostModal } = props;
+  const { post, image, postModal, setPostModal } = props;
   const closeModal = useOnclickOutside(() => {
     setPostModal(false);
   });
+
 
   var settings = {
     dots: true,
@@ -43,6 +44,7 @@ export default function PostModal(props) {
         </div>
        
         </div>
+        
         <div className="post-modal-right">
         <div className="post-modal-content">
           <div className="post-modal-title">
