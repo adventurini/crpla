@@ -14,20 +14,12 @@ export default function ImagePreviewModal(props) {
     setImageModal(false);
   });
 
-  let arr =[]
   let imageIndex = index;
-  console.log(preview, imageIndex)
 
-  for(let i=0; i<preview.length; i++){
-    console.log(imageIndex, i)
-    arr.push(preview[imageIndex])
-    if(imageIndex === preview.length - 1){
-      imageIndex=0
-    }
-    else{imageIndex++}
-  }
 
-  console.log(preview)
+
+
+ 
 
   var settings = {
     dots: true,
@@ -47,13 +39,19 @@ export default function ImagePreviewModal(props) {
      
         <div className="image-preview-modal-image-container">
         <Slider {...settings} className="image-preview-modal-slider">
-      {arr.map((image, i)=> {
+      {preview.map((image, i)=> {
         return(
           
         <div className="image-preview-modal-image-container" key={i}>
-          {console.log(image, 
-          "preview")}
- <img src={image.preview} className="image-preview-modal-image"></img>
+ <img src={preview[imageIndex].preview} className="image-preview-modal-image" />
+ 
+    {imageIndex === preview.length - 1 ?
+
+      imageIndex=0
+    
+    : imageIndex++
+
+      }
  </div>)
       })}
          

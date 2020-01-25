@@ -20,10 +20,10 @@ function FileUploader({children, noClick, setThumbnail, preview, setPreview, pos
   });
   
 
-  useEffect(() => () => {
-    // Make sure to revoke the data uris to avoid memory leaks
-    preview.forEach(file => URL.revokeObjectURL(file.preview));
-  }, [preview]);
+  // useEffect(() => () => {
+  //   // Make sure to revoke the data uris to avoid memory leaks
+  //   preview.forEach(file => URL.revokeObjectURL(file.preview));
+  // }, [preview]);
   
   return (
     <section className="container">

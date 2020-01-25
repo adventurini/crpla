@@ -14,7 +14,7 @@ export default function NewsFeed() {
       const noOverlay = {
         display: "flex",
         background: "#F2F3F7",
-        maxWidth: "1500px",
+        maxWidth: "1200px",
         margin: "0 auto"      }
       
       const setActivePostTab = (tab) => {

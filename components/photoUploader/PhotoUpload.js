@@ -91,11 +91,10 @@ export default function PhotoUpload() {
                 ) }
               </>
             ))}
-            {  console.log(imageModal, index)
-}
+          
       </div>
 
-      {imageModal && <ImagePreviewModal preview={preview} index={index} setImageModal={setImageModal} />}
+      {imageModal && <ImagePreviewModal setPreview={setPreview} preview={preview} index={index} setImageModal={setImageModal} />}
       {imageModal && <div className="photo-upload-modal"></div>}
       
     </div>
