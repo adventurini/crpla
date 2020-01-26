@@ -92,7 +92,7 @@ setEmojiClick(false)
             <FaHome className="create-post-icon home" />
           </div>
           <div className="create-post-button">
-            <Button text="Create Post" />
+            <Button padding="10px 6px" text="Create Post" />
           </div>
         </div>
         <div

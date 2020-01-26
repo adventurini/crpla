@@ -6,6 +6,7 @@ import ImagePreviewModal from "../postCard/ImagePreviewModal";
 import CurpelaWordLogo from "../../components/icons/CurpelaWordLogo";
 import { sortableContainer, sortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";
+import Button from '../layout/Button'
 
 const SortableImagessContainer = sortableContainer(({ children, preview }) => (
   <div
@@ -127,8 +128,14 @@ export default function PhotoUpload() {
                   <p className="photo-upload-content">
                     Drag images to change photo order or click images to preview. Upload more images <span className="underline">here</span>.
                   </p>
+                  
                 </div>
+               
               </FileUploader>
+              <div className={`photo-upload-content-container-hidden ${preview.length >
+      0 && "photo-upload-submit-button"}`} onClick={()=>console.log('click')}  >
+                    <Button text="Next Step" padding="12px 16px"></Button>
+                    </div>
             </div>
           </div>
         </FileUploader>

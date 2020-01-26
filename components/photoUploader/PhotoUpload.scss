@@ -80,7 +80,7 @@
     .photo-upload-title{
         font-weight: 600;
         font-size: 2.4rem;
-        margin: 40px auto 0px auto;
+        margin: 60px auto 0px auto;
         width: 85%;
         text-align: left;
         max-width: 1200px;
@@ -120,7 +120,7 @@
         .photo-upload-content-container{
             text-align: center;
             margin: 0 auto;
-            margin-bottom: 27px;
+            margin-bottom: 17px;
 
             .photo-upload-content{
                 font-size: 1.6rem;
@@ -144,6 +144,10 @@
                 }
             }
 
+        }
+        .photo-upload-submit-button{
+          margin: 0px auto 20px auto;
+          display: flex;
         }
       }
     }
