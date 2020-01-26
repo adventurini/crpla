@@ -1,0 +1,84 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.listing-post {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 85%;
+  max-width: 850px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  margin: 40px auto 0px auto;
+  .listing-post-top {
+    width: 100%;
+    display: flex;
+    margin: 10px 0px 20px 0px;
+    .listing-post-user-avatar {
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .listing-post-input {
+      width: 100%;
+      padding-bottom: 40px;
+      margin-left: 2px;
+      
+      border: none;
+      font-family: "sofia-pro";
+      color: rgb(62, 62, 62);
+      font-weight: 300;
+      font-size: 1.8rem;
+    }
+    .listing-post-input::placeholder {
+      padding: 1px;
+      font-family: "sofia-pro";
+      color: rgb(176, 176, 176);
+      font-weight: 300;
+      font-size: 1.8rem;
+    }
+  }
+  .listing-post-bottom {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    
+
+    align-items: center;
+    .listing-post-icons {
+      display: flex;
+      float: right;
+      margin-left: auto;
+      outline: none;
+
+      .listing-post-icon {
+        height: 27px;
+        width: 25px;
+        color: rgb(142, 142, 142);
+        margin-right: 19px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      .smile-icon {
+        height: 25px;
+        width: 25px;
+        &:hover {
+          color: $purple;
+        }
+      }
+      .mention {
+        height: 25px;
+        width: 36px;
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+    .listing-post-button {
+      margin-left: auto;
+    }
+  }
+
+}
