@@ -6,13 +6,16 @@ import ImagePreviewModal from "../postCard/ImagePreviewModal";
 import CurpelaWordLogo from "../../components/icons/CurpelaWordLogo";
 import { sortableContainer, sortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";
-import Button from '../layout/Button'
+import Button from '../layout/Button';
+import {TiDelete} from "react-icons/ti";
+
 
 const SortableImagessContainer = sortableContainer(({ children, preview }) => (
   <div
     className={`photo-upload-preview-image-container-hidden ${preview.length >
       0 && "photo-upload-preview-image-container-show"}`}
   >{console.log("container")}
+      
     {children}
   </div>
 ));
@@ -21,12 +24,15 @@ const SortableImage = sortableElement((props) => {
   
   const {image, fireModal, index} = props
   return(
+   
   <img
       onClick={() => fireModal(index)}
       className="photo-upload-preview-image"
       key={index}
       src={image.preview}
-    />)
+    />
+   
+    )
     
   // return(
   // imageIndex === 0 ? (
