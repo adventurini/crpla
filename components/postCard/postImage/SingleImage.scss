@@ -2,5 +2,9 @@
 @import "../../../styles/mixins";
 
 .single-image{
-    padding: 2px 2%;
+    padding: 6px 2%;
+    img{
+        height: 410px;
+        object-fit: cover;
+    }
 }

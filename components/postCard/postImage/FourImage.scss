@@ -12,8 +12,8 @@
         img{
         width: 50%;
         padding: .5%;
-        min-height: 12vw;
-        max-height: 16vw;
+        height: 16vw;
+        max-height: 220px;
         }
        
     }
@@ -23,8 +23,9 @@
         img{
             width: 50%;
             padding: .5%;
-            min-height: 12vw;
-        max-height: 16vw;
+            height: 16vw;
+            max-height: 220px;
+
         }
     }
 }
