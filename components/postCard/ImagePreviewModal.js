@@ -38,6 +38,7 @@ console.log(preview, index, imageIndex)
       <div className="image-preview-modal-left">
      
         <div className="image-preview-modal-image-container">
+      
         <Slider {...settings} className="image-preview-modal-slider">
       {preview.map((image, i)=> {
         return(

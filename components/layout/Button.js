@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.scss'
 
-export default function Button({text}) {
+export default function Button({text, padding}) {
     return (
-        <div className="main-button">
-            <button>{text}</button>
-        </div>
+        
+            <button className="main-button" style={{padding: `${padding}`}}>{text}</button>
+       
     )
 }

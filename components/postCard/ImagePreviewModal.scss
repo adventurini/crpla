@@ -13,11 +13,11 @@
   display: flex;
   position: fixed;
   flex-direction: row;
-  top: 17%;
-  left: 13%;
-  width: 60%;
-  min-width: 900px;
+  top: calc(26% - 8vw);
+  left: calc(15% + 2.5vw);
+  width: calc(70% - 5vw);
   z-index: 200;
+  max-width: 1000px;
 
 
   .image-preview-modal-left {
@@ -25,24 +25,24 @@
 
  
 .image-preview-modal-image-container{
-    height: 60vh;
+    height: calc(26vw + 25vh);
     
     .image-preview-modal-slider{
 
     
     .image-preview-modal-image {
-        border-top-left-radius: 9px;
-        border-bottom-left-radius: 9px;
+        border-radius: 9px;
+
 
       width: 100%;
-      min-height: 400px;
       height: 100%;
-      object-fit: cover;
+      // object-fit: cover;
       line-height: 100%;
       &:hover {
         cursor: pointer;
       }
     }
+   
   }
 }
 
