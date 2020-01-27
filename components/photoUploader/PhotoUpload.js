@@ -88,10 +88,9 @@ export default function PhotoUpload() {
           >
             <div className="photo-upload-dnd">
               <h1
-                className={`photo-upload-title ${preview.length > 0 &&
-                  "photo-upload-content-container-hidden"}`}
+                className={`photo-upload-title`}
               >
-                Add Listing Photos
+                Listing Generator
               </h1>
               <div className="photo-upload-dnd-container">
                 <FileUploader
@@ -118,7 +117,7 @@ export default function PhotoUpload() {
                   >
                     <p className="photo-upload-content">
                       Drag images to change photo order or click images to
-                      preview. Upload more images{" "}
+                      preview. <br />Upload more images{" "}
                       <span className="underline">here</span>.
                     </p>
                   </div>
@@ -127,7 +126,7 @@ export default function PhotoUpload() {
                       2 && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
-                      Optionally, make a post to share with your friends. <br /> When finished, click submit to generate your listing. 
+                      Optionally, make a post to share with your friends. <br /> When finished click submit to generate your listing. 
                     </p>
                   </div>
                 </FileUploader>

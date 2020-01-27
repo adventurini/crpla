@@ -2,14 +2,13 @@
 @import "../../styles/mixins";
 
 .side-bar-left {
-  min-width: 250px;
+  width: 12.5%;
+  min-width: 220px;
   background: #f2f3f7;
   display: flex;
   flex-direction: column;
   margin: 90px 0px;
-padding-left: 10px;
-text-align: center;
-margin-right: 50px;
+  margin-right: 5%;
   .bold{
       font-weight: 600;
       color: black;
@@ -23,8 +22,8 @@ margin-right: 50px;
   }
   .side-bar-avatar {
     margin: 32px 0px 0px 65px;
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
     color: rgb(66, 43, 216);
   }
 
