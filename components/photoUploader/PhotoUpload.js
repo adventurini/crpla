@@ -48,7 +48,7 @@ export default function PhotoUpload() {
     setModalIndex(index);
   };
 
-  console.log(post)
+  console.log(post, preview)
 
 
   const onSortEnd = ({ oldIndex, newIndex }) =>

@@ -9,21 +9,6 @@ export default function NewsFeedPosts({active, setActivePostTab, clicked, setCli
 
     return (
         <div className="news-feed-post-container">
-        <div className="news-feed-posts-images">
-          <a
-            className={active === "images" ? "bold" : ""}
-            onClick={() => setActivePostTab("images")}
-          >
-            Images
-          </a>{" "}
-          <a
-            className={active === "posts" && "bold"}
-            onClick={() => setActivePostTab("posts")}
-          >
-            Posts
-          </a>
-        </div>
-  
         
       <CreatePost />
           {posts.length > 0 ?
