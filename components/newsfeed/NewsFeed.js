@@ -24,10 +24,12 @@ export default function NewsFeed() {
     return (
         <div style={noOverlay}>
             <NewsFeedSidebarLeft activeTab={activeTab} setActiveTab={setActiveTab} />
-            {active === "images"? 
-            <NewsFeedImages clicked={clicked} active={active} setActivePostTab={setActivePostTab} setClicked={setClicked} activeTab={activeTab} setActiveTab={setActiveTab} />
-            :
-            <NewsFeedPosts clicked={clicked} setClicked={setClicked} active={active} setActive={setActive} setActivePostTab={setActivePostTab}/>}
+            <NewsFeedPosts clicked={clicked} setClicked={setClicked} active={active} setActive={setActive} setActivePostTab={setActivePostTab}/>
+
+            {/* { active === "images"? 
+<NewsFeedImages clicked={clicked} active={active} setActivePostTab={setActivePostTab} setClicked={setClicked} activeTab={activeTab} setActiveTab={setActiveTab} /> } */}
+            
+          
             <NewsFeedSidebarRight />
         </div>
     )

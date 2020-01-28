@@ -49,10 +49,10 @@ export default function ListingPost() {
         <div className="listing-post-user-avatar">
           <UserAvatar image={image} height="40px" width="40px" />
         </div>
-        <input
+        <textarea
           className="listing-post-input"
-          placeholder="Add a description or tag people..."
-        ></input>
+          placeholder="Add a description or tag someone..."
+        ></textarea>
       </div>
 
       <div className="listing-post-bottom">

@@ -62,7 +62,7 @@ setEmojiClick(false)
           <div className="create-post-user-avatar">
             <UserAvatar image={image} height="40px" width="40px" />
           </div>
-          <input className="create-post-input" placeholder="Share something new..."></input>
+          <textarea className="create-post-input" placeholder="Share something new..."></textarea>
         </div>
 
         <div className="create-post-bottom">

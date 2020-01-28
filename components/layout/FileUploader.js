@@ -5,9 +5,8 @@ import {useDropzone} from 'react-dropzone';
 function FileUploader({children, noClick, setThumbnail, preview, setPreview, post, setPost}) {
   console.log(preview)
   const {getRootProps, getInputProps} = useDropzone({
-    accept: 'image/*',
+    accept: 'image/*, video/*',
     onDrop: acceptedFiles => {
-      console.log(1)
       setPost({
         ...post, 
         media: [...post.media, ...acceptedFiles]
@@ -21,8 +20,7 @@ function FileUploader({children, noClick, setThumbnail, preview, setPreview, pos
 
     noClick : noClick ? true : false
   });
-  console.log(preview)
-
+console.log(preview)
   // useEffect(() => () => {
   //   // Make sure to revoke the data uris to avoid memory leaks
   //   preview.forEach(file => URL.revokeObjectURL(file.preview));
@@ -30,7 +28,6 @@ function FileUploader({children, noClick, setThumbnail, preview, setPreview, pos
   
   return (
     <section className="container">
-      {console.log(preview)}
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         {children}
