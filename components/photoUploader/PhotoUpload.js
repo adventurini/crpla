@@ -26,7 +26,7 @@ const SortableImage = sortableElement(props => {
   return (
     <img
       onClick={() => fireModal(index)}
-      className="photo-upload-preview-image"
+      className="photo-upload-preview-image sortableHelper"
       key={index}
       src={image.preview}
     />
@@ -47,6 +47,9 @@ export default function PhotoUpload() {
     setImageModal(true);
     setModalIndex(index);
   };
+
+  console.log(post)
+
 
   const onSortEnd = ({ oldIndex, newIndex }) =>
     setPreview(arrayMove(preview, oldIndex, newIndex));
@@ -112,7 +115,7 @@ export default function PhotoUpload() {
                     </p>
                   </div>
                   <div
-                    className={`photo-upload-content-container ${(step ===
+                    className={`photo-upload-content-container ${(step >=
                       2 || preview.length < 1) && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
@@ -126,7 +129,15 @@ export default function PhotoUpload() {
                       2 && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
-                      Optionally, make a post to share with your friends. <br /> When finished click submit to generate your listing. 
+                      If you have any videos, upload them <span className="underline">here</span>. <br /> When finished, click Next Step to continue.
+                    </p>
+                  </div>
+                  <div
+                    className={`photo-upload-content-container ${step !==
+                      3 && "photo-upload-content-container-hidden"}`}
+                  >
+                    <p className="photo-upload-content">
+                      Optionally, make a post to share with your followers. <br /> When finished click submit to generate your listing. 
                     </p>
                   </div>
                 </FileUploader>
@@ -138,37 +149,54 @@ export default function PhotoUpload() {
                 >
                   <Button text="Next Step" padding="12px 16px"></Button>
                 </div>
-                :
+                : step === 2 ?
                 <div
                   className={`photo-upload-content-container-hidden ${preview.length >
                     0 && "photo-upload-submit-button"}`}
-                  onClick={() => setStep(2)}
+                  onClick={() => setStep(3)}
                 >
-                  <Button text="Submit" padding="12px 16px"></Button>
+                  <Button text="Next Step" padding="12px 16px"></Button>
                 </div>
+                :
+                 <div
+                 className={`photo-upload-content-container-hidden ${preview.length >
+                   0 && "photo-upload-submit-button"}`}
+                 onClick={() => setStep(3)}
+               >
+                 <Button text="Submit" padding="12px 16px"></Button>
+               </div>
 }
               </div>
             </div>
           </FileUploader>
-          {step === 2 && <ListingPost />}
+          {step === 3 && <ListingPost />}
           {preview.length > 0 && (
             <SortableImagessContainer
               distance={1}
               axis="xy"
               onSortEnd={onSortEnd}
               preview={preview}
+              
             >
               <h2 className="photo-upload-preview-image-heading">
                 Header Image
               </h2>
               {preview.map((image, index) => {
                 return (
+                  <>
+                  {image.type.includes("video") ?
+                 null
+              
+                  :
+                  
                   <SortableImage
                     image={image}
                     fireModal={() => fireModal(index)}
                     index={index}
                     key={index}
                   />
+                }
+                  </>
                 );
               })}
             </SortableImagessContainer>
