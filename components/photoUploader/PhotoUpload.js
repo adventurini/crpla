@@ -10,6 +10,7 @@ import Button from "../layout/Button";
 import { TiDelete } from "react-icons/ti";
 import ListingPost from "./ListingPost";
 import { GoPlus } from "react-icons/go";
+import Iframe from 'react-iframe'
 
 const SortableImagesContainer = sortableContainer(({ children, preview }) => (
   <div
@@ -43,11 +44,15 @@ const SortableVideosContainer = sortableContainer(({ children, videoArray }) => 
 
 const SortableVideo = sortableElement(props => {
   const { video, index } = props;
+  console.log(video.id)
   return (
-    <img
+    <Iframe
       className="photo-upload-preview-video sortableHelper"
       key={index}
-      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+      width="450px"
+      height="450px"
+      url={video.URL.includes('youtube') ? `https://www.youtube.com/embed/${video.id}` : video.URL}
+      allowFullScreen
     />
   );
 });
