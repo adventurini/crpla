@@ -9,6 +9,7 @@ import arrayMove from "array-move";
 import Button from "../layout/Button";
 import { TiDelete } from "react-icons/ti";
 import ListingPost from "./ListingPost";
+import {GoPlus} from 'react-icons/go'
 
 const SortableImagessContainer = sortableContainer(({ children, preview }) => (
   <div
@@ -47,6 +48,11 @@ export default function PhotoUpload() {
     setImageModal(true);
     setModalIndex(index);
   };
+
+  const addVideoURL = (e, num) => {
+    e.preventDefault();
+    setVideoURL(videoURL => [...videoURL, e.target.value])
+  }
 
   console.log(post, preview)
 
@@ -129,17 +135,10 @@ export default function PhotoUpload() {
                       2 && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
-                      If you have any videos, upload them <span className="underline">here</span>. <br /> When finished, click Next Step to continue.
+                      If you have any videos or 3D tours, add the URL(s) below. <br /> Click Submit to generate a listing page.
                     </p>
                   </div>
-                  <div
-                    className={`photo-upload-content-container ${step !==
-                      3 && "photo-upload-content-container-hidden"}`}
-                  >
-                    <p className="photo-upload-content">
-                      Optionally, make a post to share with your followers. <br /> When finished click submit to generate your listing. 
-                    </p>
-                  </div>
+               
                 </FileUploader>
                 {step === 1 ?
                 <div
@@ -149,27 +148,27 @@ export default function PhotoUpload() {
                 >
                   <Button text="Next Step" padding="12px 16px"></Button>
                 </div>
-                : step === 2 ?
+                : 
                 <div
                   className={`photo-upload-content-container-hidden ${preview.length >
                     0 && "photo-upload-submit-button"}`}
-                  onClick={() => setStep(3)}
+                  onClick={() => console.log("hello")}
                 >
-                  <Button text="Next Step" padding="12px 16px"></Button>
+                  <Button text="Submit" padding="12px 16px"></Button>
                 </div>
-                :
-                 <div
-                 className={`photo-upload-content-container-hidden ${preview.length >
-                   0 && "photo-upload-submit-button"}`}
-                 onClick={() => setStep(3)}
-               >
-                 <Button text="Submit" padding="12px 16px"></Button>
-               </div>
+           
 }
               </div>
             </div>
           </FileUploader>
-          {step === 3 && <ListingPost />}
+          {step === 2 && 
+          <form className="photo-upload-video-URL">
+          <input placeholder="Add video or 3D tour URL" className="photo-upload-video-URL-input"></input>
+          <div className="photo-upload-video-URL-button" onClick={(e)=> addVideoURL(e)}>
+          <Button text={<GoPlus style={{width: "22px", height: "22px"}}/>} padding="12px 16px" width="50px" height="46px" minWidth= "50px"></Button>
+          </div>
+          </form>
+          }
           {preview.length > 0 && (
             <SortableImagessContainer
               distance={1}
