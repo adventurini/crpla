@@ -9,14 +9,13 @@ import arrayMove from "array-move";
 import Button from "../layout/Button";
 import { TiDelete } from "react-icons/ti";
 import ListingPost from "./ListingPost";
+import { GoPlus } from "react-icons/go";
 
-const SortableImagessContainer = sortableContainer(({ children, preview }) => (
+const SortableImagesContainer = sortableContainer(({ children, preview }) => (
   <div
     className={`photo-upload-preview-image-container-hidden ${preview.length >
       0 && "photo-upload-preview-image-container-show"}`}
   >
-    {console.log("container")}
-
     {children}
   </div>
 ));
@@ -33,6 +32,26 @@ const SortableImage = sortableElement(props => {
   );
 });
 
+const SortableVideosContainer = sortableContainer(({ children, videoArray }) => (
+  <div
+    className={`photo-upload-preview-image-container-hidden ${videoArray.length >
+      0 && "photo-upload-preview-image-container-show"}`}
+  >
+    {children}
+  </div>
+));
+
+const SortableVideo = sortableElement(props => {
+  const { video, index } = props;
+  return (
+    <img
+      className="photo-upload-preview-video sortableHelper"
+      key={index}
+      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+    />
+  );
+});
+
 export default function PhotoUpload() {
   const [preview, setPreview] = useState([]);
   const [post, setPost] = useState({
@@ -42,14 +61,31 @@ export default function PhotoUpload() {
   const [step, setStep] = useState(0);
   const [imageModal, setImageModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
+  const [video, setVideo] = useState({
+    URL: '',
+    id: ''
+  });
+  const [videoArray, setVideoArray] = useState([]);
+
+  const handleChange = e => {
+    e.persist();
+    setVideo({URL: e.target.value})
+  };
+
 
   const fireModal = index => {
     setImageModal(true);
     setModalIndex(index);
   };
 
-  console.log(post, preview)
-
+  const addVideo = (e, num) => {
+    video.id= video.URL.split("=")[1]
+    console.log(video.URL, video.id, video)
+    e.preventDefault();
+    setVideoArray(x=> [...x, video])
+    setVideo({URL: '', id: ''})
+  };
+  console.log(videoArray)
 
   const onSortEnd = ({ oldIndex, newIndex }) =>
     setPreview(arrayMove(preview, oldIndex, newIndex));
@@ -90,11 +126,7 @@ export default function PhotoUpload() {
             setPost={setPost}
           >
             <div className="photo-upload-dnd">
-              <h1
-                className={`photo-upload-title`}
-              >
-                Listing Generator
-              </h1>
+              <h1 className={`photo-upload-title`}>Listing Generator</h1>
               <div className="photo-upload-dnd-container">
                 <FileUploader
                   preview={preview}
@@ -106,8 +138,8 @@ export default function PhotoUpload() {
                     <MdCloudUpload className="photo-upload-icon" />
                   </div>
                   <div
-                    className={`photo-upload-content-container ${preview.length > 0
-                       && "photo-upload-content-container-hidden"}`}
+                    className={`photo-upload-content-container ${preview.length >
+                      0 && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
                       Drag & Drop photos here <br /> or <br /> Click{" "}
@@ -115,68 +147,100 @@ export default function PhotoUpload() {
                     </p>
                   </div>
                   <div
-                    className={`photo-upload-content-container ${(step >=
-                      2 || preview.length < 1) && "photo-upload-content-container-hidden"}`}
+                    className={`photo-upload-content-container ${(step >= 2 ||
+                      preview.length < 1) &&
+                      "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
                       Drag images to change photo order or click images to
-                      preview. <br />Upload more images{" "}
-                      <span className="underline">here</span>.
+                      preview. <br />
+                      Upload more images <span className="underline">here</span>
+                      .
                     </p>
                   </div>
                   <div
-                    className={`photo-upload-content-container ${step !==
-                      2 && "photo-upload-content-container-hidden"}`}
+                    className={`photo-upload-content-container ${step !== 2 &&
+                      "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
-                      If you have any videos, upload them <span className="underline">here</span>. <br /> When finished, click Next Step to continue.
-                    </p>
-                  </div>
-                  <div
-                    className={`photo-upload-content-container ${step !==
-                      3 && "photo-upload-content-container-hidden"}`}
-                  >
-                    <p className="photo-upload-content">
-                      Optionally, make a post to share with your followers. <br /> When finished click submit to generate your listing. 
+                      If you have any videos or 3D tours, add the URL(s) below.{" "}
+                      <br /> Click Submit to generate a listing page.
                     </p>
                   </div>
                 </FileUploader>
-                {step === 1 ?
-                <div
-                  className={`photo-upload-content-container-hidden ${preview.length >
-                    0 && "photo-upload-submit-button"}`}
-                  onClick={() => setStep(2)}
-                >
-                  <Button text="Next Step" padding="12px 16px"></Button>
-                </div>
-                : step === 2 ?
-                <div
-                  className={`photo-upload-content-container-hidden ${preview.length >
-                    0 && "photo-upload-submit-button"}`}
-                  onClick={() => setStep(3)}
-                >
-                  <Button text="Next Step" padding="12px 16px"></Button>
-                </div>
-                :
-                 <div
-                 className={`photo-upload-content-container-hidden ${preview.length >
-                   0 && "photo-upload-submit-button"}`}
-                 onClick={() => setStep(3)}
-               >
-                 <Button text="Submit" padding="12px 16px"></Button>
-               </div>
-}
+                {step === 1 ? (
+                  <div
+                    className={`photo-upload-content-container-hidden ${preview.length >
+                      0 && "photo-upload-submit-button"}`}
+                    onClick={() => setStep(2)}
+                  >
+                    <Button text="Next Step" padding="12px 16px"></Button>
+                  </div>
+                ) : (
+                  <div
+                    className={`photo-upload-content-container-hidden ${preview.length >
+                      0 && "photo-upload-submit-button"}`}
+                    onClick={() => console.log("hello")}
+                  >
+                    <Button text="Submit" padding="12px 16px"></Button>
+                  </div>
+                )}
               </div>
             </div>
           </FileUploader>
-          {step === 3 && <ListingPost />}
+          {step === 2 && (
+            <form className="photo-upload-video-URL">
+              <input
+                placeholder="Add video or 3D tour URL"
+                value={video.URL}
+                onChange={e => handleChange(e)}
+                className="photo-upload-video-URL-input"
+              ></input>
+              <div
+                className="photo-upload-video-URL-button"
+                onClick={e => addVideo(e)}
+              >
+                <Button
+                  text={<GoPlus style={{ width: "22px", height: "22px" }} />}
+                  padding="12px 16px"
+                  width="50px"
+                  height="46px"
+                  minWidth="50px"
+                ></Button>
+              </div>
+            </form>
+          )}
+          {videoArray.length > 0 && (
+            <SortableVideosContainer
+              distance={1}
+              axis="xy"
+              onSortEnd={onSortEnd}
+              videoArray={videoArray}
+            >
+              <h2 className="photo-upload-preview-image-heading">
+                Video Thumbnail
+              </h2>
+              {videoArray.map((video, index) => {
+                return (
+                  <>
+                    
+                      <SortableVideo
+                        video={video}
+                        index={index}
+                        key={index}
+                      />
+                    
+                  </>
+                );
+              })}
+            </SortableVideosContainer>
+          )}
           {preview.length > 0 && (
-            <SortableImagessContainer
+            <SortableImagesContainer
               distance={1}
               axis="xy"
               onSortEnd={onSortEnd}
               preview={preview}
-              
             >
               <h2 className="photo-upload-preview-image-heading">
                 Header Image
@@ -184,22 +248,18 @@ export default function PhotoUpload() {
               {preview.map((image, index) => {
                 return (
                   <>
-                  {image.type.includes("video") ?
-                 null
-              
-                  :
-                  
-                  <SortableImage
-                    image={image}
-                    fireModal={() => fireModal(index)}
-                    index={index}
-                    key={index}
-                  />
-                }
+                    
+                      <SortableImage
+                        image={image}
+                        fireModal={() => fireModal(index)}
+                        index={index}
+                        key={index}
+                      />
+                    
                   </>
                 );
               })}
-            </SortableImagessContainer>
+            </SortableImagesContainer>
           )}
 
           {imageModal && (

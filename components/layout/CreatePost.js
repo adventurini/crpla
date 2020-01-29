@@ -88,8 +88,8 @@ setEmojiClick(false)
                 <EmojiPicker />
               </div>
             ) }
-            <GoMention className="create-post-icon mention" />
-            <FaHome className="create-post-icon home" />
+            {/* <GoMention className="create-post-icon mention" />
+            <FaHome className="create-post-icon home" /> */}
           </div>
           <div className="create-post-button">
             <Button padding="10px 6px" text="Create Post" margin="5px 10px"/>
