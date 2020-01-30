@@ -10,7 +10,10 @@ import Button from "../layout/Button";
 import { TiDelete } from "react-icons/ti";
 import ListingPost from "./ListingPost";
 import { GoPlus } from "react-icons/go";
-import Iframe from 'react-iframe'
+import Iframe from 'react-iframe';
+import dynamic from "next/dynamic";
+const AddressInput = dynamic(import ('./AddressInput'),{ssr:false})
+
 
 const SortableImagesContainer = sortableContainer(({ children, preview }) => (
   <div
@@ -108,10 +111,10 @@ export default function PhotoUpload() {
                 className="photo-upload-address-form"
                 onSubmit={() => setStep(1)}
               >
-                <input
+                <AddressInput
                   className="photo-upload-address-input"
                   placeholder="Enter Address"
-                ></input>
+                ></AddressInput>
                 <button className="photo-upload-address-submit">Next</button>
               </form>
               <p className="photo-upload-explainer">
