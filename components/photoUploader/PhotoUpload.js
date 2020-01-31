@@ -12,6 +12,7 @@ import ListingPost from "./ListingPost";
 import { GoPlus } from "react-icons/go";
 import Iframe from 'react-iframe';
 import dynamic from "next/dynamic";
+import SubmissionPage from "./SubmissionPage";
 const AddressInput = dynamic(import ('./AddressInput'),{ssr:false})
 
 
@@ -133,7 +134,7 @@ export default function PhotoUpload() {
             post={post}
             setPost={setPost}
           >
-            <div className="photo-upload-dnd">
+            <div className={`photo-upload-dnd ${step >=3 && "photo-upload-content-container-hidden"}`}>
               <h1 className={`photo-upload-title`}>Listing Generator</h1>
               <div className="photo-upload-dnd-container">
                 <FileUploader
@@ -188,7 +189,7 @@ export default function PhotoUpload() {
                   <div
                     className={`photo-upload-content-container-hidden ${preview.length >
                       0 && "photo-upload-submit-button"}`}
-                    onClick={() => console.log("hello")}
+                    onClick={() => setStep(3)}
                   >
                     <Button text="Submit" padding="12px 16px"></Button>
                   </div>
@@ -218,7 +219,7 @@ export default function PhotoUpload() {
               </div>
             </form>
           )}
-          {videoArray.length > 0 && (
+          {(videoArray.length > 0 && step <3) && (
             <SortableVideosContainer
               distance={1}
               axis="xy"
@@ -243,7 +244,7 @@ export default function PhotoUpload() {
               })}
             </SortableVideosContainer>
           )}
-          {preview.length > 0 && (
+          {(preview.length > 0 && step <=2 ) && (
             <SortableImagesContainer
               distance={1}
               axis="xy"
@@ -280,6 +281,7 @@ export default function PhotoUpload() {
             />
           )}
           {imageModal && <div className="photo-upload-modal"></div>}
+          {step >= 3 && <SubmissionPage />}
         </>
       )}
     </div>

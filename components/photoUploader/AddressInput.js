@@ -140,8 +140,8 @@ export default function AddressInput() {
                     }
                     style={{
                       width: "430px",
-                      fontSize: "1.8rem",
-                      fontWeight: "200",
+                      fontSize: "1.6rem",
+                      fontWeight: "300",
                       fontFamily: "sofia-pro",
                       padding: "15px"
                                         }}
