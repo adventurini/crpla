@@ -4,12 +4,14 @@
 .listing-post {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: rgb(244, 244, 244);
   width: 85%;
   max-width: 850px;
   border-radius: 7px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  margin: 40px auto 0px auto;
+  margin: 20px auto 20px auto;
+  -webkit-box-shadow: 0px 0px 4px -0px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 0px 4px -0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 4px -0px rgba(0, 0, 0, 0.47);
   .listing-post-top {
     width: 100%;
     display: flex;
@@ -17,25 +19,27 @@
     .listing-post-user-avatar {
       border-radius: 50%;
       margin-left: 20px;
-      margin-top: 10px;
+      margin-top: 8px;
     }
     .listing-post-input {
       width: 100%;
-      padding-bottom: 40px;
+      padding-bottom: 10px;
       margin-left: 2px;
+      margin-top: 0px;
       resize: none;
       border: none;
       font-family: "sofia-pro";
       color: rgb(62, 62, 62);
       font-weight: 300;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
+      background: rgb(244, 244, 244);
     }
     .listing-post-input::placeholder {
       padding: 1px;
       font-family: "sofia-pro";
-      color: rgb(176, 176, 176);
-      font-weight: 300;
-      font-size: 1.8rem;
+      color: rgb(0, 0, 0);
+      font-weight: 200;
+      font-size: 1.3rem;
     }
   }
   .listing-post-bottom {
@@ -78,6 +82,8 @@
     }
     .listing-post-button {
       margin-left: auto;
+      margin-right:5px;
+      margin-bottom: 5px;
     }
   }
 
