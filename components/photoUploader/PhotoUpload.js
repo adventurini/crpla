@@ -10,6 +10,10 @@ import Button from "../layout/Button";
 import { TiDelete } from "react-icons/ti";
 import ListingPost from "./ListingPost";
 import { GoPlus } from "react-icons/go";
+import Iframe from "react-iframe";
+import dynamic from "next/dynamic";
+import SubmissionPage from "./SubmissionPage";
+const AddressInput = dynamic(import("./AddressInput"), { ssr: false });
 
 const SortableImagesContainer = sortableContainer(({ children, preview }) => (
   <div
@@ -32,22 +36,32 @@ const SortableImage = sortableElement(props => {
   );
 });
 
-const SortableVideosContainer = sortableContainer(({ children, videoArray }) => (
-  <div
-    className={`photo-upload-preview-image-container-hidden ${videoArray.length >
-      0 && "photo-upload-preview-image-container-show"}`}
-  >
-    {children}
-  </div>
-));
+const SortableVideosContainer = sortableContainer(
+  ({ children, videoArray }) => (
+    <div
+      className={`photo-upload-preview-image-container-hidden ${videoArray.length >
+        0 && "photo-upload-preview-image-container-show"}`}
+    >
+      {children}
+    </div>
+  )
+);
 
 const SortableVideo = sortableElement(props => {
   const { video, index } = props;
+  console.log(video.id);
   return (
-    <img
+    <Iframe
       className="photo-upload-preview-video sortableHelper"
       key={index}
-      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+      width="450px"
+      height="450px"
+      url={
+        video.URL.includes("youtube")
+          ? `https://www.youtube.com/embed/${video.id}`
+          : video.URL
+      }
+      allowFullScreen
     />
   );
 });
@@ -62,16 +76,15 @@ export default function PhotoUpload() {
   const [imageModal, setImageModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [video, setVideo] = useState({
-    URL: '',
-    id: ''
+    URL: "",
+    id: ""
   });
   const [videoArray, setVideoArray] = useState([]);
 
   const handleChange = e => {
     e.persist();
-    setVideo({URL: e.target.value})
+    setVideo({ URL: e.target.value });
   };
-
 
   const fireModal = index => {
     setImageModal(true);
@@ -79,13 +92,13 @@ export default function PhotoUpload() {
   };
 
   const addVideo = (e, num) => {
-    video.id= video.URL.split("=")[1]
-    console.log(video.URL, video.id, video)
+    video.id = video.URL.split("=")[1];
+    console.log(video.URL, video.id, video);
     e.preventDefault();
-    setVideoArray(x=> [...x, video])
-    setVideo({URL: '', id: ''})
+    setVideoArray(x => [...x, video]);
+    setVideo({ URL: "", id: "" });
   };
-  console.log(videoArray)
+  console.log(videoArray);
 
   const onSortEnd = ({ oldIndex, newIndex }) =>
     setPreview(arrayMove(preview, oldIndex, newIndex));
@@ -103,10 +116,10 @@ export default function PhotoUpload() {
                 className="photo-upload-address-form"
                 onSubmit={() => setStep(1)}
               >
-                <input
+                <AddressInput
                   className="photo-upload-address-input"
                   placeholder="Enter Address"
-                ></input>
+                ></AddressInput>
                 <button className="photo-upload-address-submit">Next</button>
               </form>
               <p className="photo-upload-explainer">
@@ -125,7 +138,10 @@ export default function PhotoUpload() {
             post={post}
             setPost={setPost}
           >
-            <div className="photo-upload-dnd">
+            <div
+              className={`photo-upload-dnd ${step >= 3 &&
+                "photo-upload-content-container-hidden"}`}
+            >
               <h1 className={`photo-upload-title`}>Listing Generator</h1>
               <div className="photo-upload-dnd-container">
                 <FileUploader
@@ -180,7 +196,7 @@ export default function PhotoUpload() {
                   <div
                     className={`photo-upload-content-container-hidden ${preview.length >
                       0 && "photo-upload-submit-button"}`}
-                    onClick={() => console.log("hello")}
+                    onClick={() => setStep(3)}
                   >
                     <Button text="Submit" padding="12px 16px"></Button>
                   </div>
@@ -206,11 +222,13 @@ export default function PhotoUpload() {
                   width="50px"
                   height="46px"
                   minWidth="50px"
+                  borderTopLeftRadius= "0px"
+                  borderBottomLeftRadius= "0px"
                 ></Button>
               </div>
             </form>
           )}
-          {videoArray.length > 0 && (
+          {videoArray.length > 0 && step < 3 && (
             <SortableVideosContainer
               distance={1}
               axis="xy"
@@ -223,19 +241,13 @@ export default function PhotoUpload() {
               {videoArray.map((video, index) => {
                 return (
                   <>
-                    
-                      <SortableVideo
-                        video={video}
-                        index={index}
-                        key={index}
-                      />
-                    
+                    <SortableVideo video={video} index={index} key={index} />
                   </>
                 );
               })}
             </SortableVideosContainer>
           )}
-          {preview.length > 0 && (
+          {preview.length > 0 && step <= 2 && (
             <SortableImagesContainer
               distance={1}
               axis="xy"
@@ -248,14 +260,12 @@ export default function PhotoUpload() {
               {preview.map((image, index) => {
                 return (
                   <>
-                    
-                      <SortableImage
-                        image={image}
-                        fireModal={() => fireModal(index)}
-                        index={index}
-                        key={index}
-                      />
-                    
+                    <SortableImage
+                      image={image}
+                      fireModal={() => fireModal(index)}
+                      index={index}
+                      key={index}
+                    />
                   </>
                 );
               })}
@@ -272,6 +282,7 @@ export default function PhotoUpload() {
             />
           )}
           {imageModal && <div className="photo-upload-modal"></div>}
+          {step >= 3 && <SubmissionPage />}
         </>
       )}
     </div>

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import "./ListingPost.scss";
 import UserAvatar from "../../components/layout/UserAvatar";
-import Button from "../layout/Button";
 import { FaRegImage, FaHome, FaRegSmile, FaHashtag } from "react-icons/fa";
-import { GoMention } from "react-icons/go";
+import { GoPlus } from "react-icons/go";
 import useOnclickOutside from "react-cool-onclickoutside";
+import Button from '../../components/layout/Button'
 
 const EmojiPicker = dynamic(import("../../components/icons/EmojiPicker"), {
   ssr: false
@@ -47,18 +47,18 @@ export default function ListingPost() {
     <div className="listing-post">
       <div className="listing-post-top">
         <div className="listing-post-user-avatar">
-          <UserAvatar image={image} height="40px" width="40px" />
+          <UserAvatar image={image} height="30px" width="30px" />
         </div>
         <textarea
           className="listing-post-input"
-          placeholder="Add a description or tag someone..."
+          placeholder="Add a description..."
         ></textarea>
       </div>
 
       <div className="listing-post-bottom">
         <div className="listing-post-icons">
 
-          {emojiClick ? (
+          {/* {emojiClick ? (
             <FaRegSmile
               className="listing-post-icon smile-icon"
               style={{ color: "rgb(66, 43, 216)" }}
@@ -84,7 +84,17 @@ export default function ListingPost() {
               <EmojiPicker />
             </div>
           )}
-          <GoMention className="listing-post-icon mention" />
+          <GoMention className="listing-post-icon mention" /> */}
+           <div className="listing-post-button">
+              <Button
+                text={<GoPlus style={{ width: "22px", height: "22px" }} />}
+                padding="4px 2px"
+                width="30px"
+                height="30px"
+                minWidth="30px"
+               
+              ></Button>
+            </div>
         </div>
        
       </div>
