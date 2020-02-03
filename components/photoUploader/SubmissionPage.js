@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import CurpelaWordLogo from "../icons/CurpelaWordLogo";
 import "./SubmissionPage.scss";
 import { GoPlus } from "react-icons/go";
 import Button from "../layout/Button";
 import ListingPost from "./ListingPost";
+import { Line } from 'rc-progress';
+
 
 export default function SubmissionPage() {
+    const [progress, setProgress] = useState(5);
+
+useEffect(() => {
+  const interval = setInterval(() => setProgress(progress + 2), 100);
+  return () => {
+    clearInterval(interval);
+  };
+}, [progress]);
+
   return (
     <div className="submission-page">
       <div className="submission-page-container">
@@ -19,9 +30,19 @@ export default function SubmissionPage() {
             Listings can be edited any time. Your listing will be here on
             completion:
           </p>
-          <p className="submission-page-listing-URL">
-            Progress Bar and Listing Button
-          </p>
+          {progress < 110 ?
+          <div className="submission-page-progress-bar">
+          <Line percent={progress} strokeWidth="3" strokeColor={progress < 100 ? `rgb(255, 156, 64)` : 'rgb(66, 43, 216)'} />
+          </div>
+          :
+          <div className="submission-page-listing-button">
+          <Button 
+          margin="20px auto"
+          text="New Listing"
+          >
+          </Button>
+          </div>
+}
           {/* <p className="submission-page-listing-URL">http://www.curpela.com/house/THIS_HOUSE_ADDRESS</p> */}
           <p className="submission-page-invite">
             If you would like to invite a realtor or 3rd party, please add their

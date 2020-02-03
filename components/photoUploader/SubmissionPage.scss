@@ -29,17 +29,19 @@
         font-weight: 300;
         line-height: 2;
       }
-      .submission-page-listing-URL {
+      .submission-page-progress-bar{
         width: 470px;
-        margin: 20px auto 0px auto;
-        font-size: 1.4rem;
-        font-weight: 400;
-        line-height: 1;
-        color: $purple;
+        margin: 30px auto 30px auto;
+
+      }
+      .submission-page-listing-button {
+        margin: 0 auto;
+        width: 100%;
+    text-align: center;
       }
       .submission-page-invite {
         width: 470px;
-        margin: 70px auto -5px auto;
+        margin: 20px auto -5px auto;
         font-size: 1.3rem;
         font-weight: 300;
         line-height: 2;
