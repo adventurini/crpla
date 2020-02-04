@@ -18,7 +18,7 @@ const Nav = () => {
       <div className="left-nav">
         <Link href="/">
           <a>
-            <CurpelaWordLogo fill="#483bda" width="120" />
+            <CurpelaWordLogo fill="white" width="120" />
           </a>
         </Link>
       </div>
