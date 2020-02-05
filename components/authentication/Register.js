@@ -6,9 +6,11 @@ import { useMutation } from "@apollo/react-hooks";
 import { CREATE_USER } from "../../graphql/User/mutations/createUser";
 import "./Register.scss";
 
-const Register = ({authTab, setAuthTab}) => {
+const Register = ({authTab, setAuthTab, address, addressSlug, images, videos}) => {
   const [createUser, { client }] = useMutation(CREATE_USER);
   const { register, handleSubmit, errors, reset } = useForm();
+
+console.log(address, addressSlug, images, videos)
 
   const onSubmit = async data => {
     // attempt to create user

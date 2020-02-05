@@ -82,6 +82,9 @@ export default function PhotoUpload({authTab, setAuthTab}) {
     id: ""
   });
   const [videoArray, setVideoArray] = useState([]);
+  const [address, setAddress] = useState("");
+  
+
 
   const handleChange = e => {
     e.persist();
@@ -93,6 +96,8 @@ export default function PhotoUpload({authTab, setAuthTab}) {
     setModalIndex(index);
   };
 
+  let addressSlug = address.replace(/,/g, '').split(" ").join("-").slice(0, -4)
+
   const addVideo = (e, num) => {
     video.id = video.URL.split("=")[1];
     console.log(video.URL, video.id, video);
@@ -100,7 +105,6 @@ export default function PhotoUpload({authTab, setAuthTab}) {
     setVideoArray(x => [...x, video]);
     setVideo({ URL: "", id: "" });
   };
-  console.log(videoArray);
 
   const onSortEnd = ({ oldIndex, newIndex }) =>
     setPreview(arrayMove(preview, oldIndex, newIndex));
@@ -128,6 +132,8 @@ export default function PhotoUpload({authTab, setAuthTab}) {
                 <AddressInput
                   className="photo-upload-address-input"
                   placeholder="Enter Address"
+                  address={address}
+                  setAddress={setAddress}
                 ></AddressInput>
                 <button className="photo-upload-address-submit">Next</button>
               </form>
@@ -292,12 +298,11 @@ export default function PhotoUpload({authTab, setAuthTab}) {
           <div className="photo-upload-final">
             {step >=3 && <h3 className="photo-upload-final-explainer">Please sign up or log in to view listing</h3>}
             
-            {console.log(authTab)}
             {
               authTab === "register" ?
-          <Register authTab={authTab} setAuthTab={setAuthTab} />
+          <Register address={address} addressSlug={addressSlug} images={preview} videos={videoArray} authTab={authTab} setAuthTab={setAuthTab} />
           :
-          <Login authTab={authTab} setAuthTab={setAuthTab} />
+          <Login address={address} addressSlug={addressSlug} images={preview} videos={videoArray} authTab={authTab} setAuthTab={setAuthTab} />
             }
           </div>
           }
