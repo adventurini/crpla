@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import loadScript from "../../utils/loadScript";
 import "./AddressInput.scss";
 
-export default function AddressInput() {
+export default function AddressInput({address, setAddress}) {
   const [sessionToken, setSessionToken] = useState("");
-  const [address, setAddress] = useState("");
   const [predictions, setPredictions] = useState([]);
   const [error, setError] = useState([""]);
   const [cursor, setCursor] = useState(0);
@@ -13,10 +12,8 @@ export default function AddressInput() {
 
   let loaded = { current: false };
 
-  console.log(document.querySelector("head"));
 
   // Variables for Google Place API
-  console.log(window);
   const google = window.google;
   // const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
   // Get session token on first render
@@ -43,8 +40,7 @@ export default function AddressInput() {
     });
   }, []);
 
-  console.log(sessionToken);
-  console.log(predictions);
+
   /* eslint-enable */
   useEffect(() => {
     document.addEventListener("mousedown", handleClick, false);
@@ -53,7 +49,6 @@ export default function AddressInput() {
     };
   }, []);
 
-  console.log(google);
 
   const handleClick = e => {
     if (node.current.contains(e.target)) {
@@ -64,7 +59,6 @@ export default function AddressInput() {
   };
 
   const displaySuggestions = (predictions, status) => {
-    console.log(predictions, status);
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
       alert(status);
       return;
@@ -77,7 +71,7 @@ export default function AddressInput() {
     const string = e.target.value;
     setAddress(string);
     var service = new google.maps.places.AutocompleteService();
-    if ([2, 3, 4, 6].includes(string.length)) {
+    if ([2, 3, 4, 6, 8, 10, 12, 14 ,16, 18].includes(string.length)) {
       service.getPlacePredictions(
         {
           input: string,
@@ -88,8 +82,6 @@ export default function AddressInput() {
       );
     }
   };
-
-  console.log(address);
 
   const handleKeyDown = e => {
     if (e.keyCode === 38 && cursor > 0) {
@@ -103,7 +95,6 @@ export default function AddressInput() {
 
   const fillAddress = (address, e) => {
     e.preventDefault();
-    console.log(e.keyCode)
     setAddress(address);
     setPredictions([]);
   };
@@ -126,8 +117,7 @@ export default function AddressInput() {
         <div ref={node} className="search_result_dropdown">
           {predictions.length > 1 && address
             ? predictions.map((prediction, i) => (
-                <>
-                {console.log("cursor, i", cursor, i)}
+                <div key={i}>
                   {cursor === i
                     ? () => setActive(true)
                     : () => setActive(false)}
@@ -139,18 +129,16 @@ export default function AddressInput() {
                         : "search_result_dropdown_item"
                     }
                     style={{
-                      width: "430px",
+                      width: "530px",
                       fontSize: "1.6rem",
                       fontWeight: "300",
                       fontFamily: "sofia-pro",
-                      padding: "15px"
-                                        }}
+                      padding: "15px"                                        }}
                     onClick={e => fillAddress(prediction.description, e)}
                   >
                     {prediction.description}
                   </div>
-                  {console.log(active)}
-                </>
+                </div>
               ))
             : null}
         </div>

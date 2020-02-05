@@ -8,10 +8,10 @@ import { Line } from 'rc-progress';
 
 
 export default function SubmissionPage() {
-    const [progress, setProgress] = useState(5);
+    const [progress, setProgress] = useState(-2);
 
 useEffect(() => {
-  const interval = setInterval(() => setProgress(progress + 2), 100);
+  const interval = setInterval(() => setProgress(progress + .35), 100);
   return () => {
     clearInterval(interval);
   };
@@ -30,14 +30,14 @@ useEffect(() => {
             Listings can be edited any time. Your listing will be here on
             completion:
           </p>
-          {progress < 110 ?
+          {progress < 105 ?
           <div className="submission-page-progress-bar">
-          <Line percent={progress} strokeWidth="3" strokeColor={progress < 100 ? `rgb(255, 156, 64)` : 'rgb(66, 43, 216)'} />
+          <Line percent={progress > 2 ? progress : 3} strokeWidth="2" strokeColor={progress < 100 ? `rgb(255, 156, 64)` : 'rgb(66, 43, 216)'} />
           </div>
           :
           <div className="submission-page-listing-button">
           <Button 
-          margin="20px auto"
+          margin="16px auto"
           text="New Listing"
           >
           </Button>

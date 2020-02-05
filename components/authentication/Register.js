@@ -6,9 +6,11 @@ import { useMutation } from "@apollo/react-hooks";
 import { CREATE_USER } from "../../graphql/User/mutations/createUser";
 import "./Register.scss";
 
-const Register = () => {
+const Register = ({authTab, setAuthTab, address, addressSlug, images, videos}) => {
   const [createUser, { client }] = useMutation(CREATE_USER);
   const { register, handleSubmit, errors, reset } = useForm();
+
+console.log(address, addressSlug, images, videos)
 
   const onSubmit = async data => {
     // attempt to create user
@@ -34,6 +36,7 @@ const Register = () => {
     // update isLoggedIn to true
     client.writeData({ data: { isLoggedIn: true } });
     // route to dashboard
+   
     Router.push("/");
   };
 
@@ -49,7 +52,7 @@ const Register = () => {
           <span>
             Already have an account? Login{" "}
             <button
-              onClick={e => (e.preventDefault(), Router.push("/login"))}
+              onClick={e => (e.preventDefault(), setAuthTab("login"))}
               className="form__message-link"
             >
               here

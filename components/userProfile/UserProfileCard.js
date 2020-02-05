@@ -40,11 +40,11 @@ export default function userProfileCard({ profile }) {
           <p className="about-description">Lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum</p>
           </div>
           </div>
-        <div className="user-images-section">
+        {/* <div className="user-images-section">
           <div className="user-images-title">
             <img className="user-images-icon" src=""></img>
             <p className='title'>Images (23)</p>
-            {/* <p className="view-all">View All</p> */}
+           
             <img className="view-all-icon" src=""></img>
           </div>
           <div className="user-images">
@@ -54,7 +54,7 @@ export default function userProfileCard({ profile }) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
   );
 }

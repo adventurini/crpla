@@ -5,35 +5,57 @@
 
 .photo-upload-container{
     width: 100%;
-    background: $background;
-    height: calc(100vh - 72px);
+    background: $purple;
+    height: calc(100vh - 100px);
     display: flex;
-    align-items: center;
+    // align-items: center;
     overflow: hidden;
     
 
     .photo-upload-content-container{
-        background: white;
-        width: 560px;
-        margin: 90px auto 140px auto;
+        background: $purple;
+        margin: 190px auto 0px auto;
         border-radius: 8px;
-        -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
-        -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
-        box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
+        width: 700px;
+        // -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
+        // -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
+        // box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.47);
 
-    .photo-upload-logo{
-        margin: 0px auto -10px auto;
-        width: 100%;
-        text-align: center;
+    // .photo-upload-logo{
+    //     margin: 0px auto -10px auto;
+    //     width: 100%;
+    //     text-align: center;
+    // }
+
+    .photo-upload-welcome-message{
+      margin: 0 auto;
+
+      h1{
+        color: white;
+        text-align:center;
+        font-family: "sofia-pro";
+        margin-bottom: 20px;
+        font-size: 5rem;
+        font-weight: 600;
+      }
+      .photo-upload-explainer{
+        margin: 0px auto 80px auto;
+        font-size: 2.3rem;
+        font-weight: 400;
+        line-height: 2;
+        color: white;
+        width: 600px;
     }
+    }
+
 
     .photo-upload-address-form{
         display: flex;
         align-items: center;
         margin: 0 auto;
-        width: 480px;
+        width: 600px;
        .photo-upload-address-input{
-           width: 400px;
+           width: 520px;
            font-family: "sofia-pro";
            font-size: 1.6rem;
            font-weight: 300;
@@ -52,7 +74,8 @@
           }
        }
        .photo-upload-address-submit{
-           background: $purple;
+           background: $orange;
+           color: white;
            width: 80px;
            height: 45px;
                       font-size: 1.6rem;
@@ -64,15 +87,12 @@
        }
     }
 }
-    .photo-upload-explainer{
-        width: 480px;
-        margin: 40px auto 60px auto;
-        font-size: 1.6rem;
-        font-weight: 300;
-        line-height: 2;
-    }
+    
 }
 
+.photo-upload-page-container{
+  background: $background;
+  min-height: calc(100vh - 160px);
 .photo-upload-dnd{
   max-width: 1000px;
   margin: 0 auto;
@@ -230,7 +250,7 @@
     .photo-upload-preview-image:first-of-type{
       margin: 0 auto;
       width: 100%;
-      height: 280px;
+      min-height: 260px;
       margin-top: 15px;
       margin-bottom: 10px;
       -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.37);
@@ -261,5 +281,21 @@
   .photo-upload-content-container-hidden{
     display: none;
   }
+
+  .photo-upload-final{
+    height: calc(100vh - 100px);
+    background: $purple;
+    padding-top:100px;
+
+    .photo-upload-final-explainer{
+      text-align: center;
+      font-family: "sofia-pro";
+      font-weight: 500;
+      font-size: 2.8rem;
+      color: white;
+    }
+  }
+}
+
 
 }

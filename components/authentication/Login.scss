@@ -3,17 +3,17 @@
 
 .login {
   display: flex;
-  height: 90vh;
+  // height: calc(100vh - 100px);
   width: 100%;
-  background: linear-gradient($purple, rgb(72, 59, 218));
+  background: $purple;
   .form-container {
     width: 450px;
     margin: 0 auto;
     background-color: $white;
     padding: 30px;
     border-radius: 5px;
-    height: 58vh;
-    margin-top: 8%;
+    height: 360px;
+    margin-top: 40px;
     -webkit-box-shadow: 2px 2px 11px -2px rgba(0, 0, 0, 0.47);
     -moz-box-shadow: 2px 2px 11px -2px rgba(0, 0, 0, 0.47);
     box-shadow: 2px 2px 11px -2px rgba(0, 0, 0, 0.47);

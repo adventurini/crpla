@@ -43,7 +43,7 @@ export default function NewsFeedSidebarLeft(props) {
           Listings
         </a>
       </div>
-      <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
+      {/* <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
         <FaHashtag className="side-bar-icon" />{" "}
         <a
           className={activeTab === "explore" ? "bold" : ""}
@@ -51,7 +51,7 @@ export default function NewsFeedSidebarLeft(props) {
         >
           Explore
         </a>
-      </div>
+      </div> */}
       <div style={{ display: "flex", alignItems: "center", marginTop: "15px" }}>
         <div className="side-bar-avatar">
           <UserAvatar image={image} width="30px" height="30px" />{" "}
