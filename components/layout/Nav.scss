@@ -9,7 +9,7 @@
   min-height: 80px;
   align-items: center;
   background: $purple;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
   overflow-y: hidden;
 
   .left-nav {
@@ -59,9 +59,9 @@
       cursor: pointer;
     }
     .signup {
-      border: 2px solid $orange;
-      color: white;
-      background-color: $orange;
+      border: 2px solid $background;
+      color: $purple;
+      background-color: $background;
     }
   }
 }

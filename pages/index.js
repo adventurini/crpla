@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Head from "next/head";
 import Header from "../components/layout/Header";
 import Nav from "../components/layout/Nav";
@@ -11,8 +11,11 @@ import "../styles/base.scss";
 import NavAuth from "../components/layout/NavAuth";
 import NewsFeed from "../components/newsfeed/NewsFeed";
 import nextCookie from "next-cookies";
+import PhotoUpload from "../components/photoUploader/PhotoUpload";
 
 const Home = ({ isAuthenticated }) => {
+  const [authTab, setAuthTab] = useState("")
+
   return (
     <div style={{background: "#F2F3F7"}}>
       <Head>
@@ -42,9 +45,9 @@ const Home = ({ isAuthenticated }) => {
         <meta name="msapplication-TileColor" content="#0e1977"></meta>
         <meta name="theme-color" content="#0e1977"></meta>
       </Head>
-
-      {isAuthenticated ? <NavAuth /> : <Nav />}
-      {isAuthenticated ? <NewsFeed /> : <Header />}
+    {console.log(authTab)}
+      {isAuthenticated ? <NavAuth /> : <Nav setAuthTab={setAuthTab}/>}
+      {isAuthenticated ? <NewsFeed /> : <PhotoUpload setAuthTab={setAuthTab} authTab={authTab}/>}
 
       {/* <FeaturedHouses />
     <FeaturedPhotographers />

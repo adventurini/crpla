@@ -7,7 +7,7 @@ import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../../graphql/User/mutations/loginUser";
 import "./Login.scss";
 
-const Login = () => {
+const Login = ({authTab, setAuthTab}) => {
   const [loginUser, { client }] = useMutation(LOGIN_USER);
   const { register, handleSubmit, setError, errors, reset } = useForm();
 
@@ -50,7 +50,7 @@ const Login = () => {
           <span>
             Don't have an account? Create one{" "}
             <button
-              onClick={e => (e.preventDefault(), Router.push("/signup"))}
+              onClick={e => (e.preventDefault(), setAuthTab("register"))}
               className="form__message-link"
             >
               here

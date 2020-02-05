@@ -12,7 +12,9 @@ import ListingPost from "./ListingPost";
 import { GoPlus } from "react-icons/go";
 import Iframe from "react-iframe";
 import dynamic from "next/dynamic";
-import SubmissionPage from "./SubmissionPage";
+import Register from "../authentication/Register";
+import Login from "../authentication/Login";
+
 const AddressInput = dynamic(import("./AddressInput"), { ssr: false });
 
 const SortableImagesContainer = sortableContainer(({ children, preview }) => (
@@ -66,7 +68,7 @@ const SortableVideo = sortableElement(props => {
   );
 });
 
-export default function PhotoUpload() {
+export default function PhotoUpload({authTab, setAuthTab}) {
   const [preview, setPreview] = useState([]);
   const [post, setPost] = useState({
     text: "",
@@ -105,12 +107,19 @@ export default function PhotoUpload() {
 
   return (
     <div className="photo-upload">
-      {step === 0 ? (
+      {(step === 0 && authTab === '') ? (
         <div className="photo-upload-container">
           <div className="photo-upload-content-container">
             <>
-              <div className="photo-upload-logo">
+              {/* <div className="photo-upload-logo">
                 <CurpelaWordLogo fill="#483bda" width="200" />
+              </div> */}
+              <div className="photo-upload-welcome-message">
+                <h1>Real Estate Delivery Portal</h1>
+                <p className="photo-upload-explainer">
+                Welcome to our free-to-use listing & delivery generator. <br /> Please enter the
+                shoot address to continue.
+              </p>
               </div>
               <form
                 className="photo-upload-address-form"
@@ -122,15 +131,12 @@ export default function PhotoUpload() {
                 ></AddressInput>
                 <button className="photo-upload-address-submit">Next</button>
               </form>
-              <p className="photo-upload-explainer">
-                Welcome to our listing content generator. Please enter the
-                listing address to continue.
-              </p>
+              
             </>
           </div>
         </div>
       ) : (
-        <>
+        <div className="photo-upload-page-container">
           <FileUploader
             noClick
             preview={preview}
@@ -139,7 +145,7 @@ export default function PhotoUpload() {
             setPost={setPost}
           >
             <div
-              className={`photo-upload-dnd ${step >= 3 &&
+              className={`photo-upload-dnd ${(step >= 3 || step ===0) &&
                 "photo-upload-content-container-hidden"}`}
             >
               <h1 className={`photo-upload-title`}>Listing Generator</h1>
@@ -180,7 +186,7 @@ export default function PhotoUpload() {
                   >
                     <p className="photo-upload-content">
                       If you have any videos or 3D tours, add the URL(s) below.{" "}
-                      <br /> Click Submit to generate a listing page.
+                      
                     </p>
                   </div>
                 </FileUploader>
@@ -196,9 +202,9 @@ export default function PhotoUpload() {
                   <div
                     className={`photo-upload-content-container-hidden ${preview.length >
                       0 && "photo-upload-submit-button"}`}
-                    onClick={() => setStep(3)}
+                    onClick={() => {setStep(3); setAuthTab("register");}}
                   >
-                    <Button text="Submit" padding="12px 16px"></Button>
+                    <Button text="Next Step" padding="12px 16px"></Button>
                   </div>
                 )}
               </div>
@@ -236,7 +242,7 @@ export default function PhotoUpload() {
               videoArray={videoArray}
             >
               <h2 className="photo-upload-preview-image-heading">
-                Video Thumbnail
+                Video Preview
               </h2>
               {videoArray.map((video, index) => {
                 return (
@@ -282,8 +288,20 @@ export default function PhotoUpload() {
             />
           )}
           {imageModal && <div className="photo-upload-modal"></div>}
-          {step >= 3 && <SubmissionPage />}
-        </>
+          {(authTab ==="register" || authTab === "login") && 
+          <div className="photo-upload-final">
+            {step >=3 && <h3 className="photo-upload-final-explainer">Please sign up or log in to view listing</h3>}
+            
+            {console.log(authTab)}
+            {
+              authTab === "register" ?
+          <Register authTab={authTab} setAuthTab={setAuthTab} />
+          :
+          <Login authTab={authTab} setAuthTab={setAuthTab} />
+            }
+          </div>
+          }
+        </div>
       )}
     </div>
   );

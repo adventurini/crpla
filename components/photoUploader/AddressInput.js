@@ -139,12 +139,11 @@ export default function AddressInput() {
                         : "search_result_dropdown_item"
                     }
                     style={{
-                      width: "430px",
+                      width: "530px",
                       fontSize: "1.6rem",
                       fontWeight: "300",
                       fontFamily: "sofia-pro",
-                      padding: "15px"
-                                        }}
+                      padding: "15px"                                        }}
                     onClick={e => fillAddress(prediction.description, e)}
                   >
                     {prediction.description}

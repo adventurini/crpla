@@ -12,7 +12,7 @@ const links = [
   return link;
 });
 
-const Nav = () => {
+const Nav = ({setAuthTab}) => {
   return (
     <div className="nav">
       <div className="left-nav">
@@ -22,8 +22,8 @@ const Nav = () => {
           </a>
         </Link>
       </div>
-      <div className="center-nav">
-        {/* <ul>
+      {/* <div className="center-nav">
+        <ul>
           {links.map(({ key, href, label }) => (
             <li key={key}>
               <Link href={href}>
@@ -31,16 +31,12 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-        </ul> */}
-      </div>
+        </ul>
+      </div> */}
 
       <div className="right-nav">
-        <a href="/login">
-          <button>Log In</button>
-        </a>
-        <a href="/signup">
-          <button className="signup">Sign Up</button>
-        </a>
+          <button onClick={()=> setAuthTab("login")}>Log In</button>
+          <button onClick={()=> setAuthTab("register")} className="signup">Sign Up</button>
       </div>
     </div>
   );
