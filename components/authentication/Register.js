@@ -6,7 +6,8 @@ import { useMutation } from "@apollo/react-hooks";
 import { CREATE_USER } from "../../graphql/User/mutations/createUser";
 import "./Register.scss";
 
-const Register = ({authTab, setAuthTab, address, addressSlug, images, videos}) => {
+const Register = (props) => {
+  const {authTab, setAuthTab, address, addressSlug, images, videos} = props;
   const [createUser, { client }] = useMutation(CREATE_USER);
   const { register, handleSubmit, errors, reset } = useForm();
 
@@ -36,7 +37,10 @@ console.log(address, addressSlug, images, videos)
     // update isLoggedIn to true
     client.writeData({ data: { isLoggedIn: true } });
     // route to dashboard
-   
+ if(props.images.length > 0 & props.address){
+    //create house mutation 
+    //return and redirect to house
+ }
     Router.push("/");
   };
 

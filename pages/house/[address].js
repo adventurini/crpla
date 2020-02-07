@@ -12,7 +12,7 @@ export default function address(props) {
     >
       <NavAuth />
       <HouseHeader />
-      <div style={{ display: "flex" }}>
+      <div>
         <HouseSideBar />
         <HouseImages />
       </div>

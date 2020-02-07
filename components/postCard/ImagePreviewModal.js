@@ -44,7 +44,7 @@ console.log(preview, index, imageIndex)
         return(
           
         <div className="image-preview-modal-image-container" key={i}>
- <img src={preview[imageIndex].preview} className="image-preview-modal-image" />
+ <img src={preview[imageIndex].preview ? preview[imageIndex].preview : preview[imageIndex]} className="image-preview-modal-image" />
  
     {imageIndex === preview.length - 1 ?
 

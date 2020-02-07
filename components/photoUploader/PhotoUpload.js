@@ -170,8 +170,8 @@ export default function PhotoUpload({authTab, setAuthTab}) {
                       0 && "photo-upload-content-container-hidden"}`}
                   >
                     <p className="photo-upload-content">
-                      Drag & Drop photos here <br /> or <br /> Click{" "}
-                      <span className="underline">here</span> to upload{" "}
+                      Drag & Drop <span style={{fontWeight: "700"}}>high res</span> listing photos <br /> or <br /> Click
+                      <span className="underline">here</span> to upload
                     </p>
                   </div>
                   <div
