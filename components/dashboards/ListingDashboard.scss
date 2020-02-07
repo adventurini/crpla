@@ -11,9 +11,9 @@
     }
     .listing-dashboard-tabs{
         display: flex;
-        width: 82%;
+        width: 83%;
         justify-content: space-between;
-            max-width: 920px;
+            max-width: 930px;
             margin: 40px auto 10px auto;
         h2{
             font-size: 1.8rem;
@@ -87,15 +87,24 @@
         }
 
     }
-  }
-  .listing-dashboard-house-invoicing{
-      display: flex;
-      align-items: center;
-      .listing-dashboard-house-outstanding-balance{
-        font-size: 1.7rem;
-        font-weight: 400;
-        font-family: 'sofia-pro';
-        margin-right: 8px;
+    .listing-dashboard-house-admins{
+      display:flex;
+      .listing-dashboard-house-admins-icon{
+        margin-left: -10px;
+        width: 35px;
+        height:35px;
       }
+    }
+    .listing-dashboard-house-invoicing{
+        display: flex;
+        align-items: center;
+        .listing-dashboard-house-outstanding-balance{
+          font-size: 1.7rem;
+          font-weight: 400;
+          font-family: 'sofia-pro';
+          margin-right: 8px;
+        }
+    }
   }
+
 }
