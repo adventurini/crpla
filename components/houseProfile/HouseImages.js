@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./HouseImages.scss";
+import ImagePreviewModal from '../postCard/ImagePreviewModal'
 import Link from "next/Link";
 import HousePosts from "./HousePosts";
 
@@ -29,39 +30,41 @@ const houses = [
 ];
 
 export default function HouseImages() {
-  const [active, setActive] = useState("images");
-
-  const setActiveTab = (tab) => {
-    tab === 'images' ? setActive('images') : setActive('posts')
-  }
+  const [imageModal, setImageModal] = useState(false);
+  const [modalIndex, setModalIndex] = useState('');
+  // const setActiveTab = (tab) => {
+  //   tab === 'images' ? setActive('images') : setActive('posts')
+  // }
 
   
   
 
   return (
-    <>
-      {active === "images" ? (
+    
         <div className="house-images-container">
-          {console.log(active)}
-          <div className="images-posts">
+          {/* <div className="images-posts">
             <a className={active ==='images' && "bold"} onClick={() => setActiveTab('images')}>Images</a>{" "}
             <a className={active=== 'posts' && "bold"} onClick={() => setActiveTab('posts')}>
               Posts
             </a>
-          </div>
+          </div> */}
           <div className="house-images">
             {houses.length > 0 &&
-              houses.map(house => (
-                <div key={house} className="image-container">
+              houses.map((house, i) => (
+                <div key={i} className="image-container" onClick={()=> {setImageModal(true); setModalIndex(i)}}>
                   <div className="overlay"></div>
                   <img src={house}></img>
                 </div>
               ))}
           </div>
+          {imageModal && (
+            <ImagePreviewModal
+              preview={houses}
+              index={modalIndex}
+              setImageModal={setImageModal}
+            />
+          )}
+          {imageModal && <div className="house-images-modal-background"></div>}
         </div>
-      ) : (
-          <HousePosts active={active} setActive={setActive} setActiveTab={setActiveTab}/>
-      )}
-    </>
-  );
+      ) 
 }

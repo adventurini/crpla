@@ -21,7 +21,7 @@ export default function HouseSideBar() {
       <div className="house-info">
           <p>48592 Jerome <br /> Shelby Twp., MI 48315</p>
       </div>
-      <button>Follow</button>
+      {/* <button>Follow</button>
       <div className="house-attributes">
         <div className="followers">
         <p className="number-of-followers">25</p>
@@ -45,7 +45,7 @@ export default function HouseSideBar() {
         <div className="house-images-title">
           <img className="house-images-icon" src=""></img>
           <p className='title'>Images(23)</p>
-          {/* <p className="view-all">View All</p> */}
+         
           <img className="view-all-icon" src=""></img>
         </div>
         <div className="house-images">
@@ -53,7 +53,7 @@ export default function HouseSideBar() {
             <img src={image} className="house-photo"></img>
           ))}
         </div>
-      </div>
+      </div> */}
       {/* <div className="house-compliments-section">
       
         <HouseCompliments />

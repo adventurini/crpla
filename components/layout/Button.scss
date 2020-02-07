@@ -11,6 +11,7 @@
     transition: .2s ease-in-out;
     margin: 5px auto;
     border-radius: 5px;
+    
     &:hover {
       background-color: darken($purple, 10%);
     }
