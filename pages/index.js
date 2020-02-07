@@ -47,7 +47,7 @@ const Home = ({ isAuthenticated }) => {
       </Head>
     {console.log(authTab)}
       {isAuthenticated ? <NavAuth /> : <Nav setAuthTab={setAuthTab}/>}
-      {isAuthenticated ? <NewsFeed /> : <PhotoUpload setAuthTab={setAuthTab} authTab={authTab}/>}
+      {<PhotoUpload setAuthTab={setAuthTab} authTab={authTab}/>}
 
       {/* <FeaturedHouses />
     <FeaturedPhotographers />

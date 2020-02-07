@@ -15,9 +15,10 @@
   flex-direction: row;
   top: calc(26% - 8vw);
   left: calc(15% + 2.5vw);
-  width: calc(70% - 5vw);
+  width: calc(69% - 5vw);
   z-index: 200;
   max-width: 1000px;
+  overflow: hidden;
 
 
   .image-preview-modal-left {
@@ -31,13 +32,13 @@
 
     
     .image-preview-modal-image {
-        border-radius: 9px;
 
 
-      width: 100%;
+      width: 105%;
       height: 100%;
       // object-fit: cover;
       line-height: 100%;
+      overflow: hidden;
       &:hover {
         cursor: pointer;
       }

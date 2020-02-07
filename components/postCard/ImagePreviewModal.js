@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./ImagePreviewModal.scss";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import UserAvatar from "../layout/UserAvatar";
-import useOnclickOutside from 'react-cool-onclickoutside';
-import Slider from 'react-slick';
+import useOnclickOutside from "react-cool-onclickoutside";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {PreviousArrow, NextArrow} from '../carousel/Arrows'
+import { PreviousArrow, NextArrow } from "../carousel/Arrows";
 
 export default function ImagePreviewModal(props) {
   const { preview, imageModal, setImageModal, index } = props;
@@ -16,19 +16,15 @@ export default function ImagePreviewModal(props) {
 
   let imageIndex = index;
 
-console.log(preview, index, imageIndex)
-
-
- 
+  console.log(preview, index, imageIndex);
 
   var settings = {
-    dots: true,
-    dots: true,
+    dots: false,
     dotsClass: "slick-dots",
     infinite: true,
     prevArrow: <PreviousArrow />,
     nextArrow: <NextArrow />,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1
   };
@@ -36,31 +32,29 @@ console.log(preview, index, imageIndex)
   return (
     <div key={imageModal} className="image-preview-modal" ref={closeModal}>
       <div className="image-preview-modal-left">
-     
-        <div className="image-preview-modal-image-container">
-      
-        <Slider {...settings} className="image-preview-modal-slider">
-      {preview.map((image, i)=> {
-        return(
-          
-        <div className="image-preview-modal-image-container" key={i}>
- <img src={preview[imageIndex].preview ? preview[imageIndex].preview : preview[imageIndex]} className="image-preview-modal-image" />
- 
-    {imageIndex === preview.length - 1 ?
-
-      imageIndex=0
-    
-    : imageIndex++
-
-      }
- </div>)
-      })}
-         
+        <div className="image-preview-modal-image-container" style={{borderRadius: "10px", background: "black"}}>
+          <Slider {...settings} className="image-preview-modal-slider">
+            {preview.map((image, i) => {
+              return (
+                <div className="image-preview-modal-image-container" key={i}>
+                  <img
+                    src={
+                      preview[imageIndex].preview
+                        ? preview[imageIndex].preview
+                        : preview[imageIndex]
+                    }
+                    className="image-preview-modal-image"
+                  />
+                  {imageIndex === preview.length - 1
+                    ? (imageIndex = 0)
+                    : imageIndex++}
+                </div>
+              );
+            })}
           </Slider>
         </div>
-       
-        </div>
-        {/* <div className="image-preview-modal-right">
+      </div>
+      {/* <div className="image-preview-modal-right">
         <div className="image-preview-modal-content">
           <div className="image-preview-modal-title">
             <div className="image-preview-modal-user-avatar">
@@ -81,7 +75,6 @@ console.log(preview, index, imageIndex)
         </div>
          
         </div> */}
-      
     </div>
   );
 }
